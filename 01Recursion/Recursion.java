@@ -42,11 +42,11 @@ public double sqrt(double n){
 
     public double sqrtHelper(double n, double Guess){
 	    //base case is the percent error stuff//
-	if(Math.abs(n-(guess * guess )) < .0001)){
+	if(Math.abs(n-(guess * guess ) < .0001)){
 	    return Guess;
 	}
-	    else{
+	    
 	return sqrtHelper(n, (n / guess + guess) / 2);
-	    }
+	    
     }
 }
