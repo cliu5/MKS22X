@@ -22,7 +22,7 @@ public class Recursion{
     //the first param is changing n//
 	//second param is the number ur passing down ie in the fib sequence 0,1,1,2,3,5 once u finish 1,1 you can throw the 1st one//
 	//second param is the sum as you store it//
-	 
+  }
   public int fib(int n){
 	if (n < 0){
 	    throw new IllegalArgumentException();
