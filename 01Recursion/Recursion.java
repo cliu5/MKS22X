@@ -12,21 +12,22 @@ public class Recursion{
     }
     }
 //fib with helper//
-  public static int Helper( int n, int First, int Second){
+  public static int FibHelper( int n, int firstNum, int secondNum){
     if (n==0){
-      return First;
+      return firstNum;
     }
     else{
-      return Helper(n-1,Second,First+Second);
+      return FibHelper(n-1,secondNum,firstNum+secondNum);
     }
-    //the first one is the number two before and the second one is the number one before//
-    //this took somethinking but you recursively go thru and store frist+second//
-    
+    //the first param is changing n//
+	//second param is the number ur passing down ie in the fib sequence 0,1,1,2,3,5 once u finish 1,1 you can throw the 1st one//
+	//second param is the sum as you store it//
+	 
   public int fib(int n){
 	if (n < 0){
 	    throw new IllegalArgumentException();
 	}
-	return Helper(n, 0, 1);
+	return FibHelper(n, 0, 1);
     }
 
    
