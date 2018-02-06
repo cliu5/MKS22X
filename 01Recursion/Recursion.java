@@ -16,6 +16,9 @@ public class Recursion{
     if (n==0){
       return firstNum;
     }
+if (n==1){
+	return secondNum;
+}
     else{
       return FibHelper(n-1,secondNum,firstNum+secondNum);
     }
