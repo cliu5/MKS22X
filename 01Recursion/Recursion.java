@@ -40,10 +40,10 @@ public double sqrt(double n){
 	return sqrtHelper(n, n/2);
     }
 
-    public double sqrtHelper(double n, double Guess){
+    public double sqrtHelper(double n, double guess){
 	    //base case is the percent error stuff//
 	if(Math.abs(n-(guess * guess ) < .0001)){
-	    return Guess;
+	    return guess;
 	}
 	    
 	return sqrtHelper(n, (n / guess + guess) / 2);
