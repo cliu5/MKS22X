@@ -19,6 +19,7 @@ public class Recursion{
     else{
       return FibHelper(n-1,secondNum,firstNum+secondNum);
     }
+	  //below is just for me to sort/understand tail recursions plz ignore//
     //the first param is changing n//
 	//second param is the number ur passing down ie in the fib sequence 0,1,1,2,3,5 once u finish 1,1 you can throw the 1st one//
 	//second param is the sum as you store it//
@@ -31,3 +32,20 @@ public class Recursion{
     }
 
 }
+
+public double sqrt(double n){
+	if(n < 0){
+	    throw new IllegalArgumentException();
+	}
+	return sqrtHelper(n, n/2);
+    }
+
+    public double sqrtHelper(double n, double Guess){
+	    //base case is the percent error stuff//
+	if(Math.abs(n-(guess * guess )) < .0001)){
+	    return Guess;
+	}
+	    else{
+	return sqrtHelper(n, (n / guess + guess) / 2);
+	    }
+    }
