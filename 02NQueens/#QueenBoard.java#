@@ -63,7 +63,9 @@ public class QueenBoard{
 	for (each row_{
 		if add AQueen*({
 			if solver col+1
-				      retir
+				      return true
+				      remove queen
+				      return false
     }
     public int countSolutions(){
     }
