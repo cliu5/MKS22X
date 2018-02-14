@@ -165,6 +165,7 @@ public class QueenBoard{
       */
       System.out.println(a); //prints out an empty i by i grid of underscores
 }
+	}}
 	
 	
     
