@@ -1,6 +1,7 @@
 public class QueenBoard{
     private int[][]board;
     private int size;
+	
     public QueenBoard(int size){
 	    if(size<0){
 		    throw new IllegalArgumentException();
@@ -11,7 +12,7 @@ public class QueenBoard{
 	
     }
 	
-	//thanks to kristen at the dojo for helping me with understanding the algorithm and debugging addQueen & removeQueen//
+	//thanks to kristen at the dojo for helping me with understanding the algorithm and debugging addQueen & removeQueen with me//
 	
     private boolean addQueen(int r, int c){
 	    if(board[r][c]>0){
@@ -19,16 +20,16 @@ public class QueenBoard{
 	    }
 	
 	    board[r][c]=-1;
-	    for(int i=1 ; c+i<size; i++){
+	    for(int x=1 ; c+x<size; x++){
 		
-		board[r][c+i]++;
+		board[r][c+x]+=1;
 			
-	if(r+i<size){
+	if(r+x<size){
 		//diagonals//
-		board[r+i][c+i]++;
+		board[r+x][c+x]+=1;
 	}
-		if (r-i>=0){
-			board[r-i][c+i]++;
+		if (r-x>=0){
+			board[r-x][c+x]+=1;
 		}
 	    }
 	    return true; 
@@ -40,13 +41,13 @@ public class QueenBoard{
 		    return false;
 	    }
 		board[r][c]+=1;
-		for(int i=1;c+i<size;i++){
-			board[r][c+i]-=1;
-			if(r+i<size){
-				board[r+i][c+i]-=1;
+		for(int x=1;c+x<size;x++){
+			board[r][c+x]-=1;
+			if(r+x<size){
+				board[r+x][c+x]-=1;
 			}
-			if(r-i>=0){
-				board[r-i][c+i]-=1;
+			if(r-x>=0){
+				board[r-x][c+x]-=1;
 			}
 		}
 		return true;
