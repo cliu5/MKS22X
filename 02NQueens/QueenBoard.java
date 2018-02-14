@@ -113,7 +113,9 @@ public class QueenBoard{
 			    throw new IllegalStateException();
 		    }
 	    }
+	    }
 	    return countSolutionsHelper(0);
+    
     }
 	    public int countSolutionsHelper(int COLUMN){
 		    int ans=0;
