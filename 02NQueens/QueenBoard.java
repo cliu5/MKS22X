@@ -14,29 +14,31 @@ public class QueenBoard{
 	//thanks to kristen at the dojo for helping me with understanding the algorithm and debugging addQueen & removeQueen//
 	
     private boolean addQueen(int r, int c){
-	if(board[r][c]==0){
+	    if(board[r][c]>0){
+		    return false;
+	    }
+	
 	    board[r][c]=-1;
 	    for(int i=1 ; c+i<size; i++){
 		
-		board[r][c+i]+=1;
+		board[r][c+i]++;
 			
 	if(r+i<size){
 		//diagonals//
-		board[r+i][c+i]+=1;
+		board[r+i][c+i]++;
 	}
 		if (r-i>=0){
-			board[r-i][c+i]+=1;
+			board[r-i][c+i]++;
 		}
-	
-	    return true; 
 	    }
+	    return true; 
     }
-	   return false;
-}
     
     
     private boolean removeQueen(int r, int c){
-	if(board[r][c]==0){
+	    if(board[r][c]!=-1){
+		    return false;
+	    }
 		board[r][c]+=1;
 		for(int i=1;c+i<size;i++){
 			board[r][c+i]-=1;
@@ -49,9 +51,7 @@ public class QueenBoard{
 		}
 		return true;
 	}
-	    return false;
-    }
-
+	    
      
 
     public String toString(){
@@ -65,6 +65,7 @@ public class QueenBoard{
 		    ans+="Q";
 		}
 	    }
+		ans+="\n";
 	}
 	    return ans;
     }
