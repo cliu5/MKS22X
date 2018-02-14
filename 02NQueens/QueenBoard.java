@@ -78,11 +78,11 @@ public class QueenBoard{
 		    }
 	    }
     }
-	    return solveHelper(0,0);
+	    return solveHelper(0);
     }
 	    
-    public boolean solveHelper(int COLUMN, int QUEENCOUNT){
-	    if(QUEENCOUNT==SIZE){
+    public boolean solveHelper(int COLUMN){
+	    if(COLUMN==size){
 		    return true;
 	    }
 	    //once the amt of queens is equal to the size of the board u solved it thats the base case//
