@@ -8,11 +8,7 @@ public class QueenBoard{
 	    
 	board= new int[size][size];
 	    this.size=size;
-	for(int i=0;i<board.size;i++){
-	    for(int j=0;j<board.size;j++){
-		board[i][j]=0;
-	    }
-	}
+	
     }
 	
 	//thanks to kristen at the dojo for helping me with understanding the algorithm and debugging addQueen & removeQueen//
