@@ -31,7 +31,7 @@ public class QueenBoard{
 		if (r-i>=0){
 			board[r-i][c+i]+=1;
 		}
-	}
+	
 	    return true; 
     }
 	   return false;
