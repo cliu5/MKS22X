@@ -108,7 +108,7 @@ public class QueenBoard{
     
     public int countSolutions(){
 	    for(int i=0;i<size;i++){
-		    for(int j=0;j<size;j++):
+		    for(int j=0;j<size;j++){
 		    if(board[i][j]!=0){
 			    throw new IllegalStateException();
 		    }
