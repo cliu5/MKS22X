@@ -19,7 +19,7 @@ public class QueenBoard{
 	    for(int i=1 ; c+i<size; i++){
 		
 		board[r][c+i]+=1;
-			}
+			
 	if(r+i<size){
 		//diagonals//
 		board[r+i][c+i]+=1;
