@@ -63,6 +63,7 @@ public class QueenBoard{
 	    for(int j=0;j<size;j++){
 		    if(board[i][j]!=-1){
 			    ans+="_";
+		    }
 		else{
 		    ans+="Q";
 		}
