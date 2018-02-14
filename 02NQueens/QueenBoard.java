@@ -1,6 +1,6 @@
 public class QueenBoard{
     private int[][]board;
-    private int count;
+    private int size;
     public QueenBoard(int size){
 	    if(size<0){
 		    throw new IllegalArgumentException();
@@ -112,11 +112,13 @@ public class QueenBoard{
 		    if(board[i][j]!=0){
 			    throw new IllegalStateException();
 		    }
+		    }
 	    }
-	    }
+	    
 	    return countSolutionsHelper(0);
     
     }
+	
 	    public int countSolutionsHelper(int COLUMN){
 		    int ans=0;
 		    if(COLUMN==size){
