@@ -2,7 +2,7 @@ public class KnightBoard{
     private int[][]board;
 	private int[] ROWMOVES={2,2,1,-1,-2,-2,1,-1};
 	private int[] COLUMNMOVES={1,-1,2,2,1,-1,-2,-2};
-	
+	// kriiiissstennnnn from the dojooooo is cool and also hlepful// 
     public KnightBoard(int startingRows,int startingCols){
     if (startingRows<0||startingCols<0){
 	throw new IllegalArgumentException();
@@ -71,6 +71,8 @@ public boolean solveH(int r, int c, int level){
 	else{
 		return false;
 	}
+	//THIS IS THE BACK TRACK PART i realized that the easiest way is to list all the column moves in one area and row moves in another area //
+	//then you backtrack thru and go through things to add//
 	for(int i=0; i<ROWMOVES.length;i++){
 		if(solveH(r+ROWMOVES[i],c+COLUMNMOVES[i],level)){
 			return true;
@@ -96,6 +98,8 @@ public int countSolutions(int startingRow,int startingCol){
 	}
 	return countH(startingRow,startingCol,1);
 }
+	
+	// this is just the solve method but adding in ans//
 public int countH(int r, int c, int level){
 	int ans=0;
 	if(r<0||r>=board.length||c<0||c>=board[r].length){
