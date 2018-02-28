@@ -43,14 +43,16 @@ ans+= "\n";
 }
 
 	
+
 public boolean solve(int startingRow, int startingCol){
+	//checking for all exceptions//
 	if(startingRow<0||startingCol<0||startingRow>=board.length||startingCol>=board[startingRow].length){
 		throw new IllegalArgumentException();
 	}
 	
-for(int row=0;row<board.length;row++){
-	for(int col=0;col<board[row].length;col++){
-	if(board[row][col]!=0){
+for(int r=0;r<board.length;r++){
+	for(int c=0;col<board[r].length;c++){
+	if(board[r][c]!=0){
 		throw new IllegalStateException();
 	}
 }
@@ -85,42 +87,43 @@ public int countSolutions(int startingRow,int startingCol){
 	if(startingRow<0||startingCol<0||startingRow>=board.length||startingCol>=board[startingRow].length){
 		throw new IllegalStateException();
 	}
-	for(int row=0;row<board.length;row++){
-		for(int col=0;col<board[row].length;col++){
-			if(board[row][col]!=0){
+	for(int r=0;r<board.length;r++){
+		for(int c=0;c<board[r].length;c++){
+			if(board[r][c]!=0){
 				throw new IllegalStateException();
 			}
 		}
 	}
 	return countH(startingRow,startingCol,1);
 }
-public int countH(int row, int col, int level){
+public int countH(int r, int c, int level){
 	int ans=0;
-	if(row<0||row>=board.length||col<0||col>=board[row].length){
+	if(r<0||r>=board.length||c<0||c>=board[r].length){
 		return 0;
 	}
 	
-	if(board[row][col]==0){
-		board[row][col]=level;
+	if(board[r][c]==0){
+		board[r][c]=level;
 		level++;
 	}
 	else{
 		return 0;
 	}
 	for(int i=0;i<ROWMOVES.length;i++){
-		if(level-1==board.length*board[row].length){
-			board[row][col]=0;
+		if(level-1==board.length*board[r].length){
+			board[r][c]=0;
 			return 1;
 		}
-		ans+=countH(row+ROWMOVES[i], col+COLUMNMOVES[i],level);
+		ans+=countH(r+ROWMOVES[i], c+COLUMNMOVES[i],level);
 	}
-	board[row][col]=0;
+	board[r][c]=0;
 	return ans;
 }
 	
 	
 	
 	
+	//crystals driver//
 	
 	public static void main(String[] args){
     KnightBoard a = new KnightBoard(3,3);
