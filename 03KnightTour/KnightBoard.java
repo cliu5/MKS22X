@@ -15,7 +15,7 @@ public String toString() {
      for (int ROW=0;ROW<board.length;ROW++){
 
      for (int COLUMN=0;COLUMN<board[ROW].length;COLUMN++){
-	     if(board.length*board[row].length<10){
+	     if(board.length*board[ROW].length<10){
 		     if(board[ROW][COLUMN]==0){
 			      ans+="_";
 		     }
@@ -33,7 +33,7 @@ public String toString() {
 			     }
 		     }
 		     else{
-			     ans+=board[ROW][COL]+ " ";
+			     ans+=board[ROW][COLUMN]+ " ";
 		     }
 	     }
      }
@@ -69,8 +69,8 @@ public boolean solveH(int row, int col, int level){
 	else{
 		return false;
 	}
-	for(int i=0; i<ROWMOVES.legnth;i++){
-		if(SolveH(row+ROWMOVES[i],col+COLMOVES[i],level)){
+	for(int i=0; i<ROWMOVES.length;i++){
+		if(SolveH(row+ROWMOVES[i],col+COLUMNMOVES[i],level)){
 			return true;
 		}
 	}
