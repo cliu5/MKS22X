@@ -11,7 +11,7 @@ public class KnightBoard(){
     }
 
 public String toString() {
-    String ans=""
+    String ans="";
      for (int ROW=0;ROW<board.length;ROW++){
 
      for (int COLUMN=0;COLUMN<board[ROW].length;COLUMN++){
@@ -49,7 +49,7 @@ public boolean solve(int startingRow, int startingCol){
 	}
 	
 for(int row=0;row<board.length;row++){
-	for(int col=0;col<board[row].length;col++):
+	for(int col=0;col<board[row].length;col++){
 	if(board[row][col]!=0){
 		throw new IllegalStateException();
 	}
@@ -58,7 +58,7 @@ for(int row=0;row<board.length;row++){
 	return solveH(startingRow, startingCol, 1);
 }
 
-public boolean solveH(int row; int col; int level){
+public boolean solveH(int row, int col, int level){
 	if(row<0||row>=board.length||col<0||col>=board[row].length){
 		return false;
 	}
@@ -114,6 +114,7 @@ public int countH(int row, int col, int level){
 	}
 	board[row][col]=0;
 	return ans;
+}
 }
 
  
