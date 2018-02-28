@@ -70,7 +70,7 @@ public boolean solveH(int row, int col, int level){
 		return false;
 	}
 	for(int i=0; i<ROWMOVES.length;i++){
-		if(SolveH(row+ROWMOVES[i],col+COLUMNMOVES[i],level)){
+		if(solveH(row+ROWMOVES[i],col+COLUMNMOVES[i],level)){
 			return true;
 		}
 	}
