@@ -99,9 +99,7 @@ public int countH(int row, int col, int level){
 	if(row<0||row>=board.length||col<0||col>=board[row].length){
 		return 0;
 	}
-	if(level-1==board.length*board[row].length){
-		return 1;
-	}
+	
 	if(board[row][col]==0){
 		board[row][col]=level;
 		level++;
@@ -110,6 +108,10 @@ public int countH(int row, int col, int level){
 		return 0;
 	}
 	for(int i=0;i<ROWMOVES.length;i++){
+		if(level-1==board.length*board[row].length){
+			board[row][col]=0;
+			return 1;
+		}
 		ans+=countH(row+ROWMOVES[i], col+COLUMNMOVES[i],level);
 	}
 	board[row][col]=0;
