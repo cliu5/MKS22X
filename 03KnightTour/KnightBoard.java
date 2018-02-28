@@ -1,4 +1,4 @@
-public class KnightBoard(){
+public class KnightBoard{
     private int[][]board;
 	private int[] ROWMOVES={2,2,1,-1,-2,-2,1,-1};
 	private int[] COLUMNMOVES={1,-1,2,2,1,-1,-2,-2};
