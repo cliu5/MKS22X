@@ -116,8 +116,12 @@ public int countH(int row, int col, int level){
 	return ans;
 }
 	
+	
+	
+	
+	
 	public static void main(String[] args){
-  /*  KnightBoard a = new KnightBoard(3,3);
+    KnightBoard a = new KnightBoard(3,3);
     System.out.println(a);
     /* Prints
       _ _ _
@@ -220,8 +224,18 @@ public int countH(int row, int col, int level){
         KnightBoard e = new KnightBoard(3,4);
         System.out.println(e.solve(i,j));
       }
-    
+    }
+  }
 
+
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	
