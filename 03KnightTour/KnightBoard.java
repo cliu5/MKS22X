@@ -51,7 +51,7 @@ public boolean solve(int startingRow, int startingCol){
 	}
 	
 for(int r=0;r<board.length;r++){
-	for(int c=0;col<board[r].length;c++){
+	for(int c=0;c<board[r].length;c++){
 	if(board[r][c]!=0){
 		throw new IllegalStateException();
 	}
@@ -60,26 +60,26 @@ for(int r=0;r<board.length;r++){
 	return solveH(startingRow, startingCol, 1);
 }
 
-public boolean solveH(int row, int col, int level){
-	if(row<0||row>=board.length||col<0||col>=board[row].length){
+public boolean solveH(int r, int c, int level){
+	if(r<0||r>=board.length||c<0||c>=board[r].length){
 		return false;
 	}
-	if(board[row][col]==0){
-		board[row][col]=level;
+	if(board[r][c]==0){
+		board[r][c]=level;
 		level++;
 	}
 	else{
 		return false;
 	}
 	for(int i=0; i<ROWMOVES.length;i++){
-		if(solveH(row+ROWMOVES[i],col+COLUMNMOVES[i],level)){
+		if(solveH(r+ROWMOVES[i],c+COLUMNMOVES[i],level)){
 			return true;
 		}
 	}
-	if(level-1==board.length*board[row].length){
+	if(level-1==board.length*board[r].length){
 		return true;
 	}
-	board[row][col]=0;
+	board[r][c]=0;
 	return false;
 }
 
