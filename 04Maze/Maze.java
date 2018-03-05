@@ -5,39 +5,56 @@ public class Maze{
 
     private char[][]maze;
     private boolean animate;
-
-    public Maze(String filename){
+	// Moves for Maze//
+	private int[]Horizontal = {0,0,1,-1};
+	private int[]Vertical = {1,-1,0,0};
+	
+    public Maze(String filename) throws FileNotFoundException{
 	animate = false;
-        try{
-	    Scanner straw  = new  Scanner(new File(filename));
-	    int atline = 1;
-	    String line = "";
-	    while(straw.hasNextLine()){
-		line = straw.nextLine();
-		atline++;
+          File store = new File(filename);
+          Scanner straw = new Scanner(store);
+	    
+	    String _Maze="";
+	    String temp="";
+	    int numRow=0;
+	    while(straw.hasNext()){
+		    temp=straw.nextLine();
+		    numRow+=1;
 	    }
-	    int rows = atline;
-	    int cols = line.length();
-	    maze = new char[rows][cols];
-
-
-	    straw = new Scanner(new File(filename));
-	    atline = 0;
-	    int j = 0;
-	    while(straw.hasNextLine()){
-		line = straw.nextLine();
-		for(int i=0;i<line.length();i++){
-		    maze[atline][i]=line.charAt(i);
-		}
-		atline++;
+	    
+	    //I was unsure how to count columns so my friend helped out (it was easier than i thought it was lol)//
+	    
+	    numCol=temp.length();
+	    
+	    maze=new char[numRow][numCol];
+	    
+	    //time to handle exceptions w/ loops!!//
+	    int current=0;
+	    int numS=false;
+	    int numE=false;
+	    while(current<_Maze.length()-1){
+		    if(_Maze.charAt(current)=="E"){
+			    numE+=1;
+		    }
+		    if(_Maze.charAt(current)=="S"){
+			    numS+=1;
+		    }
+		    current+=1;
 	    }
-	}
-	catch(FileNotFoundException e){
-	    System.out.println("File not found");
-	    System.exit(0);
-	}
+	    
+	    if(numE!=1||numS!=1){
+		throw new IllegalStateException("Must have 1 S and/or 1 E");
+	    }
+	    
+	    int x=0;
+	    for(int r =0; r<numRow; r++){
+		    for(int c=0;c<numCol;c++){
+			    maze[r][c]=_Maze.charAt(x);
+			    x++;
+		    }
+	    }
     }
-
+	
 private void wait(int millis){
 	try {
 	    Thread.sleep(millis);
@@ -59,38 +76,54 @@ public void clearTerminal(){
     }
     
 
-    
+  public String toString(){
+	  
+	  String ans=""
+		  for(int r=0;r<maze.length;r++){
+			  for(int c=0;c<maze[0].length;c++){
+				  ans+=maze[r][c];
+			  }
+			  ans+= "\n";
+		  }
+	  return ans;
+  }
+	
+
     public int  solve(){
-	int startx=0, starty=0;
-	for (int r = 0 ; r < maze.length ; r ++) {
-	    for (int c = 0 ; c < maze[0].length ; c ++) {
-		if (maze[r][c] == 'S') {
-		    startx = r;
-		    starty = c;
+	for(int r=0;r<maze.length;r++){
+		for(int c=0;c<maze[0].length;c++){
+			if(maze[r][c]=='S'){
+				startR=r;
+				startC=c;
+			}
 		}
-	    }
 	}
-	maze[startx][starty] = ' ';
-	return solve(startx,starty);
+	    maze[startR][startC]='';
+	    return solve(startR,startC);
     }
-
-    private int  solve(int x, int y){
-        if(animate){
-            System.out.println("\033[2J\033[1;1H" + this);
-            wait(5);
-        }
-	if (maze[x][y] == 'E') return 1;
-	if (maze[x][y] != ' ') return -1;	
-	if (maze[x][y] == ' ') {
-	    maze[x][y] = '@';
-	    if (solve(x , y + 1)==1  ||  solve(x , y - 1)==1  ||  solve(x + 1 , y)==1 || solve(x - 1 , y)==1 ) return 1;
+	
+	private int solve(int r, int c){
+		if(animate){
+			System.out.println(this);
+			wait(500);
+		}
+		if(maze[r][c]"E"){
+			return 1;
+		}
+		if(maze[r][c]==""){
+			maze[r][c]="@";
+		}
+		else{
+			return -1;
+		}
+		
+		for(int i=0;i<Horizontal.length;i++){
+			if(solve(r+Horizontal[i],c+Vertical[i])==1){
+				return 1;
+			}
+		}
+		maze[r][c]=".";
+		return -1
 	}
-	maze[x][y] = '.';
-        return -2;
-    }
-
- 
-    
-    
-   
 }
+
