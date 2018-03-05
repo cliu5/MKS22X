@@ -17,6 +17,7 @@ public class Maze{
 	    String _Maze="";
 	    String temp="";
 	    int numRow=0;
+	    int numCol=0;
 	    while(straw.hasNext()){
 		    temp=straw.nextLine();
 		    numRow+=1;
@@ -30,13 +31,13 @@ public class Maze{
 	    
 	    //time to handle exceptions w/ loops!!//
 	    int current=0;
-	    int numS=false;
-	    int numE=false;
+	    int numS=0;
+	    int numE=0;
 	    while(current<_Maze.length()-1){
-		    if(_Maze.charAt(current)=="E"){
+		    if(_Maze.charAt(current)=='E'){
 			    numE+=1;
 		    }
-		    if(_Maze.charAt(current)=="S"){
+		    if(_Maze.charAt(current)=='S'){
 			    numS+=1;
 		    }
 		    current+=1;
@@ -90,6 +91,8 @@ public void clearTerminal(){
 	
 
     public int  solve(){
+	    int startR=-1;
+	    int startC=-1;
 	for(int r=0;r<maze.length;r++){
 		for(int c=0;c<maze[0].length;c++){
 			if(maze[r][c]=='S'){
@@ -107,11 +110,11 @@ public void clearTerminal(){
 			System.out.println(this);
 			wait(500);
 		}
-		if(maze[r][c]=="E"){
+		if(maze[r][c]=='E'){
 			return 1;
 		}
 		if(maze[r][c]==' '){
-			maze[r][c]="@";
+			maze[r][c]='@';
 		}
 		else{
 			return -1;
@@ -122,7 +125,7 @@ public void clearTerminal(){
 				return 1;
 			}
 		}
-		maze[r][c]=".";
+		maze[r][c]='.';
 		return -1;
 	}
 }
