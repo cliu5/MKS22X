@@ -108,10 +108,7 @@ public void clearTerminal(){
     }
 	
 	private int solve(int r, int c){
-		if(animate){
-			System.out.println(this);
-			wait(20);
-		}
+		
 		if(maze[r][c]=='E'){
 			return 1;
 		}
