@@ -78,7 +78,7 @@ public void clearTerminal(){
 
   public String toString(){
 	  
-	  String ans=""
+	  String ans="";
 		  for(int r=0;r<maze.length;r++){
 			  for(int c=0;c<maze[0].length;c++){
 				  ans+=maze[r][c];
@@ -98,7 +98,7 @@ public void clearTerminal(){
 			}
 		}
 	}
-	    maze[startR][startC]='';
+	    maze[startR][startC]="";
 	    return solve(startR,startC);
     }
 	
@@ -107,7 +107,7 @@ public void clearTerminal(){
 			System.out.println(this);
 			wait(500);
 		}
-		if(maze[r][c]"E"){
+		if(maze[r][c]=="E"){
 			return 1;
 		}
 		if(maze[r][c]==""){
@@ -123,7 +123,7 @@ public void clearTerminal(){
 			}
 		}
 		maze[r][c]=".";
-		return -1
+		return -1;
 	}
 }
 
