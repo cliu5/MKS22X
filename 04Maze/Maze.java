@@ -20,6 +20,7 @@ public class Maze{
 	    int numCol=0;
 	    while(straw.hasNext()){
 		    temp=straw.nextLine();
+		    _Maze+=temp;
 		    numRow+=1;
 	    }
 	    
