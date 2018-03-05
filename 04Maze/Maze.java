@@ -6,6 +6,7 @@ public class Maze{
     private char[][]maze;
     private boolean animate;
 	// Moves for Maze//
+	//my pals at the dojo told me to do this since it's the most effficient way of backtracking//
 	private int[]Horizontal = {0,0,1,-1};
 	private int[]Vertical = {1,-1,0,0};
 	
@@ -120,7 +121,8 @@ public void clearTerminal(){
 		else{
 			return -1;
 		}
-		
+		//this is wehre hte magic happens!!//
+		//back tracks through alll possible moves only up, only down, only  left, or only rihgt//
 		for(int i=0;i<Horizontal.length;i++){
 			if(solve(r+Horizontal[i],c+Vertical[i])==1){
 				return 1;
