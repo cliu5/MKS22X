@@ -98,7 +98,7 @@ public void clearTerminal(){
 			}
 		}
 	}
-	    maze[startR][startC]="";
+	    maze[startR][startC]=' ';
 	    return solve(startR,startC);
     }
 	
@@ -110,7 +110,7 @@ public void clearTerminal(){
 		if(maze[r][c]=="E"){
 			return 1;
 		}
-		if(maze[r][c]==""){
+		if(maze[r][c]==' '){
 			maze[r][c]="@";
 		}
 		else{
