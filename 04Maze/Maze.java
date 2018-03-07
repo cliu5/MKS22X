@@ -132,7 +132,8 @@ public void clearTerminal(){
 		maze[r][c]='.';
 		
 	}
+		return -1;
 }
-	return -1;
+	
 }
 
