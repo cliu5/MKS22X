@@ -124,12 +124,13 @@ public void clearTerminal(){
 			
 			
 		
-			int _ans = (solve(r+Horizontal[i],c+Vertical[i],ans+1))
+			int _ans = (solve(r+Horizontal[i],c+Vertical[i],ans+1));
 			if (_ans!=-1){
 				return _ans;
 		}
+		
 		maze[r][c]='.';
 		return -1;
-	}
+	}}
 }
 
