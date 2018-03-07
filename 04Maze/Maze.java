@@ -107,10 +107,10 @@ public void clearTerminal(){
 	    return solve(startR,startC);
     }
 	
-	private int solve(int r, int c){
+	private int solve(int r, int c, int ans){
 		
 		if(maze[r][c]=='E'){
-			return 1;
+			return ans;
 		}
 		if(maze[r][c]==' '){
 			maze[r][c]='@';
@@ -121,9 +121,12 @@ public void clearTerminal(){
 		//this is wehre hte magic happens!!//
 		//back tracks through alll possible moves only up, only down, only  left, or only rihgt//
 		for(int i=0;i<Horizontal.length;i++){
-			if(solve(r+Horizontal[i],c+Vertical[i])==1){
-				return 1;
-			}
+			
+			
+		
+			int _ans = (solve(r+Horizontal[i],c+Vertical[i],ans+1)
+			if (_ans!=-1){
+				return _ans;
 		}
 		maze[r][c]='.';
 		return -1;
