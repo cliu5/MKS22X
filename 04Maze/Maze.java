@@ -104,7 +104,7 @@ public void clearTerminal(){
 		}
 	}
 	    maze[startR][startC]=' ';
-	    return solve(startR,startC);
+	    return solve(startR,startC,0);
     }
 	
 	private int solve(int r, int c, int ans){
