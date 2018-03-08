@@ -129,11 +129,12 @@ public void clearTerminal(){
 			if (_ans!=-1){
 				return _ans;
 		}
+		}
 		
 		maze[r][c]='.';
 			
 		
-	}
+	
 		return -1;
 		
 }
