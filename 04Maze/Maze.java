@@ -114,6 +114,7 @@ public void clearTerminal(){
 		}
 		if(maze[r][c]==' '){
 			maze[r][c]='@';
+			ans +=1;
 		}
 		else{
 			return -1;
@@ -124,16 +125,17 @@ public void clearTerminal(){
 			
 			
 		
-			int _ans = (solve(r+Horizontal[i],c+Vertical[i],ans+1));
+			int _ans = (solve(r+Horizontal[i],c+Vertical[i],ans));
 			if (_ans!=-1){
 				return _ans;
 		}
 		
 		maze[r][c]='.';
+			return -1;
 		
 	}
-		return -1;
+		
 }
 	
-}
+
 
