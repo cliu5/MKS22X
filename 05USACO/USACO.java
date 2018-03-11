@@ -68,7 +68,7 @@ d += lake[row2][col2] * -1;
 }
 }
 
-return depth * 72 * 72;
+return d * 72 * 72;
 
 
 }catch(FileNotFoundException e){
