@@ -61,7 +61,7 @@ in.nextLine();
 int d=0;
 for(int row2 = 0; row2 < lake.length; row2++){
 for(int col2 = 0; col2 < lake[0].length; col2++){
-lake[row2][col2] = lake[row2][col2] - e
+lake[row2][col2] = lake[row2][col2] - e;
 if(lake[row2][col2] < 0){
 d += lake[row2][col2] * -1;
 }
@@ -72,7 +72,7 @@ return depth * 72 * 72;
 
 
 }catch(FileNotFoundException e){
-System.out.println(“Enter a valid file!");
+System.out.println("Enter a valid file!");
 }
 return -1;
 }
