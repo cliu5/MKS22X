@@ -15,7 +15,7 @@ public class USACODriver{
 	    System.out.println("Correct? " + (ans == ansU));
 	}
 
-
+/*
 	for (int i = 1; i < 11; i ++){
 	    String file = "ctravel/ctravel." + i; // Remove the "ctravel/" if the test files are in the same directory
 	    int ans = getAnswer(file + ".out");
@@ -28,6 +28,7 @@ public class USACODriver{
 	}
 	//System.out.println(USACO.silver("ctravel/ctravel.1.in"));
     }
+	*/
 
     public static int getAnswer(String filename){
 	try{
