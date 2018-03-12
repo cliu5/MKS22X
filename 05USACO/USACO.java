@@ -115,7 +115,7 @@ for(int c=0;c<map[0].length;c++){
 old[r][c]=now[r][c];
 }}
 for(int r=0;r<now.length;r++){
-for(int c=0;c<now[0].length;c++):
+for(int c=0;c<now[0].length;c++){
 if(current[r][c]!=-1){
 current[r][c]=0;
 if(r-1>=0&&now[r-1][c]>=0){
@@ -133,7 +133,7 @@ now[r][c]+=old[r][c+1];
 }
 }
 }
-t--
+t--;
 }
 return now[coordinates[2]][coordinates[3]];
 }
