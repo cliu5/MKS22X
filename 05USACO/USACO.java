@@ -97,45 +97,45 @@ int[]coordinates=new int[4];
 for (int i=0;i<coordinates.length;i++){
 coordinates[i]=in.nextInt()-1;
 }
-int[][]old=new int[l][w];
-int[][]new=new int[l][w];
+int[][] old=new int[l][w];
+int[][] now=new int[l][w];
 for (int r=0;r<map.length;r++){
 for(int c=0;c<map[0].length;c++){
 if(map[r][c]==‘*’){
 old[r][c]=-1;
-new[r][c]=-1;
+now[r][c]=-1;
 }
 }
 }
-new[coordinates[0]][coordinates[1]]=1;
+now[coordinates[0]][coordinates[1]]=1;
 
 while (t>0):
 for(int r=0;r<map.length;r++):
 for(int c=0;c<map[0].length;c++):
-old[r][c]=new[r][c];
+old[r][c]=now[r][c];
 }}
-for(int r=0;r<new.length;r++){
-for(int c=0;c<new[0].length;c++):
+for(int r=0;r<now.length;r++){
+for(int c=0;c<now[0].length;c++):
 if(current[r][c]!=-1){
 current[r][c]=0;
-if(r-1>=0&&new[r-1][c]>=0){
-new[r][c]+=old[r-1][c];
+if(r-1>=0&&now[r-1][c]>=0){
+now[r][c]+=old[r-1][c];
 }
-if(c-1>=0&&new[r][c-1]>=0){
-new[r][c]+=old[r][c-1];
+if(c-1>=0&&now[r][c-1]>=0){
+now[r][c]+=old[r][c-1];
 }
-if(r+1<old.length&&new[r+1][c]>=0){
-new[r][c]+=old[r+1][c];
+if(r+1<old.length&&now[r+1][c]>=0){
+now[r][c]+=old[r+1][c];
 }
 if(c+1<old[r].length&&c[r][c+1]>=0){
-new[r][c]+=old[r][c+1];
+now[r][c]+=old[r][c+1];
 }
 }
 }
 }
 t—
 }
-return new[coordinates[2]][coordinates[3]];
+return now[coordinates[2]][coordinates[3]];
 }
 catch(FileNotFoundException e){
 return -1;
