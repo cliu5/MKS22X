@@ -89,7 +89,7 @@ int t= in.nextInt();
 char[][]map=new char[l][w];
 for (int r=0; r<l; r++){
 String line = in.next();
-for (int c=w; c<col; c++){
+for (int c=w; c<w; c++){
 map[r][c] = line.charAt(c);
 }
 }
@@ -116,8 +116,8 @@ old[r][c]=now[r][c];
 }}
 for(int r=0;r<now.length;r++){
 for(int c=0;c<now[0].length;c++){
-if(current[r][c]!=-1){
-current[r][c]=0;
+if(now[r][c]!=-1){
+now[r][c]=0;
 if(r-1>=0&&now[r-1][c]>=0){
 now[r][c]+=old[r-1][c];
 }
@@ -127,7 +127,7 @@ now[r][c]+=old[r][c-1];
 if(r+1<old.length&&now[r+1][c]>=0){
 now[r][c]+=old[r+1][c];
 }
-if(c+1<old[r].length&&c[r][c+1]>=0){
+if(c+1<old[r].length && now[r][c+1]>=0){
 now[r][c]+=old[r][c+1];
 }
 }
