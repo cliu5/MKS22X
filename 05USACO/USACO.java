@@ -1,6 +1,10 @@
 import java.util.*;
 import java.io.*;
 
+//I worked with people in the class and seniors who did the USACO problems already to figure out how to solve it//
+//this lab was realllllly hard//
+// also s/o to crystal for explaining why none of my code was working//
+
 public class USACO{
 public static int bronze(String filename){
 
