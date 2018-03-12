@@ -141,10 +141,13 @@ t--;
 }
 return now[coordinates[2]][coordinates[3]];
 }
-catch(FileNotFoundException e){
+ 
+ catch(FileNotFoundException e){
+  System.out.println("Enter a valid file!");
+}
 return -1;
 }
-}
+
 
 
 
