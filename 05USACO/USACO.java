@@ -101,7 +101,7 @@ int[][] old=new int[l][w];
 int[][] now=new int[l][w];
 for (int r=0;r<map.length;r++){
 for(int c=0;c<map[0].length;c++){
-if(map[r][c]==‘*’){
+if(map[r][c]=='*'){
 old[r][c]=-1;
 now[r][c]=-1;
 }
@@ -109,9 +109,9 @@ now[r][c]=-1;
 }
 now[coordinates[0]][coordinates[1]]=1;
 
-while (t>0):
-for(int r=0;r<map.length;r++):
-for(int c=0;c<map[0].length;c++):
+while (t>0){
+for(int r=0;r<map.length;r++){
+for(int c=0;c<map[0].length;c++){
 old[r][c]=now[r][c];
 }}
 for(int r=0;r<now.length;r++){
@@ -133,7 +133,7 @@ now[r][c]+=old[r][c+1];
 }
 }
 }
-t—
+t--
 }
 return now[coordinates[2]][coordinates[3]];
 }
