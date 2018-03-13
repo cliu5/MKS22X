@@ -9,7 +9,7 @@ public class Partition{
 	if (start == end) {
     return start;
   }
-  int pivotIndex = (Math.random() * (end - start + 1)) + start;
+  int pivotIndex = (int)(Math.random() * (end - start + 1)) + start;
   int value=data[pivotIndex];
 	swap(data, end, pivotIndex);
 	int pivot = start;
