@@ -66,15 +66,5 @@ public static void swap(int[] ary, int i, int j){
     return j;
  }
  
- public static void main(String[] args){
-    int[]ary = { 2, 10, 15, 23, 0,  5};  //sorted :  {0,2,5,10,15,23}
-    System.out.println(quickSelect( ary , 0 ));// would return 0
-    System.out.println(quickSelect( ary , 1 ));//  would return 2
-    System.out.println(quickSelect( ary , 2 ));//  would return 5
-    System.out.println(quickSelect( ary , 3 ));//  would return 10
-    System.out.println(quickSelect( ary , 4 ));//  would return 15
-    System.out.println(quickSelect( ary , 5 ));//  would return 23
-    quickSort(ary);
-    System.out.println(java.util.Arrays.toString(ary));
-  }
+ 
 }
