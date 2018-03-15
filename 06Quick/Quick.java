@@ -3,7 +3,7 @@ public class Quick{
  
  
  
-  public static int quickselect(int[] ary, int k){
+  public static int quickSelect(int[] ary, int k){
 	return quickHelper(ary, k, 0, ary.length - 1);
     }
 
@@ -14,12 +14,12 @@ public class Quick{
         return ary[pi];
        }
      //if its more than k lower the end val//
-	if (pivot > k) {
-  return quickHelper(ary, k, start, pivot);
+	if (pi > k) {
+  return quickHelper(ary, k, start, pi);
  }
      //if its too small, move up the start value//
-	if (pivot < k) {
-  return quickHelper(ary, k, pivot + 1, end);
+	if (pi < k) {
+  return quickHelper(ary, k, pi + 1, end);
  }
 	return ary[k];
     }
@@ -27,7 +27,7 @@ public class Quick{
  
  
   
-    public static void quicksort(int[] ary){
+    public static void quickSort(int[] ary){
 	quickSortHelper(ary, 0, ary.length -1);
     }
 
