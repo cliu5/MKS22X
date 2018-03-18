@@ -1,7 +1,35 @@
 public class Quick{
 
  
- 
+ public static int  duthPartition(int[]ary, int start, int end){
+	 int randomIndex= (int)(Math.random()*(end-start+1)+start);
+	 int var=data[var];
+	 int lt=start;
+	 int gt=end;
+	 int i=start;
+	 while(i<=gt){
+		 if(ary[i]==var){
+			 i++;
+		 }
+		 else if(ary[i]>var){
+			 swap(ary,i,gt);
+			 gt--;
+		 }
+		 else{
+			 swap(ary,lt,i);
+			 lt++;
+			 i++;
+		 }
+	 }
+	 int[]ans={lt,gt};
+	 return ans;
+ }
+}
+	
+	
+	 
+	 
+	 
  
   public static int quickSelect(int[] ary, int k){
 	return quickHelper(ary, k, 0, ary.length - 1);
