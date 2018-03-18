@@ -1,7 +1,7 @@
 public class Quick{
 
  
- public static int  duthPartition(int[]ary, int start, int end){
+ public static int  dutchPartition(int[]ary, int start, int end){
 	 int randomIndex= (int)(Math.random()*(end-start+1)+start);
 	 int var=data[var];
 	 int lt=start;
@@ -36,20 +36,14 @@ public class Quick{
     }
 
     public static int quickHelper(int[] ary, int k, int start, int end){
-        int pi = partition (ary, start ,end);
-     //base case//
-      	if (pi == k) {
-        return ary[pi];
-       }
-     //if its more than k lower the end val//
-	if (pi > k) {
-  return quickHelper(ary, k, start, pi);
- }
-     //if its too small, move up the start value//
-	if (pi < k) {
-  return quickHelper(ary, k, pi + 1, end);
- }
-	return ary[k];
+        int []pivot = dutchPartition(ary, start ,end);
+     if(pivot[0]<=k-1&&pivot[1]>=k-1){
+	     return ary[pivot[0]];
+     }
+     if(pivot[0]>k-1){
+	     return quickHelper(ary,k,start,pivot[0]-1);
+     }
+     return quickHelper(ary,k,n[1]+1,end);
     }
  
  
@@ -60,10 +54,15 @@ public class Quick{
     }
 
     public static void quickSortHelper(int[] ary, int start, int end){
-	if(end-start+1>1){
-	    int p = partition(ary, start, end);
-	    quickSortHelper(ary, start, p);
-	    quickSortHelper(ary, p+1, end);
+	if(start==end){
+		return;
+	}
+	    int[]pivot=dutchPartition(ary,start,end);
+	    if(pivot[0]!=start){
+		    quickSortHelper(ary,start,pivot[0]-1);
+	    }
+	    if(pivot[1]!=end){
+		    quickSortHelper(ary,pivot[1]+1,end);
 	}
     }
 
