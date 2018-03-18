@@ -3,7 +3,7 @@ public class Quick{
  
  public static int[]  dutchPartition(int[]ary, int start, int end){
 	 int randomIndex= (int)(Math.random()*(end-start+1)+start);
-	 int var=ary[var];
+	 int var=ary[randomIndex];
 	 int lt=start;
 	 int gt=end;
 	 int i=start;
