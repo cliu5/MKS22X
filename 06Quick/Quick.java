@@ -24,7 +24,7 @@ public class Quick{
 	 int[]ans={lt,gt};
 	 return ans;
  }
-}
+
 	
 	
 	 
@@ -75,6 +75,7 @@ public static void swap(int[] ary, int i, int j){
  
  
  //pseudocode from class//
+	/*
  public static int partition ( int [] data, int start, int end){
   int pi = (int) (Math.random()*(end-start+1)+start);
     int val = data[pi];
@@ -93,6 +94,6 @@ public static void swap(int[] ary, int i, int j){
     swap(data,start,j);
     return j;
  }
- 
+ */
  
 }
