@@ -31,7 +31,7 @@ public class Quick{
 	 
 	 
  
-  public static int quickSelect(int[] ary, int k){
+  public static int quickselect(int[] ary, int k){
 	return quickHelper(ary, k, 0, ary.length - 1);
     }
 
@@ -49,7 +49,7 @@ public class Quick{
  
  
   
-    public static void quickSort(int[] ary){
+    public static void quicksort(int[] ary){
 	quickSortHelper(ary, 0, ary.length -1);
     }
 
