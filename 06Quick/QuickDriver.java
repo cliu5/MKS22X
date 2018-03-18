@@ -5,41 +5,7 @@ public class QuickDriver{
 	//MOST IMPORTANT TEST........PARTITION!!!
 	//(This could be more extensive ..... and better .... and A LOT MORE!)
 	//(My Quick.partition returns the index num of PIVOT, and is inclusive of the last num)
-	System.out.println("TESTING PARTITION");
-
-	int[] tests = {1000, 999,999,999,4,1,0,3,2,999,999,100,100,-10000, 10212, -19212, 23, 12};
 	
-	int ans = Quick.partition(tests, 0, tests.length - 1);
-	System.out.println("Pivot: " + tests[ans] + " Index: " + ans);
-	System.out.println("Pivot correct? " + checkPivot(tests, ans));
-	toString(tests);
-
-	
-	int[] testt = {};
-	ans = Quick.partition(testt, 0, 0);
-	toString(testt);
-
-	int[] testu = {1};
-	ans = Quick.partition(testu, 0, 1);
-	System.out.println("Pivot: " + testu[ans] + " Index: " + ans);
-	toString(testu);
-
-
-	int[] testv = {1,1};
-	ans = Quick.partition(testv, 0, 1);
-	System.out.println("Pivot: " + testv[ans] + " Index: " + ans);
-	toString(testv);
-
-	int[] testw = {2,1};
-	ans = Quick.partition(testw, 0, 1);
-	System.out.println("Pivot: " + testw[ans] + " Index: " + ans);
-	toString(testw);
-
-	int[] testx = {1,2};
-	ans = Quick.partition(testx, 0, 1);
-	System.out.println("Pivot: " + testx[ans] + " Index: " + ans);
-	toString(testx);
-	System.out.println("DONE!\n");
 
 
 
