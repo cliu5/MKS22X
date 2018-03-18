@@ -1,9 +1,9 @@
 public class Quick{
 
  
- public static int  dutchPartition(int[]ary, int start, int end){
+ public static int[]  dutchPartition(int[]ary, int start, int end){
 	 int randomIndex= (int)(Math.random()*(end-start+1)+start);
-	 int var=data[var];
+	 int var=ary[var];
 	 int lt=start;
 	 int gt=end;
 	 int i=start;
@@ -36,14 +36,14 @@ public class Quick{
     }
 
     public static int quickHelper(int[] ary, int k, int start, int end){
-        int []pivot = dutchPartition(ary, start ,end);
+        int[]pivot = dutchPartition(ary, start ,end);
      if(pivot[0]<=k-1&&pivot[1]>=k-1){
 	     return ary[pivot[0]];
      }
      if(pivot[0]>k-1){
 	     return quickHelper(ary,k,start,pivot[0]-1);
      }
-     return quickHelper(ary,k,n[1]+1,end);
+     return quickHelper(ary,k,pivot[1]+1,end);
     }
  
  
