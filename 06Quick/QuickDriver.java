@@ -28,7 +28,7 @@ public class QuickDriver{
 	start = System.currentTimeMillis();
 
 	System.out.print("Before: ");
-	int[] testy = {1000, 999,999,999,4,1,0,3,2,999,999,100,100,-10000, 10212, -19212, 23, 12};
+	int[] testy = {1000, 993,999};
 	toString(testy);
 	Quick.quicksort(testy);
 	end = System.currentTimeMillis();
