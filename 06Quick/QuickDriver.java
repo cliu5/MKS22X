@@ -10,7 +10,7 @@ public class QuickDriver{
 
 
 	//Borrowed most from K
-	int[] test = {1000, 999,999,999,4,1,0,3,2,999,999,100,100,-10000, 10212, -19212, 23, 12};
+	int[] test = {1000, 993, 999};
 	toString(test);	
 	////SHOULD PRINT THE ARRAY IN ORDER FROM LEAST TO GREATEST
 	System.out.println("\nPRINTING LEAST TO GREATEST");
