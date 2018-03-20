@@ -1,6 +1,6 @@
 public class Quick{
 
- 
+ //this is litearlly the python code from class//
  public static int[]  partition(int[]ary, int start, int end){
 	 int randomIndex= (int)(Math.random()*(end-start+1)+start);
 	 int var=ary[randomIndex];
@@ -35,6 +35,8 @@ public class Quick{
 	return quickHelper(ary, k, 0, ary.length - 1);
     }
 
+	
+	//i dont know why mycode keeps timing out even though dutch partition is here, i feel like it has something to do with my helper functinos but idk how to fix it :(//
     public static int quickHelper(int[] ary, int k, int start, int end){
         int[]pivot = partition(ary, start ,end);
      if(pivot[0]<=k-1&&pivot[1]>=k-1){
@@ -72,27 +74,5 @@ public static void swap(int[] ary, int i, int j){
 	ary[j] = temp;
     }
  
- 
- //pseudocode from class//
-	/*
- public static int partition ( int [] data, int start, int end){
-  int pi = (int) (Math.random()*(end-start+1)+start);
-    int val = data[pi];
-    int i = start + 1;
-    int j = end;
-    swap(data,pi,start);
-    while (i <= j){
-      if (data[i] <= val){
-        i++;
-      }
-      else {
-        swap(data,i,j);
-        j--;
-      }
-    }
-    swap(data,start,j);
-    return j;
- }
- */
  
 }
