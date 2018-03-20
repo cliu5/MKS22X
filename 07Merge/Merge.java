@@ -17,11 +17,10 @@ msort:
       merge( ???  )  what parameters are needed?
 
 }
-private static void merge(int[]data,int[]temp,int lo, int mid, int hi){
+private static void merge(int[]data,int[]temp, int[]final){
+}
 }
 
 
+	
 
-
-
-}
