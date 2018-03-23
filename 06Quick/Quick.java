@@ -56,7 +56,7 @@ public class Quick{
 	quickSortHelper(ary, 0, ary.length -1);
 	    }
 	    else{
-		    return ary;
+		    return;
 	    }
 	    }
 
