@@ -22,28 +22,28 @@ private static void msort(int[]data, int[]temp, int lo, int hi){
 }
     
 
-private static void merge(int[]data,int[]temp,int lo, int mid, int hi){
-    int[]temp=temp[data.length];
-	//copying stuff over//
-	for(int i=lo;i<=mid;i++){
-		temp[i]=data[i];
+    public static void merge(int[] data,int[] temp,int lo,int hi){
+	int start=0;
+	int next=1;
+	int mid =(lo + hi)/2;
+	    //2nd part is copying over//
+	for(int i =lo;i <= hi;i++){
+	    if(mid+next <= hi&&(lo+start>mid||temp[lo+start] > temp[mid+next])){
+		data[i] = temp[mid+next];
+		next++;
+	    }
+	    else{
+		data[i] = temp[lo+start];
+		start++;
+	    }
 	}
-	for(int j=mid+1;j<=hi;j++){
-		temp[mid+1+hi-j]=data[j];
-	}
-	
-
-   
-
+    }
 
 }
 
 
  
 
-private static void merge(int[]data,int[]temp, int[]final){
-}
-}
 
 
 	
