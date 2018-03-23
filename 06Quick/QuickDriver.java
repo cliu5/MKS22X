@@ -1,108 +1,77 @@
-public class QuickDriver{
-    public static void main(String[] args){
+ import java.util.Arrays;
 
-	
-	//MOST IMPORTANT TEST........PARTITION!!!
-	//(This could be more extensive ..... and better .... and A LOT MORE!)
-	//(My Quick.partition returns the index num of PIVOT, and is inclusive of the last num)
-	
+ public class Driver{
 
+ //Sort testing code
+  private static final int INCREASE = 0;
+  private static final int DECREASE = 1;
+  private static final int STANDARD = 2;
+  private static final int SMALL_RANGE = 3;
+  private static final int EMPTY = 4;
 
+  private static String name(int i){
+    if(i==0)return "Increassing";
+    if(i==1)return "Decreassing";
+    if(i==2)return "Normal Random";
+    if(i==3)return "Random with Few Values";
+    if(i==4)return "size 0 array";
+    return "Error stat array";
 
-	//Borrowed most from K
-	int[] test = {1000, 993, 999};
-	toString(test);	
-	////SHOULD PRINT THE ARRAY IN ORDER FROM LEAST TO GREATEST
-	System.out.println("\nPRINTING LEAST TO GREATEST");
-	for (int i = 0; i < test.length; i++){
-	    System.out.println(Quick.quickselect(test, i));;
-	}
-	System.out.println("DONE!\n");
+  }
 
+  private static int create(int min, int max){
+    return min + (int)(Math.random()*(max-min));
+  }
 
-	//Testing QuickSort
-	System.out.println("TESTING QUICKSORT!");
-	//General Case
-
-	long start,end;
-	start = System.currentTimeMillis();
-
-	System.out.print("Before: ");
-	int[] testy = {1000, 993,999};
-	toString(testy);
-	Quick.quicksort(testy);
-	end = System.currentTimeMillis();
-
-	System.out.print("aAfter: ");
-	toString(testy);
-	System.out.println("Time: " + (end-start) + "ms");
-
-	//Edge Cases
-	System.out.print("\nTESTING EDGY CASES!\n");
-
-	int[] testz = {};
-	System.out.print("Before: ");
-	toString(testz);
-	System.out.print("aAfter: ");
-	Quick.quicksort(testz);
-	toString(testz);
-	System.out.println();
-
-	int[] testa = {1};
-	System.out.print("Before: ");
-	toString(testa);
-	System.out.print("aAfter: ");
-	Quick.quicksort(testa);
-	toString(testa);
-	System.out.println();
-
-	int[] testb = {1,1};
-	System.out.print("Before: ");
-	toString(testb);
-	System.out.print("aAfter: ");
-	Quick.quicksort(testb);
-	toString(testb);
-	System.out.println();
-
-	int[] testc = {2,1};
-	System.out.print("Before: ");
-	toString(testc);
-	System.out.print("aAfter: ");
-	Quick.quicksort(testc);
-	toString(testc);
-	System.out.println();
-
-	int[] testd = {1,2};
-	System.out.print("Before: ");
-	toString(testd);
-	System.out.print("aAfter: ");
-	Quick.quicksort(testd);
-	toString(testd);
-	System.out.println();
-	
+  private static int[]makeArray(int size,int type){
+    int[]ans =new int[size];
+    if(type == STANDARD){
+      for(int i = 0; i < size; i++){
+        ans[i]= create(-1000000,1000000);
+      }
     }
-
-    //Checks to see if pivot is correct
-    //Given: ary, pivot
-    private static boolean checkPivot(int[] ary, int pivot){
-	for (int i = 0; i < pivot; i++){
-	    if (ary[i] > ary[pivot]){
-		return false;
-	    }
-	}
-	for (int j = pivot + 1; j < ary.length; j++){
-	    if (ary[j] < ary[pivot]){
-		return false;
-	    }
-	}
-	return true;
+    if(type == INCREASE){
+      int current = -5 * size;
+      for(int i = 0; i < size; i++){
+        ans[i]= create(current,current + 10);
+        current += 10;
+      }
     }
-
-
-    private static void toString(int[] parti){
-	for (int k = 0; k < parti.length; k++){
-	    System.out.print(parti[k] + ", ");
-	}
-	System.out.println();
+    if(type == DECREASE){
+      int current = 5 * size;
+      for(int i = 0; i < size; i++){
+        ans[i]= create(current,current + 10);
+        current -= 10;
+      }
     }
+    if(type == SMALL_RANGE){
+      for(int i = 0; i < size; i++){
+        ans[i]= create(-5,5);
+      }
+    }
+    if(type == EMPTY){
+      ans = new int[0];
+    }
+    return ans;
+  }
+
+  public static void main(String[]args){
+    if(args.length < 2)return;
+    
+    int size =  Integer.parseInt(args[0]);
+    int type =   Integer.parseInt(args[1]);
+
+    int [] start = makeArray(size,type);
+    int [] result = Arrays.copyOf(start,start.length);
+    Arrays.sort(result);
+    
+    long startTime = System.currentTimeMillis();
+    Quick.quicksort(start);
+    long elapsedTime = System.currentTimeMillis() - startTime;
+    if(Arrays.equals(start,result)){
+      System.out.println("PASS Case "+name(type)+" array, size:"+size+" "+elapsedTime/1000.0+"sec ");
+    }else{
+      System.out.println("FAIL ! ERROR ! "+name(type)+" array, size:"+size+"  ERROR!");
+    }
+  }
 }
