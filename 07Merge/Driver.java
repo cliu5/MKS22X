@@ -1,6 +1,6 @@
  import java.util.Arrays;
 
- 
+ public class Driver{
 
  //Sort testing code
   private static final int INCREASE = 0;
@@ -76,3 +76,4 @@
       System.out.println("FAIL ! ERROR ! "+name(type)+" array, size:"+size+"  ERROR!");
     }
   }
+ }
