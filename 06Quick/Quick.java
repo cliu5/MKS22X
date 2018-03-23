@@ -52,8 +52,13 @@ public class Quick{
  
   
     public static void quicksort(int[] ary){
+	    if (ary.length>1){
 	quickSortHelper(ary, 0, ary.length -1);
-    }
+	    }
+	    else{
+		    return ary;
+	    }
+	    }
 
     public static void quickSortHelper(int[] ary, int start, int end){
 	if(start==end){
