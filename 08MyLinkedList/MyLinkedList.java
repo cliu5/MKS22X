@@ -1,6 +1,54 @@
 public class MyLinkedList{
+    
+  private Node first,last;
+  private int length;
 
-  private class Node {
+  public MyLinkedList() {
+      length=0;
+    first =null;
+    last=null;
+  }
+ 
+
+
+  public String toString() {
+      return "";
+  }
+
+  public int size() {
+      return length  ;
+  }
+
+  public int get(int index) {
+    if (index >= length || index < 0) {
+      throw new IndexOutOfBoundsException();
+    }
+    
+    return 1;
+  }
+
+  public void set(int index, int newValue) {
+    if (index >= length || index < 0) {
+      throw new IndexOutOfBoundsException();
+    }
+  }
+ 
+ public void add(int index,int value){
+ }
+ public void remove(int index){
+ }
+ 
+ 
+
+
+
+
+
+
+
+
+
+ private class Node {
 
     private Node next,prev;
     private int data;
@@ -18,13 +66,12 @@ public class MyLinkedList{
     public Node getPrev() {
       return prev;
     }
-    public int getCurrent() {
+    public int getValue() {
       return data;
     }
-
-    public String toString() {
-      return data + "";
-    }
+     public String toString(){
+	 return "[" + data + "]";
+     }
 
     public void setNext(Node _next) {
       next = _next;
@@ -36,39 +83,5 @@ public class MyLinkedList{
      
     
   }
-
-  private Node first,last;
-  private int size;
-
-  public MyLinkedList() {
-    size = 0;
-    first =null;
-    last=null;
-  }
-
-  public String toString() {
-   
-  }
-
-  public int size() {
-    return size;
-  }
-
-  public int get(int index) {
-    if (index >= length || index < 0) {
-      throw new IndexOutOfBoundsException();
-    }
-    
-    
-  }
-
-  public void set(int index, int newValue) {
-    if (index >= length || index < 0) {
-      throw new IndexOutOfBoundsException();
-    }
-    
-
 }
-
-
 }
