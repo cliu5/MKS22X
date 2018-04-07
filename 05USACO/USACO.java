@@ -6,26 +6,23 @@ import java.io.*;
 // also s/o to crystal for explaining why none of my code was working//
 
 public class USACO{
-public static int bronze(String filename){
+public static int bronze(String filename) throws FileNotFoundException{
 
-try{
 File straw = new File(filename);
 Scanner in = new Scanner(straw);
 
- int r,c,e,num; 
-r = in.nextInt();
-c = in.nextInt();
-e = in.nextInt();
+ int r,c,e,n; 
+r = Integer.parseInt(in.nextInt());
+c = Integer.parseInt(in.nextInt());
+e = Integer.parseInt(in.nextInt());
 num=in.nextInt();
 int[][] lake = new int[r][c];
 
 
-for(int row = 0; row < lake.length; row ++){
-for(int col = 0; col < lake[0].length; col++){
-lake[row][col] = in.nextInt();
+for(int row = 0; row < r; row ++){
+for(int col = 0; col < c; col++){
+lake[row][col] = Integer.parseInt(in.nextInt());
 }
-
-in.nextLine();
 }
 
 
