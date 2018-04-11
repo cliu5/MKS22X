@@ -35,8 +35,7 @@ public class MyLinkedListImproved<T extends Comparable<T>> implements Iterable<T
 	
 	
 	
- } 
-	
+ 
 	
 	
 	
