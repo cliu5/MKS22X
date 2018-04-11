@@ -29,7 +29,7 @@ private Node getNode(int index){
        String ans="[";
 	  Node curr=start;
 	  while(curr!=null){
-		  ans+=(curr.value+",");
+		  ans+=(curr.getData()+",");
 		  curr=curr.next;
 	  }
 	  ans+="]";
@@ -39,7 +39,7 @@ private Node getNode(int index){
 	  String ans="[";
 	  Node curr=start;
 	  while(curr!=null){
-		  ans+=(curr.value+",");
+		  ans+=(curr.getData()+",");
 		  curr=curr.previous;
 	  }
 	  ans+="]";
@@ -67,7 +67,7 @@ private Node getNode(int index){
     Node curr=start;
 	  // for linked lists to find something you have to loop thru everything //
 	  for(int i=0;i<index+1;i++){
-		  ans=curr.value;
+		  ans=curr.getData();
 		  curr=curr.getNext();
 	  }
 	  return ans;
@@ -83,8 +83,8 @@ private Node getNode(int index){
 	  for(int i=0;i<index;i++){
 		  curr=curr.next;
 	  }
-	  int ans=curr.value;
-	  curr.value=newValue;
+	  int ans=curr.getData();
+	  curr.getData()=newValue;
 	  return ans;
   }
  
