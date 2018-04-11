@@ -1,4 +1,4 @@
-public class MyLinkedList{
+public class MyLinkedListImproved<T extends Comparable<T>> implements Iterable<T>{
 	
 	//thanks to crystals driver for endless agony + pain//
 	// also to the senpais for bein pals and explaining stuff & helping me solve stuff//
@@ -62,11 +62,11 @@ private Node getNode(int index){
 	
 	
 	
-  public Integer get(int index) {
+  public T get(int index) {
     if (index >= size || index < 0) {
       throw new IndexOutOfBoundsException();
     }
-    Integer ans=0;
+    T ans=0;
     Node curr=first;
 	  // for linked lists to find something you have to loop thru everything //
 	  for(int i=0;i<index+1;i++){
@@ -77,7 +77,7 @@ private Node getNode(int index){
   }
 
 	
-  public Integer set(int index, Integer newValue) {
+  public T set(int index, T newValue) {
     if (index >= size || index < 0) {
       throw new IndexOutOfBoundsException();
     }
@@ -86,11 +86,11 @@ private Node getNode(int index){
 	  for(int i=0;i<index;i++){
 		  curr=curr.next;
 	  }
-	  Integer ans=curr.getValue();
+	  T ans=curr.getValue();
 	  getNode(index).setValue(newValue);
 	  return ans;
   }
- public int indexOf(Integer value){
+ public int indexOf(T value){
 	 
 	 Node curr = first;
 	for(int i = 0; i<size; i++){
@@ -109,7 +109,7 @@ private Node getNode(int index){
 	
 	
 	
-	public boolean add(Integer newData){
+	public boolean add(T newData){
 		Node curr=new Node(newData);
 		if(size()==0){
 			
@@ -129,7 +129,7 @@ private Node getNode(int index){
 	}
 	
 	//exceptions!//
- public void add(int index, Integer value){
+ public void add(int index, T value){
 	 /*
 	 if (index >= size || index < 0) {
       throw new IndexOutOfBoundsException();
@@ -168,7 +168,7 @@ private Node getNode(int index){
  
 	
 	
-	public boolean remove(Integer value){
+	public boolean remove(T value){
 	
 	Node curr = first;
 	for(int i = 0; i< size; i++){
@@ -183,12 +183,12 @@ private Node getNode(int index){
 	
 
 	//returns value of what u removed//
- public Integer remove(int index){
+ public T remove(int index){
 	 if (index >= size || index < 0) {
       throw new IndexOutOfBoundsException();
     }
 	 //return what ur removing set as ans//
-         Integer ans= getNode(index).getValue();
+         T ans= getNode(index).getValue();
 	 //if u remove from beginning
 	 if (index==0){
 		 Node curr=first.getNext();
@@ -213,12 +213,12 @@ private Node getNode(int index){
  private class Node {
 
     private Node next,prev;
-    private Integer data;
- public Node(Integer value){
+    private T data;
+ public Node(T value){
       data = value;
     }
 
-	public Node(Integer a, Node b, Node c){
+	public Node(T a, Node b, Node c){
 	    this.next = b;
 	    this.prev = c;
 	    this.data = a;
@@ -230,7 +230,7 @@ private Node getNode(int index){
     public Node getPrev() {
       return this.prev;
     }
-    public Integer getValue() {
+    public T getValue() {
       return this.data;
     }
      public String toString(){
