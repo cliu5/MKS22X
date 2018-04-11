@@ -8,14 +8,14 @@ public class MyLinkedListImproved<T extends Comparable<T>> implements Iterable<T
 
     private class MyLLIterator implements Iterator<T>{
 
-	Node current;
+	Node curr;
 	
 	public MyLLIterator(){
-	    current = first;
+	    curr = first;
 	}
 	
 	public boolean hasNext(){
-	    return current != null;
+	    return curr != null;
 		
 	}
     
