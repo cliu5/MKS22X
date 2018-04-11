@@ -286,7 +286,9 @@ private Node getNode(int index){
 	}
 	
     }
-	
+	public void remove() {
+    throw new UnsupportedOperationException();
+}
 	
 	
 	
