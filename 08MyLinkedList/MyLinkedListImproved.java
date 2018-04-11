@@ -4,7 +4,39 @@ public class MyLinkedListImproved<T extends Comparable<T>> implements Iterable<T
 	//thanks to crystals driver for endless agony + pain//
 	// also to the senpais for bein pals and explaining stuff & helping me solve stuff//
 	
+	public Iterator<T> iterator(){
+	return new ListIterator();
+    }
+
+    private class ListIterator implements Iterator<T>{
+
+	Node current;
 	
+	public ListIterator(){
+	    current = first;
+	}
+	
+	public boolean hasNext(){
+	    if(current != null){
+		return true;
+	    }
+	    return false;
+	}
+
+	public T next(){
+	    if(hasNext()){
+		T returnValue = current.getValue();
+		current = current.getNext();
+		return returnValue;
+	    }
+	    return null;
+	}
+	
+    }
+	
+	
+	
+ }    
     
   private Node first,last;
   private int size;
@@ -257,42 +289,6 @@ private Node getNode(int index){
     
   }
 	 
-    public Iterator<T> iterator(){
-	return new ListIterator();
-    }
-
-    private class ListIterator implements Iterator<T>{
-
-	Node current;
-	
-	public ListIterator(){
-	    current = first;
-	}
-	
-	public boolean hasNext(){
-	    if(current != null){
-		return true;
-	    }
-	    return false;
-	}
-
-	public T next(){
-	    if(hasNext()){
-		T returnValue = current.getValue();
-		current = current.getNext();
-		return returnValue;
-	    }
-	    return null;
-	}
-	
-    }
-	public void remove() {
-    throw new UnsupportedOperationException();
-}
-	
-	
-	
-	
- }    
+    
 	
 }
