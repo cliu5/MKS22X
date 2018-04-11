@@ -300,4 +300,41 @@ private Node getNode(int index){
     	
 	
 }
+	
+	 public int max(){ //return the index of the largest value or -1 if empty
+	int ans = 0;
+		 //if empty return -1
+	if(size == 0){
+	    return -1;
+	}
+	if(size() == 1){
+	    return 0;
+	}
+	else{
+	    for(T x : size){
+		if(x.compareTo(get(ans)) > 0){
+		    ans = indexOf(x);
+		}
+	    }
+	}
+	return ans;
+    }
+
+    public int min(){ //return the index of the smallest value or -1 if empty
+	int ans = 0;
+	if(size() == 0){
+	    return -1;
+	}
+	if(size() == 1){
+	    return 0;
+	}
+	else{
+	    for(T x : size){
+		if(x.compareTo(get(ans)) < 0){
+		    ans = indexOf(x);
+		}
+	    }
+	}
+	return ans;
+    }
 }
