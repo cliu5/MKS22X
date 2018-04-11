@@ -87,8 +87,33 @@ private Node getNode(int index){
 	  getNode(index).setValue(newValue);
 	  return ans;
   }
- 
-	public boolean add(Integer newData);{
+ public int indexOf(Integer value){
+	 
+	 Node curr = first;
+	for(int i = 0; i<size; i++){
+	    if(curr.getValue().equals(value)){
+		return i;
+	    }
+	    curr = curr.getNext();
+	}
+	return -1;
+	 
+ }
+	public boolean add(Integer newData){
+		if(size()==0){
+			Node current=new Node(value);
+			first=current;
+			last=current;
+		}
+		else{
+			Node current= new Node(value);
+			final.getNext()=current;
+			current.getPrevious=this.last;
+			this.last=current;
+		}
+		this.size+=1;
+		return true;
+
 	}
 	
 	//exceptions!//
@@ -97,7 +122,19 @@ private Node getNode(int index){
 	
 	
 	public boolean remove(Integer value){
+	
+	Node curr = first;
+	for(int i = 0; i< size; i++){
+	    if(current.getValue().equals(value)){
+		remove(i);
+		return true;
+	    }
+	    curr = curr.getNext();
 	}
+	return false;
+    }
+	
+
 	//returns value of what u removed//
  public Integer remove(int index){
  }
