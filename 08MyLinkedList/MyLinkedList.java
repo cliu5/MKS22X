@@ -99,17 +99,26 @@ private Node getNode(int index){
 	return -1;
 	 
  }
+	
+	
+	
+
+	
+	
+	
 	public boolean add(Integer newData){
+		Node curr=new Node(value);
 		if(size()==0){
-			Node current=new Node(value);
-			first=current;
-			last=current;
+			
+			first=curr;
+			
 		}
 		else{
-			Node current= new Node(value);
-			final.getNext()=current;
-			current.getPrevious=this.last;
-			this.last=current;
+			
+			last.setNext(curr);
+			curr.getPrev(last);
+		}
+			this.last=curr;
 		}
 		this.size+=1;
 		return true;
