@@ -4,11 +4,13 @@
       MyLinkedList nums = new MyLinkedList();
       LinkedList<Integer> nums2 = new LinkedList<>();
       
+      /*
       for(int i = 0; i < 2000; i++  ){
         int index = (int)(Math.random()*(1 + nums.size()));
         nums.add(index,i);
         nums2.add(index,i);
       }
+      
       for(int i = 0; i < nums.size(); i++  ){
         if(nums.get(i) != nums2.get(i).intValue()){
           System.out.println("FAIL Randomized adds location: "+i+" "+nums.get(i)+" vs "+nums2.get(i));
@@ -72,7 +74,7 @@
         }
       }
       System.out.println("PASS randomized removes");
-      
+      */
       //get-------------------
       try{
         nums.get(-3);
