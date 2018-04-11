@@ -74,7 +74,7 @@
         }
       }
       System.out.println("PASS randomized removes");
-      */
+      
       //get-------------------
       try{
         nums.get(-3);
