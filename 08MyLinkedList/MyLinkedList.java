@@ -29,7 +29,7 @@ private Node getNode(int index){
        String ans="[";
 	  Node curr=start;
 	  while(curr!=null){
-		  ans+=(curr.getData()+",");
+		  ans+=(curr.getValue()+",");
 		  curr=curr.next;
 	  }
 	  ans+="]";
@@ -37,10 +37,10 @@ private Node getNode(int index){
   }
   public String toStringReverse(){
 	  String ans="[";
-	  Node curr=start;
+	  Node curr=first;
 	  while(curr!=null){
-		  ans+=(curr.getData()+",");
-		  curr=curr.previous;
+		  ans+=(curr.getValue()+",");
+		  curr=curr.getPrev();
 	  }
 	  ans+="]";
 	  return ans;
@@ -64,7 +64,7 @@ private Node getNode(int index){
       throw new IndexOutOfBoundsException();
     }
     int ans=0;
-    Node curr=start;
+    Node curr=first;
 	  // for linked lists to find something you have to loop thru everything //
 	  for(int i=0;i<index+1;i++){
 		  ans=curr.getData();
@@ -75,10 +75,10 @@ private Node getNode(int index){
 
 	
   public Integer set(int index, Integer newValue) {
-    if (index >= length || index < 0) {
+    if (index >= size || index < 0) {
       throw new IndexOutOfBoundsException();
     }
-    Node curr=start;
+    Node curr=first;
 	  //traversing to get to the index'd val//
 	  for(int i=0;i<index;i++){
 		  curr=curr.next;
