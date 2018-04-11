@@ -1,3 +1,4 @@
+import java.util.Iterator;
 public class MyLinkedListImproved<T extends Comparable<T>> implements Iterable<T>{
 	
 	//thanks to crystals driver for endless agony + pain//
