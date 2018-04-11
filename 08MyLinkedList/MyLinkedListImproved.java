@@ -311,7 +311,7 @@ private Node getNode(int index){
 	    return 0;
 	}
 	else{
-	    for(T x : size){
+	    for(T x : this){
 		if(x.compareTo(get(ans)) > 0){
 		    ans = indexOf(x);
 		}
@@ -329,7 +329,7 @@ private Node getNode(int index){
 	    return 0;
 	}
 	else{
-	    for(T x : size){
+	    for(T x : this){
 		if(x.compareTo(get(ans)) < 0){
 		    ans = indexOf(x);
 		}
