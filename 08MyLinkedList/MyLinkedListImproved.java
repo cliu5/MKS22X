@@ -113,9 +113,10 @@ private Node getNode(int index){
     }
     
     Node curr=first;
-	  T ans;
+	  
 	  // for linked lists to find something you have to loop thru everything //
 	  for(int i=0;i<index+1;i++){
+		  T ans;
 		 ans=curr.getValue();
 		  curr=curr.getNext();
 	  }
