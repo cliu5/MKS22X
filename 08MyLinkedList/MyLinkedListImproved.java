@@ -72,9 +72,10 @@ private Node getNode(int index){
     }
     
     Node curr=first;
+	  T ans;
 	  // for linked lists to find something you have to loop thru everything //
 	  for(int i=0;i<index+1;i++){
-		 Integer ans=curr.getValue();
+		 ans=curr.getValue();
 		  curr=curr.getNext();
 	  }
 	  return ans;
@@ -277,7 +278,7 @@ private Node getNode(int index){
 
 	public T next(){
 	    if(hasNext()){
-		Type returnValue = current.getValue();
+		T returnValue = current.getValue();
 		current = current.getNext();
 		return returnValue;
 	    }
