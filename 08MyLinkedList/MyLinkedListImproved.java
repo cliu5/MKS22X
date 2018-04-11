@@ -3,30 +3,28 @@ public class MyLinkedListImproved<T extends Comparable<T>> implements Iterable<T
 	
 	
 	public Iterator<T> iterator(){
-	return new ListIterator();
+	return new MyLLIterator();
     }
 
-    private class ListIterator implements Iterator<T>{
+    private class MyLLIterator implements Iterator<T>{
 
 	Node current;
 	
-	public ListIterator(){
+	public MyLLIterator(){
 	    current = first;
 	}
 	
 	public boolean hasNext(){
-	    if(current != null){
-		return true;
-	    }
-	    return false;
+	    return current != null;
+		
 	}
     
 
 	public T next(){
 	    if(hasNext()){
-		T returnValue = current.getValue();
-		current = current.getNext();
-		return returnValue;
+		T ans = curr.getValue();
+		curr = curr.getNext();
+		return ans;
 	    }
 	    return null;
 	}
