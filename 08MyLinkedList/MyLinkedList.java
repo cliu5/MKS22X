@@ -1,4 +1,7 @@
 public class MyLinkedList{
+	
+	//thanks to crystals driver for endless agony + pain//
+	// also to the senpais for bein pals and explaining stuff & helping me solve stuff//
     
   private Node first,last;
   private int size;
