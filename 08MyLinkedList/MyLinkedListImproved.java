@@ -2,22 +2,49 @@ public class MyLinkedListImproved<T extends Comparable<T>> implements Iterable<T
 	
 	//thanks to crystals driver for endless agony + pain//
 	// also to the senpais for bein pals and explaining stuff & helping me solve stuff//
+	
+	 public Iterator<Type> iterator(){
+	return new ListIterator();
+    }
+
+    private class ListIterator implements Iterator<Type>{
+
+	Node current;
+	
+	public ListIterator(){
+	    current = first;
+	}
+	
+	public boolean hasNext(){
+	    if(current != null){
+		return true;
+	    }
+	    return false;
+	}
+
+	public Type next(){
+	    if(hasNext()){
+		Type returnValue = current.getValue();
+		current = current.getNext();
+		return returnValue;
+	    }
+	    return null;
+	}
+	
+    }
+	
+	
+	
+	
     
   private Node first,last;
   private int size;
 	
-	
-     public Iterator<T> iterator(){
-	return new MyLinkedListImprovedIterator();
+	public MyLinkedListImproved(){
+		first = null;
+	last = null;
+	size = 0;
     }
-
-    private class MyLinkedListImprovedIterator implements Iterator<T>{
-
-	Node curr;
-	
-	public MyLinkedListImprovedIterator(){
-	    curr = first;
-	}
 
 private Node getNode(int index){
 	if(index < 0 || index >= size()){
