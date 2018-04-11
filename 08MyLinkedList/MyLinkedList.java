@@ -179,11 +179,31 @@ private Node getNode(int index){
 
 	//returns value of what u removed//
  public Integer remove(int index){
-	 
+	 if (index >= size || index < 0) {
+      throw new IndexOutOfBoundsException();
+    }
+	 //return what ur removing set as ans//
+         int ans= (getNode(index)).getValue;
+	 //if u remove from beginning
+	 if (index==0){
+		 Node curr=first.getNext();
+		 first=curr;
+	 }
+	 // now if it's removing from the end u just change last to the one right before and the next to null
+	 else if (index==size-1){
+		 last=last.getPrev();
+		 last.setNext(null);
+	 }
+	 //if it is any place in the middle, change the arrows to go over an area
+	 else{
+		 Node curr=getNode(index);
+		 curr.getPrev().setNext(curr.getNext());
+		 curr.getNext().setPrev(curr.getPrev());
+	 }
+	 size--;
+	 return ans;
  }
  
-	
-	
 
  private class Node {
 
