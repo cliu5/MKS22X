@@ -56,6 +56,9 @@ private Node getNode(int index){
       return size;
   }
 
+	
+	
+	
   public Integer get(int index) {
     if (index >= size || index < 0) {
       throw new IndexOutOfBoundsException();
@@ -65,7 +68,7 @@ private Node getNode(int index){
 	  // for linked lists to find something you have to loop thru everything //
 	  for(int i=0;i<index+1;i++){
 		  ans=curr.value;
-		  curr=curr.next;
+		  curr=curr.getNext();
 	  }
 	  return ans;
   }
@@ -130,11 +133,11 @@ private Node getNode(int index){
       next = _next;
 	    return true;
     }
-    public void setPrev(Node _prev) {
+    public boolean setPrev(Node _prev) {
       prev = _prev;
 	    return true;
     }
-    public void setValue(int _new) {
+    public boolean setValue(int _new) {
 	    data=_new;
 	    return true;
      
