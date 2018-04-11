@@ -91,7 +91,7 @@ private Node getNode(int index){
 	 
 	 Node curr = first;
 	for(int i = 0; i<size; i++){
-	    if(curr.getValue().equals(value)){
+	    if(getNode(i).getValue().equals(value)){
 		return i;
 	    }
 	    curr = curr.getNext();
