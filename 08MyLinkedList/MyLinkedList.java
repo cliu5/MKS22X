@@ -83,8 +83,8 @@ private Node getNode(int index){
 	  for(int i=0;i<index;i++){
 		  curr=curr.next;
 	  }
-	  int ans=curr.getValue();
-	  curr.getValue().setValue(newValue);
+	  Integer ans=curr.getValue();
+	  getNode(index).setData(newValue);
 	  return ans;
   }
  
