@@ -66,7 +66,7 @@ private Node getNode(int index){
     if (index >= size || index < 0) {
       throw new IndexOutOfBoundsException();
     }
-    int ans=0;
+    Integer ans=0;
     Node curr=first;
 	  // for linked lists to find something you have to loop thru everything //
 	  for(int i=0;i<index+1;i++){
@@ -186,7 +186,7 @@ private Node getNode(int index){
       throw new IndexOutOfBoundsException();
     }
 	 //return what ur removing set as ans//
-         int ans= getNode(index).getValue();
+         Integer ans= getNode(index).getValue();
 	 //if u remove from beginning
 	 if (index==0){
 		 Node curr=first.getNext();
@@ -211,15 +211,15 @@ private Node getNode(int index){
  private class Node {
 
     private Node next,prev;
-    private int data;
+    private Integer data;
  public Node(Integer value){
       data = value;
     }
 
-	public Node(Integer data, Node prev, Node next){
-	    this.next = next;
-	    this.prev = prev;
-	    this.data = data;
+	public Node(Integer a, Node b, Node c){
+	    this.next = b;
+	    this.prev = c;
+	    this.data = a;
 	}
     public Node getNext() {
 	    
