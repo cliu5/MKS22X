@@ -1,10 +1,24 @@
 public class MyLinkedList{
     
   private Node first,last;
-  private int length;
+  private int size;
 
+private Node getNode(int index){
+	if(index < 0 || index >= size()){
+	    throw new IndexOutOfBoundsException();
+	}
+	Node curr=first;
+	for(int i=0;i<index;i++){
+		curr=curr.next();
+	}
+	return curr;
+}
+	
+	
+
+	
   public MyLinkedList() {
-      length=0;
+      size=0;
     first =null;
     last=null;
   }
@@ -12,74 +26,117 @@ public class MyLinkedList{
 
 
   public String toString() {
-      return "";
+       String ans="[";
+	  Node curr=start;
+	  while(curr!=null){
+		  ans+=(curr.value+",");
+		  curr=curr.next;
+	  }
+	  ans+="]";
+	  return ans;
+  }
+  public String toStringReverse(){
+	  String ans="[";
+	  Node curr=start;
+	  while(curr!=null){
+		  ans+=(curr.value+",");
+		  curr=curr.previous;
+	  }
+	  ans+="]";
+	  return ans;
   }
 
+	public void clear(){
+		first=null;
+		last=null;
+		size=0;
+	}
+	
   public int size() {
-      return length  ;
+      return size;
   }
 
-  public int get(int index) {
+  public Integer get(int index) {
+    if (index >= size || index < 0) {
+      throw new IndexOutOfBoundsException();
+    }
+    int ans=0;
+    Node curr=start;
+	  // for linked lists to find something you have to loop thru everything //
+	  for(int i=0;i<index+1;i++){
+		  ans=curr.value;
+		  curr=curr.next;
+	  }
+	  return ans;
+  }
+
+	
+  public Integer set(int index, Integer newValue) {
     if (index >= length || index < 0) {
       throw new IndexOutOfBoundsException();
     }
-    
-    return 1;
+    Node curr=start;
+	  //traversing to get to the index'd val//
+	  for(int i=0;i<index;i++){
+		  curr=curr.next;
+	  }
+	  int ans=curr.value;
+	  curr.value=newValue;
+	  return ans;
   }
-
-  public void set(int index, int newValue) {
-    if (index >= length || index < 0) {
-      throw new IndexOutOfBoundsException();
-    }
-  }
  
- public void add(int index,int value){
+	public boolean add(Integer newData);{
+	}
+	
+	//exceptions!//
+ public void add(int index, Integer value){
  }
- public void remove(int index){
+	
+	
+	public boolean remove(Integer value){
+	}
+	//returns value of what u removed//
+ public Integer remove(int index){
  }
  
- 
-
-
-
-
-
-
-
-
+	
+	
 
  private class Node {
 
     private Node next,prev;
     private int data;
 
-    public Node (int value) {
-      data = value;
-      next = null;
-      prev = null;
-      
-    }
-
+	public Node(Integer data, Node prev, Node next){
+	    this.next = next;
+	    this.prev = prev;
+	    this.data = data;
+	}
     public Node getNext() {
-      return next;
+	    
+      return this.next;
     }
     public Node getPrev() {
-      return prev;
+      return this.prev;
     }
     public int getValue() {
-      return data;
+      return this.data;
     }
      public String toString(){
 	 return "[" + data + "]";
      }
 
-    public void setNext(Node _next) {
+    public boolean setNext(Node _next) {
       next = _next;
+	    return true;
     }
     public void setPrev(Node _prev) {
       prev = _prev;
+	    return true;
     }
     public void setValue(int _new) {
+	    data=_new;
+	    return true;
      
     
   }
