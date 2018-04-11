@@ -160,7 +160,7 @@ private Node getNode(int index){
 	}
 	size++;
     }
- }
+ 
 	
 	
 	public boolean remove(Integer value){
