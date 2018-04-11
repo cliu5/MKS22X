@@ -171,7 +171,7 @@ private Node getNode(int index){
     public Node getPrev() {
       return this.prev;
     }
-    public int getValue() {
+    public Integer getValue() {
       return this.data;
     }
      public String toString(){
