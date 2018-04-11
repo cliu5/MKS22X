@@ -107,7 +107,7 @@ private Node getNode(int index){
 	
 	
 	public boolean add(Integer newData){
-		Node curr=new Node(value);
+		Node curr=new Node(newData);
 		if(size()==0){
 			
 			first=curr;
@@ -116,7 +116,7 @@ private Node getNode(int index){
 		else{
 			
 			last.setNext(curr);
-			curr.getPrev(last);
+			curr.setPrev(last);
 		}
 			last=curr;
 		
@@ -134,7 +134,7 @@ private Node getNode(int index){
 	
 	Node curr = first;
 	for(int i = 0; i< size; i++){
-	    if(current.getValue().equals(value)){
+	    if(curr.getValue().equals(value)){
 		remove(i);
 		return true;
 	    }
