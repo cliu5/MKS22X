@@ -127,6 +127,39 @@ private Node getNode(int index){
 	
 	//exceptions!//
  public void add(int index, Integer value){
+	 if (index >= size || index < 0) {
+      throw new IndexOutOfBoundsException();
+    }
+	 Node curr=new Node(value);
+	 //if add to the front//
+	if (index==0){
+		//and its empty//
+	    if (size==0){
+		start=curr;
+		last=curr;
+	    }
+		//otherwise repoint//
+		else{
+		start.setPrev()=curr;
+		curr.setNext()=start;
+		start=curr;
+	    }
+	}
+	 //now if you're adding to the back//
+	 else if(index==size){
+	    last.setNext()=curr;
+	    curr.setPrev()=last;
+	    last=curr;
+	}
+	 // now genrally//
+	 else{
+	    curr.setPrev()=getNode(index-1);
+	    curr.setNext()=getNode(index);
+	    getNode(index).setPrev()=curr;
+	    getNode(index-1).setNext()=curr;
+	}
+	size++;
+    }
  }
 	
 	
@@ -146,6 +179,7 @@ private Node getNode(int index){
 
 	//returns value of what u removed//
  public Integer remove(int index){
+	 
  }
  
 	
