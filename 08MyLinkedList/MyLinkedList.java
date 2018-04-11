@@ -118,9 +118,9 @@ private Node getNode(int index){
 			last.setNext(curr);
 			curr.getPrev(last);
 		}
-			this.last=curr;
-		}
-		this.size+=1;
+			last=curr;
+		
+	size+=1;
 		return true;
 
 	}
