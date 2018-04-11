@@ -183,7 +183,7 @@ private Node getNode(int index){
       throw new IndexOutOfBoundsException();
     }
 	 //return what ur removing set as ans//
-         int ans= (getNode(index).getValue);
+         int ans= getNode(index).getValue();
 	 //if u remove from beginning
 	 if (index==0){
 		 Node curr=first.getNext();
