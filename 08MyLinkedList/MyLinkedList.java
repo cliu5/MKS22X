@@ -130,9 +130,11 @@ private Node getNode(int index){
 	
 	//exceptions!//
  public void add(int index, Integer value){
+	 /*
 	 if (index >= size || index < 0) {
       throw new IndexOutOfBoundsException();
     }
+    */
 	 Node curr=new Node(value);
 	 //if add to the front//
 	if (index==0){
