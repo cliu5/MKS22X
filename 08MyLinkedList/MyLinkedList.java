@@ -251,7 +251,7 @@ private Node getNode(int index){
   }
 }
 	
-     
+     /*
     public static void main(String[]args){
       MyLinkedList nums = new MyLinkedList();
       LinkedList<Integer> nums2 = new LinkedList<>();
@@ -458,5 +458,5 @@ private Node getNode(int index){
     
     
   }
-
+*/
 }
