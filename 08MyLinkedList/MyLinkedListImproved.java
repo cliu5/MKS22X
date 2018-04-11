@@ -5,6 +5,12 @@ public class MyLinkedListImproved<T extends Comparable<T>> implements Iterable<T
     
   private Node first,last;
   private int size;
+	
+	
+  public MyLinkedListIterator iterator(){
+    return new MyLinkedListIterator(start);
+  }
+
 
 private Node getNode(int index){
 	if(index < 0 || index >= size()){
@@ -20,12 +26,7 @@ private Node getNode(int index){
 	
 
 	
-  public MyLinkedList() {
-      size=0;
-    first =null;
-    last=null;
-  }
- 
+
 
 
   public String toString() {
@@ -251,4 +252,26 @@ private Node getNode(int index){
      
     
   }
-}
+	 
+   public class MyLinkedListIterator implements Iterator<T>{
+     Node curr;
+
+     public MyLinkedListIterator(Node start){
+         curr = first;
+     }
+
+     public boolean hasNext(){
+       return current.getNext() != null;
+     }
+
+     public T next(){
+ 	if(hasNext()){
+		T ans = curr.getValue();
+		curr = curr.getNext();
+		return ans;
+	    }
+	    return null;
+	}
+	
+    }
+   }
