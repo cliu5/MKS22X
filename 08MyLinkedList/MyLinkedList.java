@@ -155,6 +155,9 @@ private Node getNode(int index){
 
     private Node next,prev;
     private int data;
+ public Node(Integer value){
+      data = value;
+    }
 
 	public Node(Integer data, Node prev, Node next){
 	    this.next = next;
