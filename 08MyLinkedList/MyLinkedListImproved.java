@@ -291,7 +291,7 @@ private Node getNode(int index){
       prev = _prev;
 	    return true;
     }
-    public boolean setValue(int _new) {
+    public boolean setValue(Integer _new) {
 	    data=_new;
 	    return true;
      
