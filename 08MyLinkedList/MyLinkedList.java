@@ -141,7 +141,7 @@ private Node getNode(int index){
 		//otherwise repoint//
 		else{
 		first.setPrev(curr);
-		curr.setNext(start);
+		curr.setNext(first);
 		first=curr;
 	    }
 	}
