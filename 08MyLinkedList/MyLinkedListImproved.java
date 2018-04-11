@@ -70,11 +70,11 @@ private Node getNode(int index){
     if (index >= size || index < 0) {
       throw new IndexOutOfBoundsException();
     }
-    T ans=0;
+    
     Node curr=first;
 	  // for linked lists to find something you have to loop thru everything //
 	  for(int i=0;i<index+1;i++){
-		  ans=curr.getValue();
+		 Integer ans=curr.getValue();
 		  curr=curr.getNext();
 	  }
 	  return ans;
@@ -275,7 +275,7 @@ private Node getNode(int index){
 	    return false;
 	}
 
-	public Type next(){
+	public T next(){
 	    if(hasNext()){
 		Type returnValue = current.getValue();
 		current = current.getNext();
