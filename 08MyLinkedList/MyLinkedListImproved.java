@@ -1,6 +1,48 @@
 import java.util.Iterator;
 public class MyLinkedListImproved<T extends Comparable<T>> implements Iterable<T>{
 	
+	
+	public Iterator<T> iterator(){
+	return new ListIterator();
+    }
+
+    private class ListIterator implements Iterator<T>{
+
+	Node current;
+	
+	public ListIterator(){
+	    current = first;
+	}
+	
+	public boolean hasNext(){
+	    if(current != null){
+		return true;
+	    }
+	    return false;
+	}
+    
+
+	public T next(){
+	    if(hasNext()){
+		T returnValue = current.getValue();
+		current = current.getNext();
+		return returnValue;
+	    }
+	    return null;
+	}
+	
+    }
+	
+	
+	
+ } 
+	
+	
+	
+	
+	
+	
+	
 	//thanks to crystals driver for endless agony + pain//
 	// also to the senpais for bein pals and explaining stuff & helping me solve stuff//
 	
@@ -257,39 +299,6 @@ private Node getNode(int index){
     
   }
 	 
-    	public Iterator<T> iterator(){
-	return new ListIterator();
-    }
-
-    private class ListIterator implements Iterator<T>{
-
-	Node current;
-	
-	public ListIterator(){
-	    current = first;
-	}
-	
-	public boolean hasNext(){
-	    if(current != null){
-		return true;
-	    }
-	    return false;
-	}
-    
-
-	public T next(){
-	    if(hasNext()){
-		T returnValue = current.getValue();
-		current = current.getNext();
-		return returnValue;
-	    }
-	    return null;
-	}
-	
-    }
-	
-	
-	
- } 
+    	
 	
 }
