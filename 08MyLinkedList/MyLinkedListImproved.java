@@ -7,10 +7,17 @@ public class MyLinkedListImproved<T extends Comparable<T>> implements Iterable<T
   private int size;
 	
 	
-  public MyLinkedListIterator iterator(){
-    return new MyLinkedListIterator(start);
-  }
+     public Iterator<T> iterator(){
+	return new MyLinkedListImprovedIterator();
+    }
 
+    private class MyLinkedListImprovedIterator implements Iterator<T>{
+
+	Node curr;
+	
+	public MyLinkedListImprovedIterator(){
+	    curr = first;
+	}
 
 private Node getNode(int index){
 	if(index < 0 || index >= size()){
