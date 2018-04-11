@@ -4,7 +4,7 @@
       MyLinkedList nums = new MyLinkedList();
       LinkedList<Integer> nums2 = new LinkedList<>();
       
-      /*
+      
       for(int i = 0; i < 2000; i++  ){
         int index = (int)(Math.random()*(1 + nums.size()));
         nums.add(index,i);
