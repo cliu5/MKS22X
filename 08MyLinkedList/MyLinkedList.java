@@ -135,28 +135,28 @@ private Node getNode(int index){
 	if (index==0){
 		//and its empty//
 	    if (size==0){
-		start=curr;
+		first=curr;
 		last=curr;
 	    }
 		//otherwise repoint//
 		else{
-		start.setPrev()=curr;
-		curr.setNext()=start;
-		start=curr;
+		first.setPrev(curr);
+		curr.setNext(start);
+		first=curr;
 	    }
 	}
 	 //now if you're adding to the back//
 	 else if(index==size){
-	    last.setNext()=curr;
-	    curr.setPrev()=last;
+	    last.setNext(curr);
+	    curr.setPrev(last);
 	    last=curr;
 	}
 	 // now genrally//
 	 else{
-	    curr.setPrev()=getNode(index-1);
-	    curr.setNext()=getNode(index);
-	    getNode(index).setPrev()=curr;
-	    getNode(index-1).setNext()=curr;
+	    curr.setPrev(getNode(index-1));
+	    curr.setNext(getNode(index));
+	    getNode(index).setPrev(curr);
+	    getNode(index-1).setNext(curr);
 	}
 	size++;
     }
