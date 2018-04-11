@@ -3,38 +3,6 @@ public class MyLinkedListImproved<T extends Comparable<T>> implements Iterable<T
 	//thanks to crystals driver for endless agony + pain//
 	// also to the senpais for bein pals and explaining stuff & helping me solve stuff//
 	
-	 public Iterator<Type> iterator(){
-	return new ListIterator();
-    }
-
-    private class ListIterator implements Iterator<Type>{
-
-	Node current;
-	
-	public ListIterator(){
-	    current = first;
-	}
-	
-	public boolean hasNext(){
-	    if(current != null){
-		return true;
-	    }
-	    return false;
-	}
-
-	public Type next(){
-	    if(hasNext()){
-		Type returnValue = current.getValue();
-		current = current.getNext();
-		return returnValue;
-	    }
-	    return null;
-	}
-	
-    }
-	
-	
-	
 	
     
   private Node first,last;
@@ -287,27 +255,40 @@ private Node getNode(int index){
     
   }
 	 
-   public class MyLinkedListIterator implements Iterator<T>{
-     Node curr;
+    public Iterator<T> iterator(){
+	return new ListIterator();
+    }
 
-     public MyLinkedListIterator(Node start){
-         curr = first;
-     }
+    private class ListIterator implements Iterator<T>{
 
-     public boolean hasNext(){
-       return current.getNext() != null;
-     }
+	Node current;
+	
+	public ListIterator(){
+	    current = first;
+	}
+	
+	public boolean hasNext(){
+	    if(current != null){
+		return true;
+	    }
+	    return false;
+	}
 
-     public T next(){
- 	if(hasNext()){
-		T ans = curr.getValue();
-		curr = curr.getNext();
-		return ans;
+	public Type next(){
+	    if(hasNext()){
+		Type returnValue = current.getValue();
+		current = current.getNext();
+		return returnValue;
 	    }
 	    return null;
 	}
 	
     }
- }
+	
+	
+	
+	
+	
+    
 	
 }
