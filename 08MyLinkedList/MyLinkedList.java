@@ -84,7 +84,7 @@ private Node getNode(int index){
 		  curr=curr.next;
 	  }
 	  int ans=curr.getValue();
-	  curr.getValue()=newValue;
+	  curr.getValue().setValue(newValue);
 	  return ans;
   }
  
