@@ -254,7 +254,31 @@ private Node getNode(int index){
 	 return ans;
  }
  
+  public int max(){
+        int ans=0;
+        if(size == 0) {
+            return -1;
+        }
+        for(T current: this){
+            if (current.compareTo(get(ans))>0){
+                ans = indexOf(current);
+            }
+        }
+        return ans;
+    }
 
+    public int min(){
+        int ans;
+        if(size == 0) {
+            return -1;
+        }
+        for(T current: this){
+            if (current.compareTo(get(ans))<0){
+                ans = indexOf(current);
+            }
+        }
+        return ans;
+    }
  private class Node {
 
     private Node next,prev;
