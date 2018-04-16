@@ -268,7 +268,7 @@ private Node getNode(int index){
     }
 
     public int min(){
-        int ans;
+        int ans=0;
         if(size == 0) {
             return -1;
         }
