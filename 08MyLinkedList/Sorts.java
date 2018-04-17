@@ -11,7 +11,7 @@ public class Sorts{
     int numLoops =0;
     int temp=max;
     while(temp>0){
-      temp/10;
+      temp/=10;
       numLoops++;
     }
     for(int i=0;i<numLoops;i++){
@@ -26,7 +26,8 @@ public class Sorts{
   }
   public static int digit(int i, Integer x){
     //took this from somewhere on stack overflow bc math is hard :( // 
-    ans = (x / (int)Math.pow(10,i)) % 10
+    ans = (x / (int)Math.pow(10,i)) % 10;
+    return ans;
   }
   public static void radixsortIncludingNegatives(MyLinkedListImproved<Integer> data){ 
     //either blank method
