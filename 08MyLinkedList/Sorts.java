@@ -26,6 +26,7 @@ public class Sorts{
   }
   public static int digit(int i, Integer x){
     //took this from somewhere on stack overflow bc math is hard :( // 
+    int ans=0;
     ans = (x / (int)Math.pow(10,i)) % 10;
     return ans;
   }
