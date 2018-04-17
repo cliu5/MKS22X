@@ -299,6 +299,7 @@ private Node getNode(int index){
 	other.clear();
     }
 		     }
+	  }
  private class Node {
 
     private Node next,prev;
