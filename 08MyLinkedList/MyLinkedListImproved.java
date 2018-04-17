@@ -284,10 +284,10 @@ private Node getNode(int index){
         //The size of other is reduced to 0
         //The size of this is now the combined sizes of both original lists
 		     
-		     if(other.getFirst() != null){
+		     if(other.first != null){
 			    if(first == null){
-                first = other.first();
-                last = other.last();
+                first = other.first;
+                last = other.last;
                 size = other.size();
                 other.clear();
             }else{
