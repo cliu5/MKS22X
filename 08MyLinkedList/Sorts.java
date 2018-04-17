@@ -9,7 +9,7 @@ public class Sorts{
       buckets[i]=new MyLinkedListImproved<Integer>();
     }
     int max=data.max();
-    int numLoops =2;
+    int numLoops =1;
     int temp=max;
     while(temp>0){
       temp/=10;
