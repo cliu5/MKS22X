@@ -279,6 +279,16 @@ private Node getNode(int index){
         }
         return ans;
     }
+	  public void extend(MyLinkedListImproved<T> other){
+        //in O(1) runtime, move the elements from other onto the end of this
+        //The size of other is reduced to 0
+        //The size of this is now the combined sizes of both original lists
+		   last.setNext(other.first);
+	other.first.setPrev(last);
+	last = other.last;
+	size += other.size();
+	other.clear();
+    }
  private class Node {
 
     private Node next,prev;
