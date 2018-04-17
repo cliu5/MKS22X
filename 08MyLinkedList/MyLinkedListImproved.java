@@ -283,7 +283,16 @@ private Node getNode(int index){
         //in O(1) runtime, move the elements from other onto the end of this
         //The size of other is reduced to 0
         //The size of this is now the combined sizes of both original lists
-		   last.setNext(other.first);
+		     
+		     if(other.getFirst() != null){
+			    if(first == null){
+                first = other.first();
+                last = other.last();
+                size = other.size();
+                other.clear();
+            }else{
+                
+        last.setNext(other.first);
 	other.first.setPrev(last);
 	last = other.last;
 	size += other.size();
@@ -302,6 +311,12 @@ private Node getNode(int index){
 	    this.prev = c;
 	    this.data = a;
 	}
+	  public Node getFirst(){
+	return last;
+    }
+    public Node getLast(){
+	return first;
+    }
     public Node getNext() {
 	    
       return this.next;
