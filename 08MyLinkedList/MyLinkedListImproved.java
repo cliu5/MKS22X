@@ -298,6 +298,7 @@ private Node getNode(int index){
 	size += other.size();
 	other.clear();
     }
+		     }
  private class Node {
 
     private Node next,prev;
