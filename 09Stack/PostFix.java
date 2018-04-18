@@ -16,19 +16,19 @@ public class PostFix{
 			double second=S.pop();
 			
 			if(tokens[i]=='+'){
-				return 1;
+				S.push(first+second);
 			}
 			if(tokens[i]=='-'){
-				return 1;
+				S.push(first-second);
 			}
 			if(tokens[i]=='*'){
-				return 1;
+				S.push(first*second);
 			}
 			if(tokens[i]=='/'){
-				return 1;
+				S.push(first/second);
 			}
 			if(tokens[i]=='%'){
-				return 1;
+				S.push(first%second);
 			}
 			
 		}
