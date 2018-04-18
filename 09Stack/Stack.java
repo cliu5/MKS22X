@@ -14,5 +14,8 @@ public class Stack{
     public double pop(){
 	return ary.remove(ary.size()-1);
     }
+	public double peek(){
+	return ary.get(ary.size()-1);
+    }
 
 }
