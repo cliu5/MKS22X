@@ -11,7 +11,28 @@ public class PostFix{
 		if(Character.isDigit(tokens[i])){
 			S.push(tokens[i]);
 		}
-          
+		else{
+			int first=S.pop();
+			int second=S.pop();
+			
+			if(tokens[i]=='+'){
+				return 1;
+			}
+			if(tokens[i]=='-'){
+				return 1;
+			}
+			if(tokens[i]=='*'){
+				return 1;
+			}
+			if(tokens[i]=='/'){
+				return 1;
+			}
+			if(tokens[i]=='%'){
+				return 1;
+			}
+			
+		}
+		
     }
 	    return 1;
     }
