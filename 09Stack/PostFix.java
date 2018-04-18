@@ -4,10 +4,11 @@ public class PostFix{
         Stack<Integer> S=new Stack<>();
 	char[] tokens= exp.split(' ');
         for(int i=0;i<tokens.length();i++){
-		if(tokens.charAt(i).equalsTo('+'){
+		if(tokens.charAt(i).equalsTo('+')){
 			return 1;
 		}
           
+    }
     }
 	public static void main(String[] args) 
     {
