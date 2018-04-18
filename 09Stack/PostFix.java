@@ -9,8 +9,8 @@ public class PostFix{
            
             else
             {
-                int temp1 = S.pop();
-                int temp2 = S.pop();
+                int val1 = S.pop();
+                int val2 = S.pop();
                  
                 switch(c)
                 {
