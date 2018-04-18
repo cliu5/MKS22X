@@ -2,7 +2,7 @@ public class PostFix{
 
     public static double eval(String exp){
         Stack<Integer> S=new Stack<>();
-	char[] tokens= exp.split(' ');
+	String[] tokens= exp.split(" ");
         for(int i=0;i<tokens.length();i++){
 		if(tokens.charAt(i).equalsTo('+')){
 			return 1;
