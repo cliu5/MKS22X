@@ -3,6 +3,7 @@ public class PostFix{
     public static double eval(String exp){
         Stack<Integer> S=new Stack<>();
 	String[] tokens= exp.split(" ");
+	    char[] c = tokens.toCharArray();
         for(int i=0;i<tokens.length;i++){
 		if(Character.isDigit(tokens[i])){
 			return 1;
