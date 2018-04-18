@@ -2,17 +2,13 @@ public class PostFix{
 
     public static double eval(String exp){
         Stack<Integer> S=new Stack<>();
-	String[] tokens= exp.split(" ");
+	String[] S= exp.split(" ");
 	   String temp = "";
-	    for(String x:tokens){
+	    for(String x:S){
 		    temp+=x;}
-	    char[] C= temp.toCharArray();
-	    
-
-	    
-	   
+	    char[] tokens= temp.toCharArray();
         for(int i=0;i<tokens.length;i++){
-		//if(Character.isDigit(tokens[i])){
+		if(Character.isDigit(tokens[i])){
 			return 1;
 		}
           
