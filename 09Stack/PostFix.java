@@ -3,7 +3,7 @@ public class PostFix{
     public static double eval(String exp){
         Stack S =new Stack();
 	String[] tokens= exp.split(" ");
-	   
+	   System.out.println(tokens);
         for(int i=0;i<tokens.length;i++){
 		
 				
