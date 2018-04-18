@@ -1,10 +1,9 @@
 import java.util.LinkedList;
 public class Stack{
 
-    LinkedList L;
     
     public Stack(){
-	LinkedList L = new LinkedList();
+	    @SuppressWarnings("unchecked")LinkedList L = new LinkedList();
     }
 
     public void pop(){
