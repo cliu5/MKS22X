@@ -1,13 +1,13 @@
 import java.util.LinkedList;
-public class Stack<T>{
+public class Stack{
 
-    LinkedList<T> L;
+    LinkedList L;
     
     public Stack(){
-	LinkedList<T> L = new LinkedList<T>();
+	LinkedList L = new LinkedList();
     }
 
-    public T pop(){
+    public void pop(){
 	return L.removeLast();
     }
 
