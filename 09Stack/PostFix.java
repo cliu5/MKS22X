@@ -42,7 +42,7 @@ public class PostFix{
 		
     }
     
-	    return 1;
+	    return S.peek();
 	    
     }
    
