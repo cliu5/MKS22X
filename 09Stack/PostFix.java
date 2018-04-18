@@ -5,7 +5,7 @@ public class PostFix{
         for(int i=0;i<exp.length();i++){
             char c=exp.charAt(i);
             if(Character.isDigit(c))
-            S.push(c+' ');
+            S.push(c-'0');
            
             else
             {
