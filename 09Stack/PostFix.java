@@ -12,7 +12,7 @@ public class PostFix{
 	    
 	   
         for(int i=0;i<tokens.length;i++){
-		if(Character.isDigit(tokens[i])){
+		//if(Character.isDigit(tokens[i])){
 			return 1;
 		}
           
