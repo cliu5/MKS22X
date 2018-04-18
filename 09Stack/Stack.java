@@ -1,16 +1,17 @@
 import java.util.LinkedList;
-public class Stack{
+public class Stack<Type>{
 
-
-	    @SuppressWarnings("unchecked") LinkedList L = new LinkedList();
+   
     
-
-    public void pop(){
-	 L.removeLast();
+    public Stack(){
+	 LinkedList<Type> L = new LinkedList<Type>();
     }
 
-    public void push(int element){
+    public Type pop(){
+	return L.removeLast();
+    }
+
+    public void push(Type element){
 	L.add(element);
     }
-
-    }
+}
