@@ -12,8 +12,8 @@ public class PostFix{
 			S.push(tokens[i]);
 		}
 		else{
-			double first=S.pop();
-			double second=S.pop();
+			char first=S.pop();
+			char second=S.pop();
 			
 			if(tokens[i]=='+'){
 				S.push(first+second);
