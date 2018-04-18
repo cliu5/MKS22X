@@ -8,7 +8,7 @@ public class Stack{
     }
 
     public void pop(){
-	return L.removeLast();
+	 L.removeLast();
     }
 
     public void push(int element){
