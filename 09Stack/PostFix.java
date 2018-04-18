@@ -9,10 +9,11 @@ public class PostFix{
 	    char[] tokens= temp.toCharArray();
         for(int i=0;i<tokens.length;i++){
 		if(Character.isDigit(tokens[i])){
-			return 1;
+			S.push(c);
 		}
           
     }
+	    return 1;
     }
 	public static void main(String[] args) 
     {
