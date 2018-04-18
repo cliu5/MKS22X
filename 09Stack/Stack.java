@@ -1,10 +1,10 @@
 import java.util.*;
 
 public class Stack{
-    private ArrayList<double> ary;
+    private ArrayList<Double> ary;
 
     public Stack(){
-	ary = new ArrayList<double>();
+	ary = new ArrayList<Double>();
     }
 
     public void push(double x){
