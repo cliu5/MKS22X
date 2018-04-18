@@ -1,13 +1,13 @@
 import java.util.*;
 
 public class Stack{
-    private ArrayList<char> ary;
+    private ArrayList<Character> ary;
 
     public Stack(){
-	ary = new ArrayList<char>();
+	ary = new ArrayList<Character>();
     }
 
-    public void push(char x){
+    public void push(Character x){
 	ary.add(x);
     }
 
