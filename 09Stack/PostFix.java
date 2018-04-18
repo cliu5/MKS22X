@@ -1,7 +1,7 @@
 public class PostFix{
 
     public static double eval(String exp){
-        Stack S=new Stack();
+        Stack S<char>=new Stack<>();
 	String[] str= exp.split(" ");
 	   String temp = "";
 	    for(String x:str){
