@@ -4,7 +4,7 @@ public class PostFix{
         Stack<Integer> S=new Stack<>();
 	String[] tokens= exp.split(" ");
         for(int i=0;i<tokens.length;i++){
-		if(tokens[i]=="+")){
+		if(Character.isDigit(tockens[i])){
 			return 1;
 		}
           
