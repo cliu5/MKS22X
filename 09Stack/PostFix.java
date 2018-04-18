@@ -4,8 +4,8 @@ public class PostFix{
         Stack<Integer> S=new Stack<>();
         for(int i=0;i<exp.length();i++){
             char c=exp.charAt(i);
-            if(Character.isDigit(c+' '))
-            S.push(c);
+            if(Character.isDigit(c))
+            S.push(c+' ');
            
             else
             {
