@@ -42,8 +42,9 @@ public class PostFix{
 		}
 		
     }
+    */
 	    return 1;
-	    */
+	    
     }
    
 	public static void main(String[] args) 
