@@ -3,7 +3,7 @@ public class Stack{
 
     
     public Stack(){
-	    @SuppressWarnings("unchecked")LinkedList L = new LinkedList();
+	    @SuppressWarnings("unchecked") LinkedList L = new LinkedList();
     }
 
     public void pop(){
