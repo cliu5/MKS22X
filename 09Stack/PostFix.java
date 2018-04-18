@@ -13,25 +13,25 @@ public class PostFix{
 			
 				S.push(first+second);
 			}
-			if(tokens[i]=='-'){
+			if(tokens[i]=="-"){
 				double first=S.pop();
 			double second=S.pop();
 			
 				S.push(first-second);
 			}
-			if(tokens[i]=='*'){
+			if(tokens[i]=="*"){
 				double first=S.pop();
 			double second=S.pop();
 			
 				S.push(first*second);
 			}
-			if(tokens[i]=='/'){
+			if(tokens[i]=="/"){
 				double first=S.pop();
 			double second=S.pop();
 			
 				S.push(first/second);
 			}
-			if(tokens[i]=='%'){
+			if(tokens[i]=="%"){
 				double first=S.pop();
 			double second=S.pop();
 			
