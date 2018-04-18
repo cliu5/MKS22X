@@ -4,7 +4,7 @@ public class PostFix{
         Stack S =new Stack();
 	String[] tokens= exp.split(" ");
 	   System.out.println(tokens);
-        for(int i=0;i<tokens.length;i++){
+        /*for(int i=0;i<tokens.length;i++){
 		
 				
 		if(tokens[i]=="+"){
@@ -44,6 +44,7 @@ public class PostFix{
     }
 	    return 1;
     }
+    */
 	public static void main(String[] args) 
     {
         
