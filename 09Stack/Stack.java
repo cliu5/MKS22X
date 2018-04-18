@@ -1,17 +1,18 @@
-import java.util.LinkedList;
-public class Stack<Type>{
+import java.util.*;
 
-   
-    
+public class Stack{
+    private ArrayList<Double> ary;
+
     public Stack(){
-	 LinkedList<Type> L = new LinkedList<Type>();
+	ary = new ArrayList<Double>();
     }
 
-    public Type pop(){
-	return L.removeLast();
+    public void push(Double x){
+	ary.add(x);
     }
 
-    public void push(Type element){
-	L.add(element);
+    public double pop(){
+	return ary.remove(ary.size()-1);
     }
+
 }
