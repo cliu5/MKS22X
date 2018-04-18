@@ -35,16 +35,4 @@ public class PostFix{
         return S.pop();    
     }
 	
-
-
-
-}
-
-	
-    }
-    
-    public static void main(String[] args){
-
-    }
-    
 }
