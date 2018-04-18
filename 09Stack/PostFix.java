@@ -3,7 +3,7 @@ public class PostFix{
     public static double eval(String exp){
         Stack<Integer> S=new Stack<>();
         for(int i=0;i<exp.length();i++){
-            char C=exp.charAt(i);
+            char c=exp.charAt(i);
             if(Character.isDigit(c))
             S.push(c - '0');
            
