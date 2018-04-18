@@ -1,10 +1,10 @@
 public class PostFix{
 
     public static double eval(String exp){
-        Stack S=new Stack<>();
-	String[] S= exp.split(" ");
+        Stack S=new Stack();
+	String[] str= exp.split(" ");
 	   String temp = "";
-	    for(String x:S){
+	    for(String x:str){
 		    temp+=x;}
 	    char[] tokens= temp.toCharArray();
         for(int i=0;i<tokens.length;i++){
