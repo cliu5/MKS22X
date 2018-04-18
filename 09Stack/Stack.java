@@ -11,7 +11,7 @@ public class Stack{
 	return L.removeLast();
     }
 
-    public void push(T element){
+    public void push(int element){
 	L.add(element);
     }
 
