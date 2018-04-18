@@ -3,35 +3,34 @@ public class PostFix{
     public static double eval(String exp){
         Stack S =new Stack();
 	String[] tokens= exp.split(" ");
-	   System.out.println(tokens);
-        /*for(int i=0;i<tokens.length;i++){
+	  for(int i=0;i<tokens.length;i++){
 		
 				
-		if(tokens[i]=="+"){
+		if(tokens[i].equals("+")){
 			double first=S.pop();
 			double second=S.pop();
 			
 				S.push(first+second);
 			}
-			if(tokens[i]=="-"){
+			if(tokens[i].equals("-")){
 				double first=S.pop();
 			double second=S.pop();
 			
 				S.push(first-second);
 			}
-			else if(tokens[i]=="*"){
+			else if(tokens[i].equals("*")){
 				double first=S.pop();
 			double second=S.pop();
 			
 				S.push(first*second);
 			}
-			else if(tokens[i]=="/"){
+			else if(tokens[i].equals("/")){
 				double first=S.pop();
 			double second=S.pop();
 			
 				S.push(first/second);
 			}
-			else if(tokens[i]=="%"){
+			else if(tokens[i].equals("%")){
 				double first=S.pop();
 			double second=S.pop();
 			
@@ -42,7 +41,7 @@ public class PostFix{
 		}
 		
     }
-    */
+    
 	    return 1;
 	    
     }
