@@ -46,7 +46,7 @@ public class PostFix{
     }
 	public static void main(String[] args) 
     {
-        String exp="2 3 *";
-        System.out.println(eval(exp));
+        
+        System.out.println(eval("10 2.0 +"));
     }
 }
