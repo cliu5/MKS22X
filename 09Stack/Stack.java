@@ -7,7 +7,7 @@ public class Stack<T>{
 	LinkedList<T> L = new LinkedList<T>();
     }
 
-    public Type pop(){
+    public T pop(){
 	return L.removeLast();
     }
 
