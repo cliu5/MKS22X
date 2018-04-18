@@ -2,35 +2,43 @@ public class PostFix{
 
     public static double eval(String exp){
         Stack S =new Stack();
-	String[] str= exp.split(" ");
-	   String temp = "";
-	    for(String x:str){
-		    temp+=x;}
-	    char[] tokens= temp.toCharArray();
+	String[] tokens= exp.split(" ");
+	   
         for(int i=0;i<tokens.length;i++){
-		if(Character.isDigit(tokens[i])){
-			S.push(tokens[i]);
-		}
-		else{
-			char first=S.pop();
-			char second=S.pop();
+		
+				
+		if(tokens[i]=="+"){
+			double first=S.pop();
+			double second=S.pop();
 			
-			if(tokens[i]=='+'){
 				S.push(first+second);
 			}
 			if(tokens[i]=='-'){
+				double first=S.pop();
+			double second=S.pop();
+			
 				S.push(first-second);
 			}
 			if(tokens[i]=='*'){
+				double first=S.pop();
+			double second=S.pop();
+			
 				S.push(first*second);
 			}
 			if(tokens[i]=='/'){
+				double first=S.pop();
+			double second=S.pop();
+			
 				S.push(first/second);
 			}
 			if(tokens[i]=='%'){
+				double first=S.pop();
+			double second=S.pop();
+			
 				S.push(first%second);
 			}
-			
+		else{
+			S.push(Double.parseDouble(tokens[i]));
 		}
 		
     }
