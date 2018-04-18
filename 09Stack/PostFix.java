@@ -9,8 +9,8 @@ public class PostFix{
            
             else
             {
-                int val1 = S.pop();
-                int val2 = S.pop();
+                int temp1 = S.pop();
+                int temp2 = S.pop();
                  
                 switch(c)
                 {
@@ -34,5 +34,9 @@ public class PostFix{
         }
         return S.pop();    
     }
-	
+	public static void main(String[] args) 
+    {
+        String exp="231*+9-";
+        System.out.println(eval(exp));
+    }
 }
