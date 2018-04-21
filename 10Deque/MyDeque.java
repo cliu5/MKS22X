@@ -27,10 +27,35 @@ public boolean isFull()
             start == end+1);
     }
 //These will add the element to the specified side. The deque will double capacity if there is no space left.
+	/*
 public void addFirst(Type element){
 	if(element==null){
 		throw new NullPointerException();
 	}
+
+        if (isFull())
+        {
+            resize();
+	    }
+ 
+        if (start == -1)
+        {
+            start = 0;
+            end = 0;
+        }
+         
+        // front is at first position of queue
+        else if (start == 0)
+            start = size - 1 ;
+  
+        else // decrement front end by '1'
+            start = start-1;
+  
+        // insert current element into Deque
+        ary[start] = element ;
+    }
+	
+	*/
 	
 }
 public void addLast(Type element){
