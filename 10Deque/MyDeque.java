@@ -55,9 +55,10 @@ public void addFirst(Type element){
         ary[start] = element ;
     }
 	
-	*/
+	
 	
 }
+*/
 public void addLast(Type element){
 }
 //These will retrieve and remove the element from the specified side.
