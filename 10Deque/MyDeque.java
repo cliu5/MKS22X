@@ -1,3 +1,4 @@
+import java.util.NoSuchElementException;
 public class MyDeque<Type>{
 private int start,end,size;
 private Type[]ary;
