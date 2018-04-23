@@ -149,4 +149,14 @@ public Type getLast(){
         }
         return ary[end];
 }
+	@SuppressWarnings("unchecked")
+	private void resize(){
+		Type[] previous = ary;
+        ary = (Type[]) new Object[length * 2];
+for(int i = start; i<start+size(); i++){
+ary[i-start] = ary[i % ary.length];
+}
+start = 0;
+end = size()-1;
+}
 }
