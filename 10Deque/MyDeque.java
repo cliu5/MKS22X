@@ -1,4 +1,4 @@
-import java.util.NoSuchElementException;
+import java.util.*;
 public class MyDeque<Type>{
 private int start,end,size;
 private Type[]data;
@@ -127,7 +127,7 @@ public Type removeFirst(){
         }
 
         size--;
-        return data;
+        return ans;
 		
 }
 
