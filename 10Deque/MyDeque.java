@@ -23,7 +23,7 @@ public int size(){
   return size;
 }
 	
-public void addFirst(E element){
+public void addFirst(Type element){
 	if(element==null){
 	throw new NullPointerException();
 	}
@@ -38,7 +38,7 @@ resize();
 	//if start is at the very beginning, add to the end//
 	else if (start == 0){
 		ary[ary.length-1]=element; 
-	start=data.length-1;
+	start=ary.length-1;
 	}
 	//if its just in the middle, the one before it is element//
 	    else{
@@ -50,7 +50,7 @@ resize();
 	
 	
 	
-public void addLast(E element){
+public void addLast(Type element){
 	if(element==null){
 	throw new NullPointerException();
 	}
@@ -94,10 +94,10 @@ public Type removeLast(){
 		throw new NoSuchElementException();
 	}
 
-        Type ans = data[end];
-        data[end] = null;
+        Type ans = ary[end];
+        ary[end] = null;
         if (end == 0) {
-            end = data.length - 1;
+            end = ary.length - 1;
         }
 
         else {
