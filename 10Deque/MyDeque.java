@@ -136,7 +136,7 @@ public Type removeFirst(){
 		return (start == -1);
 	}
 public Type getFirst(){
-	if(isEmpty() || end < 0)
+	if(size()==0)
         {
             throw new NoSuchElementException();
         }
