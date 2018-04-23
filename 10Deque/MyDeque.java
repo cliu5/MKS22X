@@ -56,12 +56,12 @@ public void addLast(Type element){
 	}
 	
 	//if its too small//
-else if(size == ary.length){
+else if(size == data.length){
 resize();
 }
 	//if its not full//
 	else if(size==0){
-	ary[end] = element;
+	data[end] = element;
 	}
 else if (end == data.length-1){
 		data[start]=element; 
@@ -105,7 +105,7 @@ public Type removeLast(){
         }
 
         size--;
-        return data;
+        return ans;
     }
 	
 	
