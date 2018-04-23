@@ -1,11 +1,11 @@
 import java.util.NoSuchElementException;
 public class MyDeque<Type>{
 private int start,end,size;
-private Type[]ary;
+private Type[]data;
 
   @SuppressWarnings("unchecked")
     public MyDeque(){
-	ary = (Type[])new Object[10];
+	data = (Type[])new Object[10];
 	
     }
     
@@ -14,7 +14,7 @@ public MyDeque(int initialCapacity){
 		if(initialCapacity<0){
 throw new IllegalArgumentException();
 }
-	ary = (Type[])new Object[initialCapacity];
+	data = (Type[])new Object[initialCapacity];
 	
 }
 	
@@ -28,21 +28,21 @@ public void addFirst(Type element){
 	throw new NullPointerException();
 	}
 	//if its too small//
-else if(size == ary.length){
+else if(size == data.length){
 resize();
 }
 	//if its not full//
 	else if(size==0){
-	ary[start] = element;
+	data[start] = element;
 	}
 	//if start is at the very beginning, add to the end//
 	else if (start == 0){
-		ary[ary.length-1]=element; 
-	start=ary.length-1;
+		data[data.length-1]=element; 
+	start=data.length-1;
 	}
 	//if its just in the middle, the one before it is element//
 	    else{
-      ary[start - 1] =element;
+      data[start - 1] =element;
       start--;
     }
     size++;	
@@ -63,13 +63,13 @@ resize();
 	else if(size==0){
 	ary[end] = element;
 	}
-else if (end == ary.length-1){
-		ary[start]=element; 
+else if (end == data.length-1){
+		data[start]=element; 
 	end=start;
 	}
 	
 else{
-	ary[end+1]=element;
+	data[end+1]=element;
 	end++;
 }
 	size++;
@@ -94,10 +94,10 @@ public Type removeLast(){
 		throw new NoSuchElementException();
 	}
 
-        Type ans = ary[end];
-        ary[end] = null;
+        Type ans = data[end];
+        data[end] = null;
         if (end == 0) {
-            end = ary.length - 1;
+            end = data.length - 1;
         }
 
         else {
@@ -105,7 +105,7 @@ public Type removeLast(){
         }
 
         size--;
-        return ans;
+        return data;
     }
 	
 	
@@ -117,9 +117,9 @@ public Type removeFirst(){
 	if(isEmpty()||end<0){
 		throw new NoSuchElementException();
 	}
-	 Type ans = ary[start];
-        ary[start] = null;
-        if (start == ary.length - 1) {
+	 Type ans = data[start];
+        data[start] = null;
+        if (start == data.length - 1) {
             start = 0;
         }
         else {
@@ -127,7 +127,7 @@ public Type removeFirst(){
         }
 
         size--;
-        return ans;
+        return data;
 		
 }
 
@@ -140,21 +140,21 @@ public Type getFirst(){
         {
             throw new NoSuchElementException();
         }
-        return ary[start];
+        return data[start];
 }
 public Type getLast(){
 	if(isEmpty() || end < 0)
         {
             throw new NoSuchElementException();
         }
-        return ary[end];
+        return data[end];
 }
 	@SuppressWarnings("unchecked")
 	private void resize(){
-		Type[] previous = ary;
-        ary = (Type[]) new Object[size() * 2];
+		Type[] previous = data;
+        data = (Type[]) new Object[size() * 2];
 for(int i = start; i<start+size(); i++){
-ary[i-start] = ary[i % ary.length];
+data[i-start] = data[i % data.length];
 }
 start = 0;
 end = size()-1;
