@@ -152,7 +152,7 @@ public Type getLast(){
 	@SuppressWarnings("unchecked")
 	private void resize(){
 		Type[] previous = ary;
-        ary = (Type[]) new Object[length * 2];
+        ary = (Type[]) new Object[size() * 2];
 for(int i = start; i<start+size(); i++){
 ary[i-start] = ary[i % ary.length];
 }
