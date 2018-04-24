@@ -35,7 +35,7 @@ public class ExpressionTree{
       else{
         double a=getLeft().evaluate();
         double b=getRight().evaluate();
-        return evalute(getOp(),a,b);
+        return evaluate(getOp(),a,b);
 
     }
 
