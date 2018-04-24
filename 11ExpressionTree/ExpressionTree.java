@@ -39,7 +39,7 @@ public class ExpressionTree{
 
     }
 
-   
+  }
     
 
   /*use the correct operator on both a and b, and return that value*/
