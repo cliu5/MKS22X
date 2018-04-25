@@ -150,15 +150,18 @@ public Type getLast(){
         return data[end];
 }
 	@SuppressWarnings("unchecked")
+	
+	//copy into ans
 	private void resize(){
-		Type[] previous = data;
-        data = (Type[]) new Object[size() * 2];
-for(int i = start; i<start+size(); i++){
-data[i-start] = data[i % data.length];
-}
-start = 0;
-end = size()-1;
-}
+	Type[] ans = (Type[])new Object[data.length * 2];
+	for (int i = 0; i < size(); i++){
+	    ans[i] = data[(start + i) % data.length];
+	}
+	start = 0;
+	end = size() - 1;
+	data = ans;
+    }
+
 	
 public String toString(){
     String ans = "[";
