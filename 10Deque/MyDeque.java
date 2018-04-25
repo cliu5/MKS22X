@@ -153,7 +153,7 @@ public Type getLast(){
 	
 	//copy into ans
 	private void resize(){
-	Type[] ans = (Type[])new Object[data.length * 2];
+	Type[] ans = (Type[])new Object[data.length * 2 +1];
 	for (int i = 0; i < size(); i++){
 	    ans[i] = data[(start + i) % data.length];
 	}
