@@ -11,72 +11,64 @@ public static int bronze(String filename) throws FileNotFoundException{
 File straw = new File(filename);
 Scanner in = new Scanner(straw);
 
- int r,c,e,n; 
-r = Integer.parseInt(in.nextInt());
-c = Integer.parseInt(in.nextInt());
-e = Integer.parseInt(in.nextInt());
-num=in.nextInt();
+ int r,c,e; 
+r = Integer.parseInt(in.next());
+c = Integer.parseInt(in.next());
+e = Integer.parseInt(in.next());
+
 int[][] lake = new int[r][c];
 
 
 for(int row = 0; row < r; row ++){
 for(int col = 0; col < c; col++){
-lake[row][col] = Integer.parseInt(in.nextInt());
+lake[row][col] = Integer.parseInt(in.next());
 }
 }
 
 
 
-while(num > 0){
-int _r = in.nextInt() - 1;
-int _c = in.nextInt() - 1;
-int _t = in.nextInt();
-int row1 = _r;
-int col1 = _c;
+while(in.hasNext()){
+int _r =  Integer.parseInt(in.next()) - 1;
+int _c =  Integer.parseInt(in.next()) - 1;
+int _t =  Integer.parseInt(in.next()) - 1;
+
 int maxE = 0;
-for(int row2 = _r; row2 < _r + 3 && row2 < lake.length; row2++){
-for(int col2 = _c; col2 < _c + 3 && col2 < lake[0].length; col2++){
+
+ 
+for(int row2 = _r; row2 >= 0 && row2 < _r + 3; row2++){
+for(int col2 = _c; col2 >=0 && col2<_c+3; col2++){
 if(lake[row2][col2] > maxE){
-row1 = row2;
-col1 = col2;
+
 maxE = lake[row2][col2];
 }
 }
 }
 
 int newE = maxE - _t;
-lake[row1][col1] = newE;
-for(int row2 = _r; row2 < _r + 3 && row2 < lake.length; row2++){
-for(int col2 = _c; col2 < _c + 3 && col2 < lake[0].length; col2++){
+
+for(int row2 = _r; row2 >= 0 && row2 < _r + 3; row2++){
+for(int col2 = _c; col2 >=0 && col2< _c+3; col2++){
 if(lake[row2][col2] > newE){
 lake[row2][col2] = newE;
 }
 }
 }
 
-num--;
-if(num > 0){
-in.nextLine();
-}
-}
 int d=0;
-for(int row2 = 0; row2 < lake.length; row2++){
-for(int col2 = 0; col2 < lake[0].length; col2++){
-lake[row2][col2] = lake[row2][col2] - e;
-if(lake[row2][col2] < 0){
-d += lake[row2][col2] * -1;
+for(int row2 = 0; row2 < r; row2++){
+for(int col2 = 0; col2 <c; col2++){
+if(e- lake[row2][col2] < 0){
+ lake[row2][col2]=0;
+}
+ else{
+  lake[row2][col2]=e - lake[row2][col2];
+  d+=lake[row2][col2];
 }
 }
 }
-
 return d * 72 * 72;
-
-
-}catch(FileNotFoundException e){
-System.out.println("Enter a valid file!");
 }
-return -1;
-}
+
 
 
 public static int silver(String filename){
