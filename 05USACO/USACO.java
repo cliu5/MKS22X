@@ -53,7 +53,7 @@ lake[row2][col2] = newE;
 }
 }
 }
-
+}
 int d=0;
 for(int row2 = 0; row2 < r; row2++){
 for(int col2 = 0; col2 <c; col2++){
@@ -68,7 +68,7 @@ if(e- lake[row2][col2] < 0){
 }
 return d * 72 * 72;
 }
-}
+
 
 
 public static int silver(String filename){
