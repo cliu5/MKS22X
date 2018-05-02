@@ -68,7 +68,7 @@ if(e- lake[row2][col2] < 0){
 }
 return d * 72 * 72;
 }
-
+}
 
 
 public static int silver(String filename){
