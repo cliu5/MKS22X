@@ -70,8 +70,7 @@ return d * 72 * 72;
 }
 
 
-
-public static int silver(String filename) throws FileNotFoundException(){
+public static int silver(String filename) throws FileNotFoundException{
 File straw=new File(filename);
 Scanner in= new Scanner(straw);
  String first = in.nextLine();
