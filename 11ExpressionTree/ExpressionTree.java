@@ -5,9 +5,9 @@ public class ExpressionTree{
   /*return the expression as an infix notation string with parenthesis*/
   /* The sample tree would be: "( 3 + (2 * 10))"     */
   public String toString(){
-    String ans="";
+    String ans=" ";
     if(isValue()){
-	    ans += getValue() + " ";
+	    ans += getValue() + "";
       return ans;
 	}
 	ans += "(" + getLeft().toString() + getOp() + getRight().toString() + " )";
