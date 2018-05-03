@@ -10,7 +10,7 @@ public class ExpressionTree{
 	    ans += getValue() + "";
       return ans;
 	}
-	ans += "(" + getLeft().toString() + getOp() + getRight().toString() + " )";
+	ans += "(" + getLeft().toString() + getOp() + getRight().toString() + ")";
 	return ans;
     
 
