@@ -106,7 +106,8 @@ startMap[startRow][startCol]=1;
      int[][]moves={{i+1},{i-1,j},{i.j+1},{i,j-1}};
      for(int[]x:moves){
       if(x[0]>=0&&x[0]<r&&x[1]>=0&&x[1]<c){
-       if(map[x[0]][x[1]]+=map[rowIndex][colIndex];
+       if(map[x[0]][x[1]]!='*'){
+       map[x[0]][x[1]]+=map[rowIndex][colIndex];
           }
           }
           }
