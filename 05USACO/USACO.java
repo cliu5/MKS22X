@@ -103,7 +103,7 @@ startMap[startRow][startCol]=1;
   for(int rowIndex=0;rowIndex<r;rowIndex++){
    for(int colIndex=0;colIndex<c;colIndex++){
     if(startMap[rowIndex][colIndex]!=0){
-     int[][]moves={{i+1},{i-1,j},{i.j+1},{i,j-1}};
+     int[][]moves={{rowIndex+1},{rowIndex-1,colIndex},{rowIndex,colIndex+1},{rowIndex,colIndex-1}};
      for(int[]x:moves){
       if(x[0]>=0&&x[0]<r&&x[1]>=0&&x[1]<c){
        if(map[x[0]][x[1]]!='*'){
