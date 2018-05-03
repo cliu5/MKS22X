@@ -81,8 +81,8 @@ Scanner in= new Scanner(straw);
  int c=Integer.parseInt(firstLine[1]);
  int t=Integer.parseInt(firstLine[2]);
  char[][]map=new char[r][c];
-  int[][] startMap=new int[r][c]
-    int[][] endMap=new int[r][c]
+  int[][] startMap=new int[r][c];
+    int[][] endMap=new int[r][c];
  
  //filling up the map w/ info, i spent too much time on this stpuid part :( //
  for(int rowIndex=0;rowIndex<r;rowIndex++){
@@ -104,7 +104,7 @@ startMap[startRow][startCol]=1;
   for(int rowIndex=0;rowIndex<r;rowIndex++){
    for(int colIndex=0;colIndex<c;colIndex++){
     if(startMap[rowIndex][colIndex]!=0){
-     int[][]moves={{i+1},{i-1,j}.{i.j+1},{i,j-1}};
+     int[][]moves={{i+1},{i-1,j},{i.j+1},{i,j-1}};
      for(int[]x:moves){
       if(x[0]>=0&&x[0]<r&&x[1]>=0&&x[1]<c){
        if(map[x[0]][x[1]]+=map[rowIndex][colIndex];
@@ -117,7 +117,7 @@ startMap[startRow][startCol]=1;
           }
           startMap=endMap;
           endMap=new int[row][col];
-          time--;
+          t--;
           }
           return startMap[lastRow][lastCol];
           }
