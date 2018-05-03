@@ -116,7 +116,7 @@ startMap[startRow][startCol]=1;
           }
           }
           startMap=endMap;
-          endMap=new int[row][col];
+          endMap=new int[r][c];
           t--;
           }
           return startMap[lastRow][lastCol];
