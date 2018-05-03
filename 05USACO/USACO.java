@@ -71,77 +71,58 @@ return d * 72 * 72;
 
 
 
-public static int silver(String filename){
-
-try{
+public static int silver(String filename) throws FileNotFoundException(){
 File straw=new File(filename);
 Scanner in= new Scanner(straw);
-int l=in.nextInt();
-int w=in.nextInt();
-int t= in.nextInt();
-char[][]map=new char[l][w];
-for (int r=0; r<l; r++){
-String line = in.next();
-for (int c=w; c<w; c++){
-map[r][c] = line.charAt(c);
-}
-}
-int[]coordinates=new int[4];
-for (int i=0;i<coordinates.length;i++){
-coordinates[i]=in.nextInt()-1;
-}
-int[][] old=new int[l][w];
-int[][] now=new int[l][w];
-for (int r=0;r<map.length;r++){
-for(int c=0;c<map[0].length;c++){
-if(map[r][c]=='*'){
-old[r][c]=-1;
-now[r][c]=-1;
-}
-}
-}
-now[coordinates[0]][coordinates[1]]=1;
-
-while (t>0){
-for(int r=0;r<map.length;r++){
-for(int c=0;c<map[0].length;c++){
-old[r][c]=now[r][c];
-}}
-for(int r=0;r<now.length;r++){
-for(int c=0;c<now[0].length;c++){
-if(now[r][c]!=-1){
-now[r][c]=0;
-if(r-1>=0&&now[r-1][c]>=0){
-now[r][c]+=old[r-1][c];
-}
-if(c-1>=0&&now[r][c-1]>=0){
-now[r][c]+=old[r][c-1];
-}
-if(r+1<old.length&&now[r+1][c]>=0){
-now[r][c]+=old[r+1][c];
-}
-if(c+1<old[r].length && now[r][c+1]>=0){
-now[r][c]+=old[r][c+1];
-}
-}
-}
-}
-t--;
-}
-return now[coordinates[2]][coordinates[3]];
-}
+ String first = in.nextLine();
+ String[]firstLine=first.split(" ");
+ //first getting all the info
+ int r=Integer.parseInt(firstLine[0]);
+ int c=Integer.parseInt(firstLine[1]);
+ int t=Integer.parseInt(firstLine[2]);
+ char[][]map=new char[r][c];
+  int[][] startMap=new int[r][c]
+    int[][] endMap=new int[r][c]
  
- catch(FileNotFoundException e){
-  System.out.println("Enter a valid file!");
-}
-return -1;
-}
-
-
-
-
-
-}
-
-
-
+ //filling up the map w/ info, i spent too much time on this stpuid part :( //
+ for(int rowIndex=0;rowIndex<r;rowIndex++){
+  String currentLine=in.nextLine();
+  for(int colIndex=0;colIndex<c;colIndex++){
+   map[rowIndex][colIndex]=currentLine.charAt(colIndex);
+  }
+ }
+  
+ String second=in.nextLine();
+ String[]secondLine=second.split(" ");
+ int startRow=Integer.parseInt(secondLine[0])-1;
+ int startCol=Integer.parseInt(secondLine[1])-1;
+ int lastRow=Integer.parseInt(secondLine[2])-1;
+ int lastCol=Integer.parseInt(secondLine[3])-1;
+ 
+startMap[startRow][startCol]=1;
+ while(t>0){
+  for(int rowIndex=0;rowIndex<r;rowIndex++){
+   for(int colIndex=0;colIndex<c;colIndex++){
+    if(startMap[rowIndex][colIndex]!=0){
+     int[][]moves={{i+1},{i-1,j}.{i.j+1},{i,j-1}};
+     for(int[]x:moves){
+      if(x[0]>=0&&x[0]<r&&x[1]>=0&&x[1]<c){
+       if(map[x[0]][x[1]]+=map[rowIndex][colIndex];
+          }
+          }
+          }
+          map[rowIndex][colIndex]=0;
+          }
+          }
+          }
+          startMap=endMap;
+          endMap=new int[row][col];
+          time--;
+          }
+          return startMap[lastRow][lastCol];
+          }
+          return 0;
+          }
+          }
+ 
+  
