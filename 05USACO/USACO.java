@@ -121,7 +121,7 @@ startMap[startRow][startCol]=1;
           }
           return startMap[lastRow][lastCol];
 
-
+}
           return 0;
 }
           }
