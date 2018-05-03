@@ -1,10 +1,10 @@
 public class MyHeap{
-  public void MyHeap(){
+  public MyHeap(){
   }
   
   //construct empty max heap//
 
-  public void MyHeap(boolean){
+  public MyHeap(boolean){
 
   }
  //true ; construct empty max heap, false: construct empty min heap.
