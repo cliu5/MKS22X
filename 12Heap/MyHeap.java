@@ -1,12 +1,30 @@
-public class MyHeap{
-  public MyHeap(){
-  }
+import java.io.*;
+import java.util.*
+
+@SuppressWarnings("unchecked")
+public class MyHeap<T extends Comparable<T>>{
+
+  
+  public T[] ary;
+    public boolean ifMax;
+    public int size;
+ 
+    @SuppressWarnings("unchecked")
+    public MyHeap(){
+	ary = (T[]) new Comparable[10];
+	size = 0;
+	ifMax = true;
+    }
   
   //construct empty max heap//
 
-  public MyHeap(boolean){
+    @SuppressWarnings("unchecked")
+    public MyHeap(boolean b){
+	ary = (T[]) new Comparable[10];
+	size = 0;
+	ifMax = b;
+    }
 
-  }
  //true ; construct empty max heap, false: construct empty min heap.
   
   public void add(String s){
@@ -15,7 +33,10 @@ public class MyHeap{
   }
   public String peek(){
   }
+  
+  
 public int size(){
+return size;
 }
   
 
