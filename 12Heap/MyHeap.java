@@ -51,6 +51,12 @@ return size;
 }
   
 //helpers
+public void pushUp(){
+}
+public void pushDown(){
+}
+public void swap(T[], T first, T second){
+}
 	@SuppressWarnings("unchecked")
     public void resize(){
 	    //just copying over stuff
