@@ -30,6 +30,13 @@ public class MyHeap<T extends Comparable<T>>{
   public void add(String s){
   }
   public String remove(){
+	T temp = ary[0];
+	 //swap first and last
+	  //remove last//
+	pushDown();
+	return temp;
+    }
+
 	  
   }
   public String peek(){
