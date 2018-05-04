@@ -30,8 +30,10 @@ public class MyHeap<T extends Comparable<T>>{
   public void add(String s){
   }
   public String remove(){
+	  
   }
   public String peek(){
+	  return ary[0];
   }
   
   
@@ -39,5 +41,14 @@ public int size(){
 return size;
 }
   
-
+//helpers
+	@SuppressWarnings("unchecked")
+    public void resize(){
+	    //just copying over stuff
+        T[] temp=(T[])new Comparable[size()*2];
+	for(int i=0; i<size(); i++){
+	    temp[i] = ary[i];
+	}
+	ary=temp;
+    }
 }
