@@ -105,6 +105,12 @@ startMap[startRow][startCol]=1;
     if(startMap[rowIndex][colIndex]!=0){
      
      //I REALLY JUST TRIED SO FREAKIN HARD TO DEBUG THIS STUFF BUT IT WASN'T WORKING SO I ASKED IVAN AND USED HIS SYNTAX FOR THIS PART//
+     /*okay so the way ivan explained it to me
+     was this part is like cellular automaton and basically you loop through these moves and
+     First if statement checks to see if it’s within bounds and range
+Second if statement checks to see if it(the next pos) is a tree (‘*’)
+hahahhaha i hate this lab :( :( :( :( :( 
+*/
      int[][]moves={{rowIndex+1},{rowIndex-1,colIndex},{rowIndex,colIndex+1},{rowIndex,colIndex-1}};
      for(int[]x:moves){
       if(x[0]>=0&&x[0]<r&&x[1]>=0&&x[1]<c){
