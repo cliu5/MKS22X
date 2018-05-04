@@ -33,8 +33,8 @@ public class MyHeap<T extends Comparable<T>>{
   }
   public String remove(){
 	T temp = ary[0];
-	 //swap first and last
-	  //remove last//
+	 ary[0]=ary[ary.length-1];
+	 ary[ary.length-1]=null;
 	pushDown();
 	return temp;
     }
