@@ -27,7 +27,9 @@ public class MyHeap<T extends Comparable<T>>{
 
  //true ; construct empty max heap, false: construct empty min heap.
   
-  public void add(String s){
+  public void add(T s){
+	  ary[ary.length-1]=s;
+	  pushUp();
   }
   public String remove(){
 	T temp = ary[0];
