@@ -1,4 +1,4 @@
-1. Frontier interface
+import java.util.*;
 
 public interface Frontier{
   public Location next();
