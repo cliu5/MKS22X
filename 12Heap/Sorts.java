@@ -1,4 +1,4 @@
-mport java.util.*;
+import java.util.*;
 public class Sorts{
     
     public static void heapsort(Integer[] ary){
