@@ -28,9 +28,9 @@ public class Sorts{
 	    a[i] = new Integer ((int)(Math.random() * 10));
 	}
 
-	System.out.println("....." + print(a));
+	System.out.println(a);
 	heapsort(a);
-	System.out.println("....." + print(a));
+	System.out.println(a);
 	
     }
     
