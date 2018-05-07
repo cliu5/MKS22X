@@ -97,7 +97,7 @@ public void pushDown(){
 				}
     }
 }
-public void swap(T[], int first, int second){
+public void swap(T[]ary, int first, int second){
 	T temp = ary[first];
 	ary[first]=ary[second];
 	ary[second]=temp;
