@@ -84,6 +84,7 @@ public void pushDown(){
 						index = index * 2 + 2;
 					}
 				}
+			}
 				else if(!ifMax) {
 					if (ary[index].compareTo(ary[index*2+1]) < 0 ) {
 						T temp = ary[index];
@@ -95,6 +96,7 @@ public void pushDown(){
 					
 				}
     }
+}
 public void swap(T[], int first, int second){
 	T temp = ary[first];
 	ary[first]=ary[second];
