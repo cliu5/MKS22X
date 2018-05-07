@@ -1,14 +1,14 @@
 import java.util.*;
 public class Sorts{
     
-    public static void heapsort(int[] ary){
+    public static void heapsort(Integer[] ary){
 	MyHeap<int> heap = heapify(ary);
 	for ( int i = ary.length-1 ; i>0;i--){
     ary[i]=heap.remove();
     }
     }
     
-    public static MyHeap<Integer> heapify(int[] ary){
+    public static MyHeap<Integer> heapify(Integer[] ary){
 	MyHeap<int> heap = new MyHeap<>();
 	for(int i = 0; i < ary.length; i++){
 	    heap.add(ary[i]);
@@ -22,8 +22,8 @@ public class Sorts{
     
    
     public static void main(String[] args){
-    int[] reg = new int[25];
-    int[] heap = new int[25];
+    Integer[] reg = new int[25];
+    Integer[] heap = new int[25];
 
     for(int i = 0; i < 25; i ++){
       int temp = (int)(Math.random() * 1000);
