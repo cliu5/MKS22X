@@ -3,14 +3,14 @@ public class Sorts{
     
     public static void heapsort(Integer[] ary){
 	MyHeap<Integer> heap = heapify(ary);
-	for ( int i = ary.size-1 ; i>0;i--){
+	for ( int i = ary.length-1 ; i>0;i--){
     ary[i]=heap.remove();
     }
     }
     
     public static MyHeap<Integer> heapify(Integer[] ary){
 	MyHeap<Integer> heap = new MyHeap<>();
-	for(int i = 0; i < ary.size; i++){
+	for(int i = 0; i < ary.length; i++){
 	    heap.add(ary[i]);
 	}
 	return heap;
