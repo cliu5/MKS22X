@@ -41,7 +41,7 @@ public class MyHeap<T extends Comparable<T>>{
     }
 
 	  
-  }
+  
   public String peek(){
 	  return ary[0];
   }
