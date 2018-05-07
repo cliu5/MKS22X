@@ -32,7 +32,7 @@ public class MyHeap<T extends Comparable<T>>{
 	  ary[ary.length-1]=s;
 	  pushUp();
   }
-  public String remove(){
+  public T remove(){
 	T temp = ary[0];
 	 ary[0]=ary[ary.length-1];
 	 ary[ary.length-1]=null;
@@ -42,7 +42,7 @@ public class MyHeap<T extends Comparable<T>>{
 
 	  
   
-  public String peek(){
+  public T peek(){
 	  return ary[0];
   }
   
@@ -77,7 +77,7 @@ public void pushDown(){
 			if (ifMax) {
 				if (ary[index*2+1].compareTo(ary[index*2+2]) < 0) {
 					if (ary[index].compareTo(ary[index*2+2]) < 0 ) {
-						T temp = data[index];
+						T temp = ary[index];
 						ary[index] = ary[index*2+2];
 						ary[index*2+2] = temp;
 
@@ -89,7 +89,7 @@ public void pushDown(){
 					if (ary[index].compareTo(ary[index*2+1]) < 0 ) {
 						T temp = ary[index];
 						ary[index] = ary[index*2+1];
-						ary[index*2+1] = index;
+						ary[index*2+1] = temp;
 
 						index = index*2+1;
 					}
