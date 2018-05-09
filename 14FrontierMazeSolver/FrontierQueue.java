@@ -1,10 +1,10 @@
 import java.util.*;
 
 public class FrontierQueue implements Frontier{
-  private ArrayList<Location> f;
+  private LinkedList<Location> f;
 
   public FrontierQueue(){
-    f = new LinkedList<Location>();
+    f = new LinkedList<>();
   }
 
   public Location next(){
