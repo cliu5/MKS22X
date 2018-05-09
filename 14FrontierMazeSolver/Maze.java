@@ -16,7 +16,18 @@ public class Maze{
   YOU MUST COMPLETE THIS METHOD!!!
   */
   public Location[] getNeighbors(Location L){
-    return null;
+    Location[] ans = new Location[4];
+      int x = L.getRow();
+      int y = L.getCol();
+    //if statements to add to ans or not
+      
+      
+    
+    
+    
+    
+    
+    
   }
 
   public Location getStart(){
