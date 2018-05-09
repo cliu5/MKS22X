@@ -7,6 +7,8 @@ public interface Frontier{
 }
 
 
+
+/*
 2. Location (see image) 
 
 public class Location{
@@ -108,4 +110,4 @@ public class Maze{
 }
 
 
-
+*/
