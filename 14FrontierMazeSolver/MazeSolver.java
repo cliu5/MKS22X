@@ -2,7 +2,7 @@ public class MazeSolver{
   private Maze maze;
   private Frontier frontier;
   public MazeSolver(String mazeText){
-    
+    maze=new Maze(mazeText);
   }
   //Default to BFS
   public boolean solve(){ return solve(0); }
