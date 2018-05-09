@@ -4,7 +4,7 @@ public class FrontierQueue implements Frontier{
   private ArrayList<Location> f;
 
   public FrontierQueue(){
-    f = new LinkedList<>();
+    f = new LinkedList<Location>();
   }
 
   public Location next(){
