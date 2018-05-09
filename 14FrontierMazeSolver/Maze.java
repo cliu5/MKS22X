@@ -29,3 +29,4 @@ public class Maze{
   public Location getEnd(){
     return null;
   }
+}
