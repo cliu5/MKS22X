@@ -12,10 +12,12 @@ public class Maze{
   // '@' - part of solution
   // 'S' - starting space (do not replace this)
   public String toString(){
+    return "";
   }
    
   // Work on this method as a group! 
   public String toStringColor(){
+    return "";
   }
   //return a list of Locations that are:
   // adjacent to n and  not visited
