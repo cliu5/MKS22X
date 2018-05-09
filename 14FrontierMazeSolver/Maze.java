@@ -19,6 +19,7 @@ public class Maze{
     Location[] ans = new Location[4];
       int x = L.getRow();
       int y = L.getCol();
+    
     //if statements to add to ans or not
       
       
