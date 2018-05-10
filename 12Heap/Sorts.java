@@ -8,7 +8,7 @@ public class Sorts{
     }
     }
     
-    public static MyHeap<int> heapify(int[] ary){
+    public static MyHeap heapify(int[] ary){
 	MyHeap heap = new MyHeap<>();
 	for(int i = 0; i < ary.length; i++){
 	    heap.add(ary[i]);
