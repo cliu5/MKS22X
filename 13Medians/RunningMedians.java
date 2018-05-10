@@ -30,7 +30,7 @@ public class RunningMedians{
 }
 
     public double getMedian(){
-	int ans=0;
+	Double ans=0.0;
 	if(size()==0){
 	    throw new NoSuchElementException();
 	}
