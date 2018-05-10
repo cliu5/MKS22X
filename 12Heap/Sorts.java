@@ -18,8 +18,8 @@ public class Sorts{
 
  
  public static void main(String[] args){
-    Integer[] reg = new int[25];
-    Integer[] heap = new int[25];
+    Integer[] reg = new Integer[25];
+    Integer[] heap = new Integer[25];
 
     for(int i = 0; i < 25; i ++){
       int temp = (int)(Math.random() * 1000);
