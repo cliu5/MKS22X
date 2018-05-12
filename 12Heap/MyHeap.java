@@ -89,35 +89,69 @@ public void pushUp(int index){
 	
 	
 }
-public void pushDown(){
-	int index = 0;
-		while (index*2+2 < size) {
-			if (ifMax) {
-				if (ary[index*2+1].compareTo(ary[index*2+2]) < 0) {
-					if (ary[index].compareTo(ary[index*2+2]) < 0 ) {
-						T temp = ary[index];
-						ary[index] = ary[index*2+2];
-						ary[index*2+2] = temp;
-
-						index = index * 2 + 2;
-					}
-				}
-			}
-				else if(!ifMax) {
-					if (ary[index].compareTo(ary[index*2+1]) < 0 ) {
-						T temp = ary[index];
-						ary[index] = ary[index*2+1];
-						ary[index*2+1] = temp;
-
-						index = index*2+1;
-					}
-					
-				}
+public void pushDown(int index){
+	int rightChild=2*index+2;
+	int leftChild=2*index+1;
+	
+	if(rightChild < size){
+	    if(ifMax && (ary[rightChild].compareTo(ary[index]) > 0 || ary[leftChild].compareTo(ary[index]) > 0)){
+		if(data[rightChild].compareTo(data[leftChild]) > 0){
+			swap(rightChild,index);
+		    pushdown(rightChild);
+		}else {
+			swap(leftChild,index);
+		    pushdown(leftChild);
+		}
+		    //same as above if statement but now if the rightChild is greaterthan left child//
+	    }else if(!ifMax && (ary[rigthChild].compareTo(ary[index]) < 0 || ary[leftChild].compareTo(ary[index]) < 0)){
+		if(ary[rightChild].compareTo(ary[leftChild]) < 0){
+		    swap(rightChild,index);
+		    pushdown(rightChild);
+		}else {
+		    swap(leftChild,index);
+		    pushdown(leftChild);
+		}
+	    }
+	}else if(leftChild < size){
+	    if(ifMax && ary[leftChild].compareTo(ary[index]) > 0||!ifMax && ary[leftChild].compareTo(ary[index]) < 0){
+		    swap(leftChild,index);
+		pushdown(leftChild);
+	    }
+	}
     }
-}
+	
 public void swap(T[]ary, int first, int second){
 	T temp = ary[first];
 	ary[first]=ary[second];
 	ary[second]=temp;
 }
+	 public static void main(String[] args){
+	MyHeap m = new MyHeap(false);
+	//String a = "";
+	Random r = new Random();
+	for(int i = 0; i < (int)Integer.parseInt(args[0]); i++){
+	    m.add(Integer.valueOf(r.nextInt(10000)));
+	    //a+= i;
+	    //System.out.println(m);
+
+	}
+	boolean isgood = true;
+	for(int i = 0; i < m.size(); i++){
+	    if((2*i + 2 < m.size() && m.get(2 * i +2) != null) && (m.get(i).compareTo(m.get(2 * i + 1))<0 || m.get(i).compareTo(m.get(2 * i +2)) < 0)){
+		isgood = false;
+	    }
+	    System.out.println(isgood);
+	}
+	System.out.println(m);
+	for(int i = 0; i < (int)Integer.parseInt(args[0]); i++){
+            System.out.println(m.remove());
+            //a+= i;
+
+	    }
+	String b = "1230";
+	String c = "123";
+	System.out.println(b.compareTo(c));
+
+    }
+
 }
