@@ -95,21 +95,21 @@ public void pushDown(int index){
 	
 	if(rightChild < size){
 	    if(ifMax && (ary[rightChild].compareTo(ary[index]) > 0 || ary[leftChild].compareTo(ary[index]) > 0)){
-		if(data[rightChild].compareTo(data[leftChild]) > 0){
+		if(ary[rightChild].compareTo(ary[leftChild]) > 0){
 			swap(ary,rightChild,index);
-		    pushdown(rightChild);
+		    pushDown(rightChild);
 		}else {
 			swap(ary,leftChild,index);
-		    pushdown(leftChild);
+		    pushDown(leftChild);
 		}
 		    //same as above if statement but now if the rightChild is greaterthan left child//
 	    }else if(!ifMax && (ary[rigthChild].compareTo(ary[index]) < 0 || ary[leftChild].compareTo(ary[index]) < 0)){
 		if(ary[rightChild].compareTo(ary[leftChild]) < 0){
 		    swap(ary,rightChild,index);
-		    pushdown(rightChild);
+		    pushDown(rightChild);
 		}else {
 		    swap(ary,leftChild,index);
-		    pushdown(leftChild);
+		    pushDown(leftChild);
 		}
 	    }
 	}else if(leftChild < size){
