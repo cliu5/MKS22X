@@ -53,8 +53,8 @@ return size;
   
 //helpers
 public void pushUp(){
-	T temp = ary[size-1];
-	int index = size - 1;
+	T temp = ary[(ary.length-1)];
+	int index = ary.length-1;
 
 	if(ifMax){
 	    while((index/2 > 0) &&
