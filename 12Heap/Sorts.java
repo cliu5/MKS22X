@@ -1,22 +1,14 @@
 import java.util.*;
 public class Sorts{
     
-    public static void heapsort(Integer[] ary){
+public static void heapsort(Integer[] ary){
 	MyHeap<Integer> heap = heapify(ary);
-	for ( int i = ary.length-1 ; i>0;i--){
-    ary[i]=heap.remove();
+	for ( int i = 0;i<ary.length;i++){
+    ary[heap.size()]=heap.remove();
     }
     }
     
-    public static MyHeap<Integer> heapify(Integer[] ary){
-	MyHeap<Integer> heap = new MyHeap<>();
-	for(int i = 0; i < ary.length; i++){
-	    heap.add(ary[i]);
-	}
-	return heap;
-    }
-
- 
+    
  public static void main(String[] args){
     Integer[] reg = new Integer[25];
     Integer[] heap = new Integer[25];
