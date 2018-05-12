@@ -125,33 +125,5 @@ public void swap(T[]ary, int first, int second){
 	ary[first]=ary[second];
 	ary[second]=temp;
 }
-	 public static void main(String[] args){
-	MyHeap m = new MyHeap(false);
-	//String a = "";
-	Random r = new Random();
-	for(int i = 0; i < (int)Integer.parseInt(args[0]); i++){
-	    m.add(Integer.valueOf(r.nextInt(10000)));
-	    //a+= i;
-	    //System.out.println(m);
-
-	}
-	boolean isgood = true;
-	for(int i = 0; i < m.size(); i++){
-	    if((2*i + 2 < m.size() && m.get(2 * i +2) != null) && (m.get(i).compareTo(m.get(2 * i + 1))<0 || m.get(i).compareTo(m.get(2 * i +2)) < 0)){
-		isgood = false;
-	    }
-	    System.out.println(isgood);
-	}
-	System.out.println(m);
-	for(int i = 0; i < (int)Integer.parseInt(args[0]); i++){
-            System.out.println(m.remove());
-            //a+= i;
-
-	    }
-	String b = "1230";
-	String c = "123";
-	System.out.println(b.compareTo(c));
-
-    }
-
+	 
 }
