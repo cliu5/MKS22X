@@ -125,5 +125,24 @@ public void swap(T[]ary, int first, int second){
 	ary[first]=ary[second];
 	ary[second]=temp;
 }
-	 
+	 public static MyHeap<Integer> heapify(Integer[] ary){
+	MyHeap<Integer> heap = new MyHeap<>();
+	for(int i = 0; i < ary.length; i++){
+	    heap.add(ary[i]);
+	}
+	return heap;
+    }
+
+  public void heapify(T[] data){
+	ary = data;
+	size = ary.length;
+	for(int i = size - 1; i >= 0; i--){
+	    if(2*i + 1 < size){
+		pushDown(i);
+	    }
+	}
+    }
+
+	
+	
 }
