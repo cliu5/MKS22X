@@ -28,22 +28,50 @@ public class MyHeap<T extends Comparable<T>>{
 
  //true ; construct empty max heap, false: construct empty min heap.
   
+	@SuppressWarnings("unchecked")
+	public void resize(){
+		T[]temp=(T[])new Comparable[size*2];
+		for(int i=0;i<ary.length;i++){
+			temp[i]=ary[i];
+		}
+		ary=temp;
+	}
+	
   public void add(T s){
-	  ary[ary.length-1]=s;
-	  pushUp();
+	  if (size==ary.length){
+		  resize();
+	  }
+	  if(size==0){
+		  ary[0]=s;
+	  }
+	  else{
+		  ary[size]=s;
+		  pushUp(size);
+	  }
+	  size++;
   }
+			 
+	 
   public T remove(){
+	  if(size==0){
+		  return null;
+	  }
 	T temp = ary[0];
-	 ary[0]=ary[ary.length-1];
-	 ary[ary.length-1]=null;
-	pushDown();
+	 ary[0]=ary[size-1];
+	  size--;
+	  pushDown(0);
 	return temp;
     }
 
 	  
   
   public T peek(){
+	  if(size==0){
+		  return null;
+	  }
+	  else{
 	  return ary[0];
+	  }
   }
   
   
@@ -52,7 +80,12 @@ return size;
 }
   
 //helpers
-public void pushUp(){
+public void pushUp(int index){
+	
+	
+	
+	
+	
 	T temp = ary[(ary.length-1)];
 	int index = ary.length-1;
 
@@ -102,13 +135,4 @@ public void swap(T[]ary, int first, int second){
 	ary[first]=ary[second];
 	ary[second]=temp;
 }
-	@SuppressWarnings("unchecked")
-    public void resize(){
-	    //just copying over stuff
-        T[] temp=(T[])new Comparable[size()*2];
-	for(int i=0; i<size(); i++){
-	    temp[i] = ary[i];
-	}
-	ary=temp;
-    }
 }
