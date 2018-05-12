@@ -82,7 +82,7 @@ return size;
 //helpers
 public void pushUp(int index){
 	if(ifMax && ary[index].compareTo(ary[(index - 1) / 2]) > 0 || !ifMax&&ary[index].compareTo(ary[(index-1)/2])<0){
-		swap(index,(index-1)/2);
+		swap(ary[],index,(index-1)/2);
 		pushUp((index-1/2));
     }
 	
@@ -96,25 +96,25 @@ public void pushDown(int index){
 	if(rightChild < size){
 	    if(ifMax && (ary[rightChild].compareTo(ary[index]) > 0 || ary[leftChild].compareTo(ary[index]) > 0)){
 		if(data[rightChild].compareTo(data[leftChild]) > 0){
-			swap(rightChild,index);
+			swap(ary[],rightChild,index);
 		    pushdown(rightChild);
 		}else {
-			swap(leftChild,index);
+			swap(ary[],leftChild,index);
 		    pushdown(leftChild);
 		}
 		    //same as above if statement but now if the rightChild is greaterthan left child//
 	    }else if(!ifMax && (ary[rigthChild].compareTo(ary[index]) < 0 || ary[leftChild].compareTo(ary[index]) < 0)){
 		if(ary[rightChild].compareTo(ary[leftChild]) < 0){
-		    swap(rightChild,index);
+		    swap(ary[],rightChild,index);
 		    pushdown(rightChild);
 		}else {
-		    swap(leftChild,index);
+		    swap(ary[],leftChild,index);
 		    pushdown(leftChild);
 		}
 	    }
 	}else if(leftChild < size){
 	    if(ifMax && ary[leftChild].compareTo(ary[index]) > 0||!ifMax && ary[leftChild].compareTo(ary[index]) < 0){
-		    swap(leftChild,index);
+		    swap(ary[],leftChild,index);
 		pushdown(leftChild);
 	    }
 	}
