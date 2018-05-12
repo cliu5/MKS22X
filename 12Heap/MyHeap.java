@@ -1,6 +1,6 @@
 import java.io.*;
 import java.util.*;
-//thanks viv lee for the help//
+//thanks vivien lee who had Mr. K last year for allllll the help with this lab //
 
 @SuppressWarnings("unchecked")
 public class MyHeap<T extends Comparable<T>>{
