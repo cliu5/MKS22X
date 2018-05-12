@@ -81,28 +81,13 @@ return size;
   
 //helpers
 public void pushUp(int index){
+	if(ifMax && ary[index].compareTo(ary[(index - 1) / 2]) > 0 || !ifMax&&ary[index].compareTo(ary[(index-1)/2])<0){
+		swap(index,(index-1)/2);
+		pushUp((index-1/2));
+    }
 	
 	
 	
-	
-	
-	T temp = ary[(ary.length-1)];
-	int index = ary.length-1;
-
-	if(ifMax){
-	    while((index/2 > 0) &&
-		  (temp.compareTo(ary[index/2]) > -1)){
-		swap(ary, index, index/2);
-		index = index/2;
-	    }
-	}
-	else if(!ifMax){
-	    while((index/2 > 0) &&
-		  (temp.compareTo(ary[index/2]) < 1)){
-		swap(ary, index, index/2);
-		index = index/2;
-	    }
-	}
 }
 public void pushDown(){
 	int index = 0;
