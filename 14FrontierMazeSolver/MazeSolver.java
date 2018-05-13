@@ -34,7 +34,7 @@ public class MazeSolver{
 		
 			Location _l = neighbors[i].getPrev();
 			while(_l.getX()!=maze.getStart().getX() || _l.getY()!=maze.getStart().getY()){
-        maze[_l.getX()][_l.getY()]['@'];
+        maze[_l.getX()][_l.getY()]='@';
 			    _l = _l.getPrev();
 			}
           maze[maze.getStart().getX()]maze.getStart().getY()]='@';
