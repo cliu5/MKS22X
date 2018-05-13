@@ -28,7 +28,7 @@ public static void heapsort(Integer[] ary){
     Sorts.heapsort(heap);
 
     for(int i = 0; i < 25; i++){
-      if(!reg[i].equals(heap[i])){
+      if(reg[i]!=(heap[i]){
         System.out.println("There is an error at index " + i);
         System.out.println("reg: " + Arrays.toString(reg));
         System.out.println("hea: " + Arrays.toString(heap));
