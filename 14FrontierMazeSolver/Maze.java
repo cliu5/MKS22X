@@ -19,16 +19,25 @@ public class Maze{
     Location[] ans = new Location[4];
       int x = L.getRow();
       int y = L.getCol();
-    
-    //if statements to add to ans or not
-      
-      
-    
-    return ans;
-    
-    
-    
-    
+      int counter=0;
+    int[][] Moves = new int[][]{ {0, 1}, {1, 0}, {-1, 0}, {0, -1} };
+    for(int[] z : Moves){
+      if(   (x + z[0] < maze[0].length) &&
+      (y + z[1] < maze.length) &&
+         (x + z[0] >= 0) && 
+         (y + z[1] >= 0) &&
+         (
+      (maze[x+z[0],y+z[1]) == ' ' ||
+      (maze[x+z[0],y+z[1])=='E' 
+            )
+            )
+      {
+      Location temp = new Location(x + z[0], y + z[1], L);
+      ans[counter] = temp;
+      counter++;
+    }
+  }
+  return ans;
   }
 
   public Location getStart(){
