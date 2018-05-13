@@ -44,7 +44,7 @@ public class MazeSolver{
 	}
 	return false;
     }
-    
+    } 
   public String toString(){
     return maze.toString();
   }
