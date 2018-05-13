@@ -4,7 +4,7 @@ public class FrontierPriorityQueue implements Frontier{
     private MyHeap<Location> data;
 
     public FrontierPriorityQueue(){
-	data = new MyHeap<Location>(false);
+	data = new MyHeap<>(false);
     }
 
     public void add(Location l){
