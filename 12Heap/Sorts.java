@@ -15,25 +15,14 @@ public static void heapsort(Integer[] ary){
     
     
  public static void main(String[] args){
-    Integer[] reg = new Integer[25];
-    Integer[] heap = new Integer[25];
-
-    for(int i = 0; i < 25; i ++){
-      int temp = (int)(Math.random() * 1000);
-      reg[i] = temp;
-      heap[i] = temp;
+	Integer[] test = new Integer[5];
+	test[0] = 4;
+	test[1] = 7;
+	test[2] = 10;
+	test[3] = 5;
+	test[4] = 3;
+	heapsort(test);
+	System.out.println(Arrays.toString(test));
     }
-
-    Arrays.sort(reg);
-    Sorts.heapsort(heap);
-
-    for(int i = 0; i < 25; i++){
-      if(reg[i]!=(heap[i])){
-        System.out.println("There is an error at index " + i);
-        System.out.println("reg: " + Arrays.toString(reg));
-        System.out.println("hea: " + Arrays.toString(heap));
-      }
-    }
-  }
 
 }
