@@ -27,8 +27,8 @@ public class Maze{
          (x + z[0] >= 0) && 
          (y + z[1] >= 0) &&
          (
-      (maze[x+z[0],y+z[1]) == ' ' ||
-      (maze[x+z[0],y+z[1])=='E' 
+      (maze[x+z[0]][y+z[1]]) == ' ' ||
+      (maze[x+z[0]][y+z[1]])=='E' 
             )
             )
       {
