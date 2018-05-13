@@ -9,7 +9,7 @@ public class MazeSolver{
     return solve(0); 
   }
   
-  public boolean solve(int mode){
+ 
 
     public boolean solve(int mode){
 	
