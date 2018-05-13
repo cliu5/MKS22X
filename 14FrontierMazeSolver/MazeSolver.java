@@ -23,8 +23,8 @@ public class MazeSolver{
 	
 	frontier.add(maze.getStart());
 	while(frontier.hasNext()){
-	    Location l = frontier.next();
-    maze[l.getX()][l.getY()]='.';
+	    Location next = frontier.next();
+    maze[next.getX()][next.getY()]='.';
 	   Location[] neighbors = maze.getNeighbors(l);
 	
     //CHECKING FOR END//
