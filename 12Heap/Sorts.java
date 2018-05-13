@@ -14,15 +14,5 @@ public static void heapsort(Integer[] ary){
     }
     
     
- public static void main(String[] args){
-	Integer[] test = new Integer[5];
-	test[0] = 4;
-	test[1] = 7;
-	test[2] = 10;
-	test[3] = 5;
-	test[4] = 3;
-	heapsort(test);
-	System.out.println(Arrays.toString(test));
-    }
-
+ 
 }
