@@ -37,14 +37,14 @@ public class MazeSolver{
         maze[_l.getX()][_l.getY()]='@';
 			    _l = _l.getPrev();
 			}
-          maze[maze.getStart().getX()]maze.getStart().getY()]='@';
+          maze[maze.getStart().getX()][maze.getStart().getY()]='@';
 			return true;
 		    }
 		    frontier.add(neighbors[i]);
 	}
 	return false;
     }
-  
+    
   public String toString(){
     return maze.toString();
   }
