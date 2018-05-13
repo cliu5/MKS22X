@@ -48,5 +48,10 @@ public class MazeSolver{
   public String toString(){
     return maze.toString();
   }
+	     public static void main(String[] args){
+	MazeSolver test = new MazeSolver("data2.dat");
+
+	System.out.println(test.solve(2));
+    }
 }
 
