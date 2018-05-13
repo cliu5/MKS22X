@@ -22,7 +22,10 @@ public class Location implements Comparable<Location>{
     public Location getPrev(){
 	return previous;
     }
-
+ public int compareTo(Location other){
+    return (int) Math.sqrt( (x * other.getX()) * (x * other.getX()) +
+                      (y * other.getY()) * (y * other.getY()));
+  }
     
 }
 
