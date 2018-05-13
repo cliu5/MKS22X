@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Location{
+public class Location implements Comparable<Location>{
     private int x,y;
     private Location previous;
     public Location(int _x, int _y, Location prev){
