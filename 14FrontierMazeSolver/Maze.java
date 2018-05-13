@@ -17,8 +17,8 @@ public class Maze{
   */
   public Location[] getNeighbors(Location L){
     Location[] ans = new Location[4];
-      int x = L.getRow();
-      int y = L.getCol();
+      int x = L.getX();
+      int y = L.getY();
       int counter=0;
     int[][] Moves = new int[][]{ {0, 1}, {1, 0}, {-1, 0}, {0, -1} };
     for(int[] z : Moves){
