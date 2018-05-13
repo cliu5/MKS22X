@@ -3,13 +3,19 @@ import java.util.*;
 public class Location implements Comparable<Location>{
     private int x,y;
     private Location previous;
+	private double distance;
     public Location(int _x, int _y, Location prev){
     x=_x;
     y=_y;
     previous=prev;
     }
     
-    
+    public Location (int _x, int _y, Location prev, double d){
+	x = _x;
+	y = _y;
+	previous = prev;
+	distance = d;
+    }
     
      public int getX(){
 	return x;
@@ -23,9 +29,8 @@ public class Location implements Comparable<Location>{
 	return previous;
     }
  public int compareTo(Location other){
-    return (int) Math.sqrt( (x * other.getX()) * (x * other.getX()) +
-                      (y * other.getY()) * (y * other.getY()));
-  }
+	return this.distance - other.distance;
+    }
     
 }
 
