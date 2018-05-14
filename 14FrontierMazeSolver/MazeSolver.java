@@ -42,14 +42,17 @@ private boolean animate;
 			maze.set(temp.getX(), temp.getY(), '@');
 		
 			temp = temp.getPrev();
+			    System.out.println(toStringColor(maze));
 			    
 		    }
 			maze.set(maze.getStart().getX(),maze.getStart().getY(),'@');
-			
+			System.out.println(toStringColor(maze));
 		    return true;
+			
 			
 		}
 		frontier.add(neighbors[i]);
+		    System.out.println(toStringColor(maze));
 		    
 	    }
 			
