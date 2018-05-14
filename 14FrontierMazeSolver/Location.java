@@ -52,7 +52,29 @@ disTo = _disTo;
     public Location getPrev(){
 	return previous;
     }
+	public int getDisTo(){
+		return disTo;
+	}
+	public int getDisFrom(){
+		return disFrom;
+	}
  public int compareTo(Location other){
+	 
+	 if(aStar){
+	    int d = disTo + disFrom;
+	    int otherD = other.getDisTo() + other.getDisFrom();
+	    if(d < otherD){
+		return -1;
+	    }
+	    if(d > otherD){
+		return 1;
+	    }
+	    else{
+		return 0;
+	    }
+	}
+	else{
+	    
 	return this.distance - other.distance;
     }
     
