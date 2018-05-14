@@ -4,6 +4,7 @@ public class Location implements Comparable<Location>{
     private int x,y;
     private Location previous;
 	private int distance;
+	private boolean aStar;
     public Location(int _x, int _y, Location prev){
     x=_x;
     y=_y;
@@ -17,6 +18,18 @@ public class Location implements Comparable<Location>{
 	distance = d;
     }
     
+    public Location (int _x, int _y, Location prev, boolean ASTAR){
+	x = _x;
+	y = _y;
+	previous = prev;
+	distance = d;
+	    aStar=ASTAR;
+    }
+	 public boolean isAstar(){
+	return aStar;
+    }
+
+	
      public int getX(){
 	return x;
     }
