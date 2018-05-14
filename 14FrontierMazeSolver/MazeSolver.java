@@ -42,10 +42,10 @@ private boolean animate;
 			maze.set(temp.getX(), temp.getY(), '@');
 		
 			temp = temp.getPrev();
-			    System.out.println(maze.toStringColor());
+			    
 		    }
 			maze.set(maze.getStart().getX(),maze.getStart().getY(),'@');
-			System.out.println(maze.toStringColor());
+			
 		    return true;
 			
 		}
@@ -53,7 +53,7 @@ private boolean animate;
 		    
 	    }
 			if(animate){
-				System.out.println(maze.toStringColor());
+				
 	    }	    
 	}
 	return false;
