@@ -35,13 +35,13 @@ private boolean animate;
 		    
 		if(neighbors[i].getX() == maze.getEnd().getX() && neighbors[i].getY() == maze.getEnd().getY()){
 			
-		    Location temp = neighbors[i].getPrevious();
+		    Location temp = neighbors[i].getPrev();
 			
 		    while(temp.getX() != maze.getStart().getX() || temp.getY() != maze.getStart().getY()){
 			    
 			maze.set(temp.getX(), temp.getY(), '@');
 		
-			temp = temp.getPrevious();
+			temp = temp.getPrev();
 		    }
 			maze.set(maze.getStart().getX(),maze.getStart().getY(),'@');
 		    return true;
