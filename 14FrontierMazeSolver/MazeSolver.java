@@ -69,7 +69,7 @@ private boolean animate;
     return maze.toString();
   }
 	     public static void main(String[] args){
-	MazeSolver test = new MazeSolver("data2.dat");
+	MazeSolver test = new MazeSolver("data3.dat");
 
 	System.out.println(test.solve(2));
     }
