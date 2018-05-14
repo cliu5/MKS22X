@@ -4,7 +4,7 @@ public class MazeSolver{
 private boolean animate;
   public MazeSolver(String mazeText){
     maze=new Maze(mazeText);
-	animate = false;
+	animate = true;
   }
   
   public boolean solve(){ 
