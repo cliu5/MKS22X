@@ -20,7 +20,7 @@ public class Location implements Comparable<Location>{
 	distance = d;
     }
     
-    public Location (int _x, int _y, Location prev, boolean ASTAR){
+    public Location (int _x, int _y, Location prev,int d, boolean ASTAR){
 	x = _x;
 	y = _y;
 	previous = prev;
