@@ -5,6 +5,7 @@ public class Location implements Comparable<Location>{
     private Location previous;
 	private int disFrom;
 	private int disTo;
+	private int distance;
 	private boolean aStar;
     public Location(int _x, int _y, Location prev){
     x=_x;
