@@ -1,8 +1,10 @@
 public class MazeSolver{
   private Maze maze;
   private Frontier frontier;
+private boolean animate;
   public MazeSolver(String mazeText){
     maze=new Maze(mazeText);
+	animate = true;
   }
   
   public boolean solve(){ 
@@ -22,29 +24,45 @@ public class MazeSolver{
 	}
 	
 	frontier.add(maze.getStart());
-	while(frontier.hasNext()){
+
+		while(frontier.hasNext()){
+
 	    Location next = frontier.next();
-    maze[next.getX()][next.getY()]='.';
-	   Location[] neighbors = maze.getNeighbors(l);
-	
-    //CHECKING FOR END//
-	    for(int i = 0; i<neighbors.length && neighbors[i]!=null; i++){
-		    if(maze.getEnd().getX()==neighbors[i].getX() &&
-		       maze.getEnd().getY()==neighbors[i].getY()){
+	    maze.set(next.getX(), next.getY(), '.');
+	    Location[] neighbors = maze.getNeighbors(next);
+			
+	    for(int i = 0; i < neighbors.length && neighbors[i] != null; i ++){
+		    
+		if(neighbors[i].getX() == maze.getEnd().getX() && neighbors[i].getY() == maze.getEnd().getY()){
+			
+		    Location temp = neighbors[i].getPrevious();
+			
+		    while(temp.getX() != maze.getStart().getX() || temp.getY() != maze.getStart().getY()){
+			    
+			maze.set(temp.getX(), temp.getY(), '@');
 		
-			Location _l = neighbors[i].getPrev();
-			while(_l.getX()!=maze.getStart().getX() || _l.getY()!=maze.getStart().getY()){
-        maze[_l.getX()][_l.getY()]='@';
-			    _l = _l.getPrev();
-			}
-          maze[maze.getStart().getX()][maze.getStart().getY()]='@';
-			return true;
+			temp = temp.getPrevious();
 		    }
-		    frontier.add(neighbors[i]);
+			maze.set(maze.getStart().getX(),maze.getStart().getY(),'@');
+		    return true;
+			
+		}
+		frontier.add(neighbors[i]);
+		    
+	    }
+			if(animate){
+				System.out.println(maze.toStringColor());
+	    }	    
 	}
 	return false;
     }
-    } 
+		
+		
+		
+		
+		
+		
+		
   public String toString(){
     return maze.toString();
   }
