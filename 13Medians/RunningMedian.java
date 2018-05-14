@@ -4,7 +4,7 @@ public class RunningMedian{
     private MyHeap<Double> maxHeap;
     private MyHeap<Double> minHeap;
 
-    public RunningMedians(){
+    public RunningMedian(){
 	maxHeap = new MyHeap<Double>();
 	minHeap = new MyHeap<Double>(false);
     }
