@@ -2,6 +2,7 @@ public class MazeSolver{
   private Maze maze;
   private Frontier frontier;
 private boolean animate;
+	private boolean aStar;
   public MazeSolver(String mazeText){
     maze=new Maze(mazeText);
 	animate = true;
@@ -21,10 +22,9 @@ private boolean animate;
 	    frontier = new FrontierQueue();
 	}else if(mode==1){
 	    frontier = new FrontierStack();
-	}else{
+	}else if( mode ==2){
 	    frontier = new FrontierPriorityQueue();
 	}
-	
 	frontier.add(maze.getStart());
 
 		while(frontier.hasNext()){
