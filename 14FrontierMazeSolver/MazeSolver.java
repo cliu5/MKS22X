@@ -52,9 +52,7 @@ private boolean animate;
 		frontier.add(neighbors[i]);
 		    
 	    }
-			if(animate){
-				
-	    }	    
+			
 	}
 	return false;
     }
