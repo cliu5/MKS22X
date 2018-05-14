@@ -4,7 +4,7 @@ public class MazeSolver{
 private boolean animate;
   public MazeSolver(String mazeText){
     maze=new Maze(mazeText);
-	animate = true;
+	animate = false;
   }
   
   public boolean solve(){ 
@@ -67,9 +67,9 @@ private boolean animate;
     return maze.toString();
   }
 	     public static void main(String[] args){
-	MazeSolver test = new MazeSolver("data2.dat");
+	MazeSolver test = new MazeSolver("data3.dat");
 
-	System.out.println(test.solve(2));
+	System.out.println(test.solve(3));
     }
 }
 
