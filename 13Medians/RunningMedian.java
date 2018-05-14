@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class RunningMedians{
+public class RunningMedian{
     private MyHeap<Double> maxHeap;
     private MyHeap<Double> minHeap;
 
