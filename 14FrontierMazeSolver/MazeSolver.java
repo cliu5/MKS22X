@@ -11,7 +11,9 @@ private boolean animate;
     return solve(0); 
   }
   
- 
+ public void setAStar(boolean b){
+	 aStar=b;
+ }
 
     public boolean solve(int mode){
 	
