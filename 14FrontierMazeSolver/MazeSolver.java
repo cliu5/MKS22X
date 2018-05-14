@@ -42,8 +42,10 @@ private boolean animate;
 			maze.set(temp.getX(), temp.getY(), '@');
 		
 			temp = temp.getPrev();
+			    System.out.println(maze.toStringColor());
 		    }
 			maze.set(maze.getStart().getX(),maze.getStart().getY(),'@');
+			System.out.println(maze.toStringColor());
 		    return true;
 			
 		}
@@ -67,9 +69,9 @@ private boolean animate;
     return maze.toString();
   }
 	     public static void main(String[] args){
-	MazeSolver test = new MazeSolver("data3.dat");
+	MazeSolver test = new MazeSolver("data2.dat");
 
-	System.out.println(test.solve(0));
+	System.out.println(test.solve(2));
     }
 }
 
