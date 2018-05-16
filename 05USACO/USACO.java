@@ -136,32 +136,14 @@ hahahhaha i hate this lab :( :( :( :( :(
 	int a1 = a.silver("ctravel.1.in");
 	int a2 = a.silver("ctravel.2.in");
 	int a3 = a.silver("ctravel.3.in");
-	int a4 = a.silver("ctravel.4.in");
-	int a5 = a.silver("ctravel.5.in");
-	int a6 = a.silver("ctravel.6.in");
-	int a7 = a.silver("ctravel.7.in");
-	int a8 = a.silver("ctravel.8.in");
-	int a9 = a.silver("ctravel.9.in");
 	int a10 = a.silver("ctravel.10.in");
 	System.out.println(a1 == 1);
 	System.out.println(a2 == 74);
 	System.out.println(a3 == 6485);
-	System.out.println(a4 == 339246);
-	System.out.println(a5 == 0);
-	System.out.println(a6 == 14396412);
-	System.out.println(a7 == 1533810);
-	System.out.println(a8 == 456055) ;
-	System.out.println(a9 == 28);
 	System.out.println(a10 == 1321670);
 	System.out.println(a1 );
 	System.out.println(a2 );
 	System.out.println(a3);
-	System.out.println(a4 );
-	System.out.println(a5);
-	System.out.println(a6);
-	System.out.println(a7);
-	System.out.println(a8) ;
-	System.out.println(a9);
 	System.out.println(a10);
 }
           }
