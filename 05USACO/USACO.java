@@ -131,7 +131,7 @@ hahahhaha i hate this lab :( :( :( :( :(
 
 }
  
- public static void main(String[] args) {
+ public static void main(String[] args) throws FileNotFoundException {
 	USACO a = new USACO();
 	int a1 = a.silver("ctravel.1.in");
 	int a2 = a.silver("ctravel.2.in");
