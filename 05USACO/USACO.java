@@ -111,7 +111,7 @@ startMap[startRow][startCol]=1;
 Second if statement checks to see if it(the next pos) is a tree (‘*’)
 hahahhaha i hate this lab :( :( :( :( :( 
 */
-     int[][]moves={{rowIndex+1},{rowIndex-1,colIndex},{rowIndex,colIndex+1},{rowIndex,colIndex-1}};
+     int[][]moves={{rowIndex+1,colIndex},{rowIndex-1,colIndex},{rowIndex,colIndex+1},{rowIndex,colIndex-1}};
      for(int[]x:moves){
       if(x[0]>=0&&x[0]<r&&x[1]>=0&&x[1]<c){
        if(map[x[0]][x[1]]!='*'){
