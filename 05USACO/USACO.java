@@ -69,7 +69,7 @@ if(e- lake[row2][col2] < 0){
 }
 }
 }
- }catch(FileNotFoundException e){
+ catch(FileNotFoundException e){
 	    System.out.println("valid file please!");
 	    System.exit(1);
 }
