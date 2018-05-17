@@ -113,7 +113,7 @@ public Type removeFirst(){
 		return (start == -1);
 	}
 public Type getFirst(){
-	if(size()<=0)
+	if(size<=0)
         {
             throw new NoSuchElementException();
         }
