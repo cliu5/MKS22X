@@ -143,8 +143,8 @@ hahahhaha i hate this lab :( :( :( :( :(
 
  
   public static void main(String[]args){
-    // System.out.println(USACO.bronze("bronze4.dat"));
-    System.out.println(USACO.silver("silver5.dat"));
+     System.out.println(USACO.bronze("bronze4.dat"));
+    //System.out.println(USACO.silver("silver5.dat"));
   }
 
 
