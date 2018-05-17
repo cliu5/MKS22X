@@ -66,6 +66,7 @@ if(e- lake[row2][col2] < 0){
   d+=lake[row2][col2];
 }
 }
+}
  }catch(FileNotFoundException e){
 	    System.out.println("valid file please!");
 	    System.exit(1);
