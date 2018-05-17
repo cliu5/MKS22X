@@ -130,22 +130,6 @@ hahahhaha i hate this lab :( :( :( :( :(
           return startMap[lastRow][lastCol];
 
 }
- 
- public static void main(String[] args) throws FileNotFoundException {
-	USACO a = new USACO();
-	int a1 = a.silver("ctravel.1.in");
-	int a2 = a.silver("ctravel.2.in");
-	int a3 = a.silver("ctravel.3.in");
-	int a10 = a.silver("ctravel.10.in");
-	System.out.println(a1 == 1);
-	System.out.println(a2 == 74);
-	System.out.println(a3 == 6485);
-	System.out.println(a10 == 1321670);
-	System.out.println(a1 );
-	System.out.println(a2 );
-	System.out.println(a3);
-	System.out.println(a10);
-}
           }
  
   
