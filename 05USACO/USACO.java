@@ -17,6 +17,8 @@ r = Integer.parseInt(in.next());
 c = Integer.parseInt(in.next());
 e = Integer.parseInt(in.next());
 
+	 int d=0;
+	 
 int[][] lake = new int[r][c];
 
 
@@ -55,7 +57,7 @@ lake[row2][col2] = newE;
 }
 }
 }
-int d=0;
+
 for(int row2 = 0; row2 < r; row2++){
 for(int col2 = 0; col2 <c; col2++){
 if(e- lake[row2][col2] < 0){
