@@ -9,9 +9,6 @@ import java.io.*;
 public class USACO{
 public static int bronze(String filename){
 	
-	
-	
-	
 try{
  
 File straw = new File(filename);
