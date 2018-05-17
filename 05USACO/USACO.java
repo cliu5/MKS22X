@@ -7,7 +7,7 @@ import java.io.*;
 // also s/o to crystal for explaining why none of my code was working//
 
 public class USACO{
-public static int bronze(String filename){
+public static int bronze(String filename) throws FileNotFoundException{
 	
 File straw = new File(filename);
 Scanner in = new Scanner(straw);
