@@ -45,6 +45,8 @@ public class Calculator{
 	    return S.peek();
 	    
     }
-   
+   public static void main(String[]args){
+    System.out.println(Calculator.eval("10 2.0 -"));
+}
 	
 }
