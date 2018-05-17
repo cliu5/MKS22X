@@ -6,8 +6,9 @@ import java.io.*;
 // also s/o to crystal for explaining why none of my code was working//
 
 public class USACO{
-public static int bronze(String filename) throws FileNotFoundException{
+public static int bronze(String filename) {
 
+ 
 File straw = new File(filename);
 Scanner in = new Scanner(straw);
 
@@ -70,7 +71,7 @@ return d * 72 * 72;
 }
 
 
-public static int silver(String filename) throws FileNotFoundException{
+public static int silver(String filename) {
 File straw=new File(filename);
 Scanner in= new Scanner(straw);
  String first = in.nextLine();
