@@ -5,7 +5,7 @@ private Type[]data;
 
   @SuppressWarnings("unchecked")
     public MyDeque(){
-	data = (Type[])new Object[10];
+	this(10);
 	
     }
     
@@ -15,7 +15,9 @@ public MyDeque(int initialCapacity){
 throw new IllegalArgumentException();
 }
 	data = (Type[])new Object[initialCapacity];
-	
+	size=0;
+	start=0;
+	end=0;
 }
 	
 	
@@ -28,25 +30,17 @@ public void addFirst(Type element){
 	throw new NullPointerException();
 	}
 	//if its too small//
-else if(size == data.length){
+ if(size == data.length){
 resize();
 }
-	//if its not full//
-	else if(size==0){
-	data[start] = element;
-	}
-	//if start is at the very beginning, add to the end//
-	else if (start == 0){
-		data[data.length-1]=element; 
-	start=data.length-1;
-	}
-	//if its just in the middle, the one before it is element//
-	    else{
-      data[start - 1] =element;
-      start--;
+	
+	    if (size != 0){
+        start = (start-1+data.length) % data.length;
     }
-    size++;	
-}
+    data[start] = element;
+    size++;
+  }
+
 	
 	
 	
@@ -56,22 +50,14 @@ public void addLast(Type element){
 	}
 	
 	//if its too small//
-else if(size == data.length){
+ if(size == data.length){
 resize();
 }
 	//if its not full//
-	else if(size==0){
-	data[end] = element;
+	 if(size!=0){
+		 end=(end+1)%data.length;
 	}
-else if (end == data.length-1){
-		data[start]=element; 
-	end=start;
-	}
-	
-else{
-	data[end+1]=element;
-	end++;
-}
+data[end]=element;
 	size++;
 }
 	
@@ -90,20 +76,15 @@ public boolean isFull()
 	
 //These will retrieve and remove the element from the specified side.
 public Type removeLast(){
-	 if(isEmpty()||end<0){
+	 if(size<=0){
 		throw new NoSuchElementException();
 	}
 
         Type ans = data[end];
         data[end] = null;
-        if (end == 0) {
-            end = data.length - 1;
+        if (size>1) {
+            end = (end-1+data.length)%data.length;
         }
-
-        else {
-            end--;
-        }
-
         size--;
         return ans;
     }
@@ -114,18 +95,14 @@ public Type removeLast(){
 	
 
 public Type removeFirst(){
-	if(isEmpty()||end<0){
+	if(size<=0){
 		throw new NoSuchElementException();
 	}
 	 Type ans = data[start];
         data[start] = null;
-        if (start == data.length - 1) {
-            start = 0;
+        if (start >1) {
+            start = (start+1)%data.length;
         }
-        else {
-            start++;
-        }
-
         size--;
         return ans;
 		
@@ -136,14 +113,14 @@ public Type removeFirst(){
 		return (start == -1);
 	}
 public Type getFirst(){
-	if(size()==0)
+	if(size()<=0)
         {
             throw new NoSuchElementException();
         }
         return data[start];
 }
 public Type getLast(){
-	if(isEmpty() || end < 0)
+	if(size<=0)
         {
             throw new NoSuchElementException();
         }
@@ -161,7 +138,7 @@ public Type getLast(){
 	end = size() - 1;
 	data = ans;
     }
-
+//CRYSTAL'S TOSTRING  I BELIEVE AND HER DRIVER//
 	
 public String toString(){
     String ans = "[";
