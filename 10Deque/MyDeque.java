@@ -158,8 +158,7 @@ public String toString(){
     ans = ans.substring(0, ans.length() - 2) + "]";
     return ans;
   }
-
-  public static void main(String[] args) {
+public static void main(String[] args) {
     MyDeque<String> a = new MyDeque<>(), a1 = new MyDeque<>();
     ArrayList<String> b = new ArrayList<>();
 
