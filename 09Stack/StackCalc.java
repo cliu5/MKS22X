@@ -1,4 +1,4 @@
-public class StackCalc{
+public class Calculator{
 
     public static double eval(String exp){
         Stack S =new Stack();
