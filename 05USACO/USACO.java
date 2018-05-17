@@ -8,7 +8,7 @@ import java.io.*;
 public class USACO{
 public static int bronze(String filename) {
 
- 
+ try{
 File straw = new File(filename);
 Scanner in = new Scanner(straw);
 
@@ -25,7 +25,7 @@ for(int col = 0; col < c; col++){
 lake[row][col] = Integer.parseInt(in.next());
 }
 }
-
+ 
 
 
 while(in.hasNext()){
@@ -66,12 +66,16 @@ if(e- lake[row2][col2] < 0){
   d+=lake[row2][col2];
 }
 }
+ }catch(FileNotFoundException e){
+	    System.out.println("valid file please!");
+	    System.exit(1);
 }
 return d * 72 * 72;
 }
 
 
 public static int silver(String filename) {
+ try{
 File straw=new File(filename);
 Scanner in= new Scanner(straw);
  String first = in.nextLine();
@@ -130,7 +134,14 @@ hahahhaha i hate this lab :( :( :( :( :(
           }
           return startMap[lastRow][lastCol];
 
+	}catch(FileNotFoundException e){
+	    System.out.println("valid file buddy!");
+	}
+	return 0;
+    }
+
+
+
+
 }
-          }
- 
   
