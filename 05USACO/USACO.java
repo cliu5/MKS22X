@@ -1,6 +1,7 @@
 import java.util.*;
 import java.io.*;
 
+
 //I worked with people in the class and seniors who did the USACO problems already to figure out how to solve it//
 //this lab was realllllly hard//
 // also s/o to crystal for explaining why none of my code was working//
@@ -140,14 +141,12 @@ hahahhaha i hate this lab :( :( :( :( :(
 	return 0;
     }
 
- public static void main(String[] args){
-	try{
-	    System.out.println(bronze("inputBronze.dat"));
-	    //System.out.println(silver("inputSilver.dat"));
-	}catch(FileNotFoundException e){
-	    System.out.println("File not found");
-	}
-    }
+ 
+  public static void main(String[]args){
+    // System.out.println(USACO.bronze("bronze4.dat"));
+    System.out.println(USACO.silver("silver5.dat"));
+  }
+
 
 
 }
