@@ -140,7 +140,14 @@ hahahhaha i hate this lab :( :( :( :( :(
 	return 0;
     }
 
-
+ public static void main(String[] args){
+	try{
+	    System.out.println(bronze("inputBronze.dat"));
+	    //System.out.println(silver("inputSilver.dat"));
+	}catch(FileNotFoundException e){
+	    System.out.println("File not found");
+	}
+    }
 
 
 }
