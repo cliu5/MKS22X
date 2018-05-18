@@ -7,18 +7,108 @@ import java.io.*;
 // also s/o to crystal for explaining why none of my code was working//
 
 public class USACO{
-public static int bronze(String filename) throws FileNotFoundException{
+public static int bronze(String filename) {
 	
-File straw = new File(filename);
-Scanner in = new Scanner(straw);
+	try{
+		
+	    BufferedReader straw = new BufferedReader(new FileReader(filename));
+	    StringTokenizer in = new StringTokenizer(straw.readLine());
 
- int r,c,e; 
-r = Integer.parseInt(in.next());
-c = Integer.parseInt(in.next());
-e = Integer.parseInt(in.next());
-
+ int r,c,e,n; 
+r = Integer.parseInt(in.nextToken());
+c = Integer.parseInt(in.nextToken());
+e = Integer.parseInt(in.nextToken());
+ n = Integer.parseInt(in.nextToken());
 	 
-int[][] lake = new int[r][c];
+int[][] lake = new int[r+1][c+1];
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		for(int row = 0; row < r; row ++){
+for(int col = 0; col < c; col++){
+lake[row][col] = Integer.parseInt(in.next());
+}
+}
+		
+		
+		
+		
+	    for (int row = 1; row<=r; row++){
+		StringTokenizer str2 = new StringTokenizer(straw.readLine());
+		for (int col = 1; col <= c; col++){
+		    lake[i][j] = Integer.parseInt(st1.nextToken());
+		}
+	    }
+	    for (int i = 0; i < n; i++){
+		StringTokenizer st2 = new StringTokenizer(br.readLine());
+		int row = Integer.parseInt(st2.nextToken());
+		int col = Integer.parseInt(st2.nextToken());
+		int tmpDepth = Integer.parseInt(st2.nextToken());
+	        int highestCow;
+		for (int q = 0; q < tmpDepth; q++) {
+		    highestCow = lake[row][col];
+		    for (int j = 0; j < 3; j++){
+			for (int k = 0; k < 3; k++){
+			    if (lake[row+j][col+k] > highestCow){
+				highestCow=lake[j+ row][k + col];
+			    }
+			}
+		    }
+		    for (int a = 0; a < 3; a++){
+			for (int b = 0; b < 3; b++){
+			    if (lake[row+a][col+b] == highestCow){
+				lake[row+a][col+b]--;
+			    }
+			}
+		    }
+		}
+	    }
+	    for (int i = 1; i <= r; i++){
+		for (int j = 1; j <= c; j++){
+		    if (lake[i][j] <= e){
+			depth += e-lake[i][j];
+		    }
+		}
+	    }
+	}
+	catch(IOException  e){
+	    System.out.println("no found file! :(");
+	}
+	return (depth*72*72);
+   }
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 
 
 for(int row = 0; row < r; row ++){
