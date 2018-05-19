@@ -14,7 +14,7 @@ public static int bronze(String filename) {
 	    BufferedReader straw = new BufferedReader(new FileReader(filename));
 	    StringTokenizer in = new StringTokenizer(straw.readLine());
 
- int r,c,e,n; 
+ int r,c,e,n,d; 
 r = Integer.parseInt(in.nextToken());
 c = Integer.parseInt(in.nextToken());
 e = Integer.parseInt(in.nextToken());
@@ -58,7 +58,7 @@ int[][] lake = new int[r+1][c+1];
 	    for (int row = 1; row <= r; row++){
 		for (int col = 1; col <= c; col++){
 		    if (lake[row][col] <= e){
-			depth += e-lake[i][j];
+			d += e-lake[row][col];
 		    }
 		}
 	    }
@@ -66,7 +66,7 @@ int[][] lake = new int[r+1][c+1];
 	catch(IOException  e){
 	    System.out.println("Enter a valid file buddy!");
 	}
-	return (depth*72*72);
+	return (d*72*72);
    }
 
 	
