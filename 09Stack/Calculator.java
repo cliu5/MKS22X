@@ -16,7 +16,7 @@ public class Calculator{
 				double first=S.pop();
 			double second=S.pop();
 			
-				S.push(first-second);
+				S.push(-1*(first-second));
 			}
 			else if(tokens[i].equals("*")){
 				double first=S.pop();
@@ -28,7 +28,7 @@ public class Calculator{
 				double first=S.pop();
 			double second=S.pop();
 			
-				S.push(first/second);
+				S.push(1/(first/second));
 			}
 			else if(tokens[i].equals("%")){
 				double first=S.pop();
