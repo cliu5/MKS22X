@@ -72,18 +72,22 @@ int[][] lake = new int[r+1][c+1];
 
 	
 public static int silver(String filename) {
- try{
+	int r,c,t;
+	int initialRow,initialCol,endRow,endCol;
+	r=0;
+	c=0;
+	t=0;
+	char[][]map;
+	 try{
 File straw=new File(filename);
 Scanner in= new Scanner(straw);
  String first = in.nextLine();
  String[]firstLine=first.split(" ");
  //first getting all the info
- int r=Integer.parseInt(firstLine[0]);
- int c=Integer.parseInt(firstLine[1]);
- int t=Integer.parseInt(firstLine[2]);
- char[][]map=new char[r][c];
-  int[][] startMap=new int[r][c];
-    int[][] endMap=new int[r][c];
+  r=Integer.parseInt(firstLine[0]);
+  c=Integer.parseInt(firstLine[1]);
+  t=Integer.parseInt(firstLine[2]);
+ map=new char[row][col];
  
  //filling up the map w/ info, i spent too much time on this stpuid part :( //
  for(int rowIndex=0;rowIndex<r;rowIndex++){
@@ -95,12 +99,15 @@ Scanner in= new Scanner(straw);
   
  String second=in.nextLine();
  String[]secondLine=second.split(" ");
- int startRow=Integer.parseInt(secondLine[0])-1;
- int startCol=Integer.parseInt(secondLine[1])-1;
- int lastRow=Integer.parseInt(secondLine[2])-1;
- int lastCol=Integer.parseInt(secondLine[3])-1;
+  initialRow=Integer.parseInt(secondLine[0])-1;
+  initialCol=Integer.parseInt(secondLine[1])-1;
+  endRow=Integer.parseInt(secondLine[2])-1;
+  endCol=Integer.parseInt(secondLine[3])-1;
  
-startMap[startRow][startCol]=1;
+		 int[][]startMap= new int[row][col];
+		 int[][]endMap=new int[row][col];
+		 
+startMap[initialRow][initialCol]=1;
  while(t>0){
   for(int rowIndex=0;rowIndex<r;rowIndex++){
    for(int colIndex=0;colIndex<c;colIndex++){
@@ -117,11 +124,11 @@ hahahhaha i hate this lab :( :( :( :( :(
      for(int[]x:moves){
       if(x[0]>=0&&x[0]<r&&x[1]>=0&&x[1]<c){
        if(map[x[0]][x[1]]!='*'){
-       map[x[0]][x[1]]+=map[rowIndex][colIndex];
+       endMap[x[0]][x[1]]+=startMap[rowIndex][colIndex];
           }
           }
           }
-          map[rowIndex][colIndex]=0;
+          startMap[rowIndex][colIndex]=0;
           }
           }
           }
@@ -129,7 +136,7 @@ hahahhaha i hate this lab :( :( :( :( :(
           endMap=new int[r][c];
           t--;
           }
-          return startMap[lastRow][lastCol];
+          return startMap[endRow][endCol];
 
 	}catch(FileNotFoundException e){
 	    System.out.println("valid file buddy!");
