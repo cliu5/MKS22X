@@ -54,6 +54,10 @@ public class Calculator{
 	   System.out.println(Calculator.eval("10 2.0 +"));
 	System.out.println(Calculator.eval("11 3 - 4 + 2.5 *"));
 	System.out.println(Calculator.eval("8 2 + 99 9 - * 2 + 9 -"));
+	     System.out.println(Calculator.eval("10"));
+	     System.out.println(Calculator.eval("4.0 3.0 %"));
+	
+	   
    }
 	
 }
