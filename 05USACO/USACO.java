@@ -87,7 +87,7 @@ Scanner in= new Scanner(straw);
   r=Integer.parseInt(firstLine[0]);
   c=Integer.parseInt(firstLine[1]);
   t=Integer.parseInt(firstLine[2]);
- map=new char[row][col];
+ map=new char[r][c];
  
  //filling up the map w/ info, i spent too much time on this stpuid part :( //
  for(int rowIndex=0;rowIndex<r;rowIndex++){
@@ -104,8 +104,8 @@ Scanner in= new Scanner(straw);
   endRow=Integer.parseInt(secondLine[2])-1;
   endCol=Integer.parseInt(secondLine[3])-1;
  
-		 int[][]startMap= new int[row][col];
-		 int[][]endMap=new int[row][col];
+		 int[][]startMap= new int[r][c];
+		 int[][]endMap=new int[r][c];
 		 
 startMap[initialRow][initialCol]=1;
  while(t>0){
