@@ -31,10 +31,12 @@ public class Calculator{
 				S.push(1/(first/second));
 			}
 			else if(tokens[i].equals("%")){
+				
+				
 				double first=S.pop();
 			double second=S.pop();
 			
-				S.push(first%second);
+				S.push(second%first);
 			}
 		else{
 			S.push(Double.parseDouble(tokens[i]));
