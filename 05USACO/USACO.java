@@ -8,17 +8,18 @@ import java.io.*;
 
 public class USACO{
 public static int bronze(String filename) {
-	
+	int d=0;
 	try{
 		
 	    BufferedReader straw = new BufferedReader(new FileReader(filename));
 	    StringTokenizer in = new StringTokenizer(straw.readLine());
 
- int r,c,e,n,d; 
+ int r,c,e,n; 
 r = Integer.parseInt(in.nextToken());
 c = Integer.parseInt(in.nextToken());
 e = Integer.parseInt(in.nextToken());
  n = Integer.parseInt(in.nextToken());
+		
 	 
 int[][] lake = new int[r+1][c+1];
 	
@@ -66,7 +67,7 @@ int[][] lake = new int[r+1][c+1];
 	catch(IOException  e){
 	    System.out.println("Enter a valid file buddy!");
 	}
-	return (d*72*72);
+	return d*72*72;
    }
 
 	
