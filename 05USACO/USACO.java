@@ -21,151 +21,54 @@ e = Integer.parseInt(in.nextToken());
  n = Integer.parseInt(in.nextToken());
 	 
 int[][] lake = new int[r+1][c+1];
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		for(int row = 0; row < r; row ++){
-for(int col = 0; col < c; col++){
-lake[row][col] = Integer.parseInt(in.next());
-}
-}
-		
-		
-		
+	
 		
 	    for (int row = 1; row<=r; row++){
 		StringTokenizer str2 = new StringTokenizer(straw.readLine());
 		for (int col = 1; col <= c; col++){
-		    lake[i][j] = Integer.parseInt(st1.nextToken());
+		    lake[row][col] = Integer.parseInt(str2.nextToken());
 		}
 	    }
-	    for (int i = 0; i < n; i++){
-		StringTokenizer st2 = new StringTokenizer(br.readLine());
-		int row = Integer.parseInt(st2.nextToken());
-		int col = Integer.parseInt(st2.nextToken());
-		int tmpDepth = Integer.parseInt(st2.nextToken());
-	        int highestCow;
-		for (int q = 0; q < tmpDepth; q++) {
-		    highestCow = lake[row][col];
-		    for (int j = 0; j < 3; j++){
-			for (int k = 0; k < 3; k++){
-			    if (lake[row+j][col+k] > highestCow){
-				highestCow=lake[j+ row][k + col];
+		
+		
+	    for (int maxMoves = 0; maxMoves < n; maxMoves++){
+		StringTokenizer str3 = new StringTokenizer(straw.readLine());
+		int row = Integer.parseInt(str3.nextToken());
+		int col = Integer.parseInt(str3.nextToken());
+		int depth = Integer.parseInt(str3.nextToken());
+	        int max;
+		for (int currDepth = 0; currDepth < depth; currDepth++) {
+		    max = lake[row][col];
+		    for (int i = 0; i < 3; i++){
+			for (int j = 0; j < 3; j++){
+			    if (lake[row+i][col+j] > max){
+				max=lake[i+ row][j + col];
 			    }
 			}
 		    }
-		    for (int a = 0; a < 3; a++){
-			for (int b = 0; b < 3; b++){
-			    if (lake[row+a][col+b] == highestCow){
-				lake[row+a][col+b]--;
+		    for (int i = 0; i < 3; i++){
+			for (int j = 0; j < 3; j++){
+			    if (lake[row+i][col+j] == max){
+				lake[row+i][col+j]--;
 			    }
 			}
 		    }
 		}
 	    }
-	    for (int i = 1; i <= r; i++){
-		for (int j = 1; j <= c; j++){
-		    if (lake[i][j] <= e){
+	    for (int row = 1; row <= r; row++){
+		for (int col = 1; col <= c; col++){
+		    if (lake[row][col] <= e){
 			depth += e-lake[i][j];
 		    }
 		}
 	    }
 	}
 	catch(IOException  e){
-	    System.out.println("no found file! :(");
+	    System.out.println("Enter a valid file buddy!");
 	}
 	return (depth*72*72);
    }
 
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-
-
-for(int row = 0; row < r; row ++){
-for(int col = 0; col < c; col++){
-lake[row][col] = Integer.parseInt(in.next());
-}
-}
- 
-
-
-while(in.hasNext()){
-int _r =  Integer.parseInt(in.next()) - 1;
-int _c =  Integer.parseInt(in.next()) - 1;
-int _t =  Integer.parseInt(in.next()) - 1;
-
-int maxE = 0;
-
- 
-for(int row2 = _r; row2 >= 0 && row2 < _r + 3; row2++){
-for(int col2 = _c; col2 >=0 && col2<_c+3; col2++){
-if(lake[row2][col2] > maxE){
-
-maxE = lake[row2][col2];
-}
-}
-}
-
-int newE = maxE - _t;
-
-for(int row2 = _r; row2 >= 0 && row2 < _r + 3; row2++){
-for(int col2 = _c; col2 >=0 && col2< _c+3; col2++){
-if(lake[row2][col2] > newE){
-lake[row2][col2] = newE;
-}
-}
-}
-}
-int d=0;
-for(int row2 = 0; row2 < r; row2++){
-for(int col2 = 0; col2 <c; col2++){
-if(e- lake[row2][col2] < 0){
- lake[row2][col2]=0;
-}
- else{
-  lake[row2][col2]=e - lake[row2][col2];
-  d+=lake[row2][col2];
-
-}
-}
- }
-return d * 72 * 72;
-
-  }
-
-
-	
-	
 	
 public static int silver(String filename) {
  try{
