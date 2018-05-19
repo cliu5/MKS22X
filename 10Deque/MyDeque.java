@@ -5,7 +5,10 @@ private Type[]data;
 
   @SuppressWarnings("unchecked")
     public MyDeque(){
-this(10);
+data=(Type[]) new Object[10]; 
+      size=0;
+      start=0;
+      end=0;
     }
     
 @SuppressWarnings("unchecked")
@@ -21,18 +24,24 @@ end=0;
 public int size(){
   return size;
 }
+  
+  
 public void addFirst(Type element){
-if(element==null){
+if(element.equals(null)){
 throw new NullPointerException();
 }
+  if(size==0){
+    data[0]=element;
+    size++;
+    return;
+  }
+  
 //if its too small//
  if(size == data.length){
 resize();
 }
-   if (size != 0){
         start = (start-1+data.length) % data.length;
-    }
-    data[start] = element;
+    data[(start-1+data.length)%data.length] = element;
     size++;
   }
 
@@ -40,17 +49,22 @@ public void addLast(Type element){
 if(element==null){
 throw new NullPointerException();
 }
-//if its too small//
- if(size == data.length){
-resize();
-}
-//if its not full//
-if(size!=0){
+  if (size()==0){
+    data[0]=element;
+    size++;
+    end++;
+    start=data.length-1;
+    return;
+  }
+  if(data.length)==size()){
+    resize();
+  }
+
 end=(end+1)%data.length;
-}
-data[end]=element;
+data[(end%data.length)]=element;
 size++;
 }
+
 
 //Helpers
 public boolean isFull()
@@ -75,7 +89,7 @@ throw new NoSuchElementException();
     }
 
 public Type removeFirst(){
-if(size<=0){
+if(size()<=0){
 throw new NoSuchElementException();
 }
 Type ans = data[start];
@@ -110,10 +124,10 @@ if(size<=0)
 private void resize(){
 Type[] ans = (Type[])new Object[data.length * 2 +1];
 for (int i = 0; i < size(); i++){
-   ans[i] = data[(start + i) % data.length];
+   ans[i] = data[(start + i) % size()];
 }
 start = 0;
-end = size() - 1;
+end = size();
 data = ans;
     }
 //CRYSTAL'S TOSTRING  I BELIEVE AND HER DRIVER//
