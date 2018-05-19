@@ -33,7 +33,7 @@ public class Calculator{
 			else if(tokens[i].equals("%")){
 				double first=S.pop();
 			double second=S.pop();
-			System.out.println(S.push(first%second));
+			
 				S.push(first%second);
 			}
 		else{
