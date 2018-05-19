@@ -47,6 +47,10 @@ public class Calculator{
     }
    public static void main(String[]args){
     System.out.println(Calculator.eval("10 2.0 -"));
-}
+	   System.out.println(Calculator.eval("10 2.0 +"));
+		   System.out.println(Calculator.eval("10 2.0 /"));
+		   System.out.println(Calculator.eval("10 2.0 *"));
+		   System.out.println(Calculator.eval("10 2.0 %"));
+   }
 	
 }
