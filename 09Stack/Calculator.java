@@ -33,7 +33,7 @@ public class Calculator{
 			else if(tokens[i].equals("%")){
 				double first=S.pop();
 			double second=S.pop();
-			
+			System.out.println(S.push(first%second));
 				S.push(first%second);
 			}
 		else{
@@ -46,15 +46,9 @@ public class Calculator{
 	    
     }
    public static void main(String[]args){
-    System.out.println(Calculator.eval("10 2.0 -"));
-	   System.out.println(Calculator.eval("10 2.0 +"));
-		   System.out.println(Calculator.eval("10 2.0 /"));
-		   System.out.println(Calculator.eval("10 2.0 *"));
+   
 		   System.out.println(Calculator.eval("10 2.0 %"));
-	   System.out.println(Calculator.eval("10 2.0 +"));
-	System.out.println(Calculator.eval("11 3 - 4 + 2.5 *"));
-	System.out.println(Calculator.eval("8 2 + 99 9 - * 2 + 9 -"));
-	     System.out.println(Calculator.eval("10"));
+	  
 	     System.out.println(Calculator.eval("4.0 3.0 %"));
 	
 	   
