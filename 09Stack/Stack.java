@@ -12,6 +12,9 @@ public class Stack{
     }
 
     public double pop(){
+	    if(data.size()==0){
+	    return 0.0;
+	    }
 	return ary.remove(ary.size()-1);
     }
 	public double peek(){
