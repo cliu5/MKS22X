@@ -56,7 +56,7 @@ throw new NullPointerException();
     start=data.length-1;
     return;
   }
-  if(data.length)==size()){
+  if((data.length)==size()){
     resize();
   }
 
