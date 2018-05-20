@@ -6,9 +6,10 @@ private Type[]data;
   @SuppressWarnings("unchecked")
     public MyDeque(){
 data=(Type[]) new Object[10]; 
-      size=0;
       start=0;
-      end=0;
+      end=-1;
+      size=0;
+      
     }
     
 @SuppressWarnings("unchecked")
@@ -17,9 +18,9 @@ if(initialCapacity<0){
 throw new IllegalArgumentException();
 }
 data = (Type[])new Object[initialCapacity];
-size=0;
-start=0;
-end=0;
+  start=0;
+  end=-1;
+  size=0;
 }
 public int size(){
   return size;
@@ -27,44 +28,42 @@ public int size(){
   
   
 public void addFirst(Type element){
-if(element.equals(null)){
+if(element==(null)){
 throw new NullPointerException();
 }
-  if(size==0){
-    data[0]=element;
-    size++;
-    return;
-  }
-  
+ 
 //if its too small//
  if(size == data.length){
 resize();
 }
-        start = (start-1+data.length) % data.length;
-    data[(start-1+data.length)%data.length] = element;
+  if(start==0){
+    start=data.length;
+  }
+  start--;
+  
+       else{
+         data[start]=element;
     size++;
   }
+}
 
 public void addLast(Type element){
 if(element==null){
 throw new NullPointerException();
 }
-  if (size()==0){
-    data[0]=element;
-    size++;
-    end++;
-    start=data.length-1;
-    return;
-  }
   if((data.length)==size()){
     resize();
   }
-
-end=(end+1)%data.length;
-data[(end%data.length)]=element;
+  if (end=size()){
+   end=-1;
+  }
+  end++;
+else{
+data[(end)]=element;
 size++;
 }
-
+}
+  
 
 //Helpers
 public boolean isFull()
@@ -81,10 +80,10 @@ throw new NoSuchElementException();
 
         Type ans = data[end];
         data[end] = null;
-        if (size>1) {
+        
             end = (end-1+data.length)%data.length;
-        }
-        size--;
+        
+        end--;
         return ans;
     }
 
@@ -94,9 +93,9 @@ throw new NoSuchElementException();
 }
 Type ans = data[start];
         data[start] = null;
-        if (start >1) {
+       
             start = (start+1)%data.length;
-        }
+        
         size--;
         return ans;
 }
@@ -123,11 +122,11 @@ if(size<=0)
 //copy into ans
 private void resize(){
 Type[] ans = (Type[])new Object[data.length * 2 +1];
-for (int i = 0; i < size(); i++){
-   ans[i] = data[(start + i) % size()];
+for (int i = 0; i < data.length; i++){
+   ans[i] = data[(start + i) % data.length];
 }
 start = 0;
-end = size();
+end = data.length-1;
 data = ans;
     }
 //CRYSTAL'S TOSTRING  I BELIEVE AND HER DRIVER//
