@@ -41,7 +41,7 @@ resize();
   }
   start--;
   
-       else{
+      if(data[start]==null){
          data[start]=element;
     size++;
   }
@@ -58,7 +58,7 @@ throw new NullPointerException();
    end=-1;
   }
   end++;
-else{
+if(data[end]==null){
 data[(end)]=element;
 size++;
 }
