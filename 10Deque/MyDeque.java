@@ -54,7 +54,7 @@ throw new NullPointerException();
   if((data.length)==size()){
     resize();
   }
-  if (end=size()){
+  if (end==size()){
    end=-1;
   }
   end++;
