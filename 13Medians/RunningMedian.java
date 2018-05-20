@@ -5,7 +5,7 @@ public class RunningMedian{
     private MyHeap<Double> minHeap;
 
     public RunningMedian(){
-	maxHeap = new MyHeap<Double>();
+	maxHeap = new MyHeap<Double>(true);
 	minHeap = new MyHeap<Double>(false);
     }
 
@@ -48,26 +48,7 @@ public class RunningMedian{
 
    
 }   
-	 public static void main(String[]args){
-    RunningMedian r = new RunningMedian();
-    //System.out.println(r);
-    r.add(3.0);
-    System.out.println(r);
-    r.add(5.0);
-    System.out.println(r);
-    r.add(1.0);
-    System.out.println(r);
-    r.add(32.0);
-    System.out.println(r);
-    r.add(32.0);
-    System.out.println(r);
-    r.add(32.0);
-    System.out.println(r);
-    r.add(32.0);
-    System.out.println(r);
-    r.add(90.0);
-    System.out.println(r);
-  }
+	 
 }
    
 
