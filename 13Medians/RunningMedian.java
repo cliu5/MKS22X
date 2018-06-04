@@ -48,9 +48,6 @@ public class RunningMedian{
 
    
 }   
-	public int size(){
-      return minHeap.size() + maxHeap.size();
-  }
 
 	 
 }
