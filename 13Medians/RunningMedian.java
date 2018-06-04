@@ -29,7 +29,7 @@ public class RunningMedian{
 	}
 }
 
-    public double getMedian(){
+    public Double getMedian(){
 	Double ans=0.0;
 	if(size()==0){
 	    throw new NoSuchElementException();
@@ -48,6 +48,10 @@ public class RunningMedian{
 
    
 }   
+	public int size(){
+      return minHeap.size() + maxHeap.size();
+  }
+
 	 
 }
    
