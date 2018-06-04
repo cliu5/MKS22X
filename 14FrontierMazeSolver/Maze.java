@@ -7,7 +7,7 @@ public class Maze{
   private static final String SHOW_CURSOR =  "\033[?25h";
   Location start,end;
   private char[][]maze;
-
+ private boolean isAStar;
 
 
   /*
