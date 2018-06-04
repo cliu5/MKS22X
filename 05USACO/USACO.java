@@ -1,11 +1,6 @@
 import java.util.*;
 import java.io.*;
 
-
-//I worked with people in the class and seniors who did the USACO problems already to figure out how to solve it//
-//this lab was realllllly hard//
-// also s/o to crystal for explaining why none of my code was working//
-
 public class USACO{
 public static int bronze(String filename) {
 	int d=0;
@@ -71,6 +66,7 @@ int[][] lake = new int[r+1][c+1];
    }
 
 	
+//I worked with people in the class and seniors who did the USACO problems already to figure out how to solve it//
 public static int silver(String filename) {
 	int r,c,t;
 	int initialRow,initialCol,endRow,endCol;
