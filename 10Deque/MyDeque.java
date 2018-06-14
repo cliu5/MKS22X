@@ -59,7 +59,7 @@ end=(end+1)%data.length;
 data[end]=element;
 size++;
 }
-} 
+
   
   
   public boolean isFull()
