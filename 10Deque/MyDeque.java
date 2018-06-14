@@ -70,7 +70,7 @@ size++;
   
   
   public Type removeLast(){
-if(size<=0){
+if(size<1){
 throw new NoSuchElementException();
 }
 
@@ -85,7 +85,7 @@ return ans;
 
   
 public Type removeFirst(){
-if(size<=0){
+if(size<1){
 throw new NoSuchElementException();
 }
 Type ans = data[start];
