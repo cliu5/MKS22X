@@ -77,7 +77,7 @@ throw new NoSuchElementException();
 if(size>1){
    end = (end-1+data.length)%data.length;
         }
-size—;
+size--;
 return ans;
 }
 
