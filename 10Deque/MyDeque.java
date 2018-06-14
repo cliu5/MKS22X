@@ -124,7 +124,7 @@ return (start == -1);
 @SuppressWarnings("unchecked")
 //copy into ans
 public void resize(){
-Type[] ans = (Type[])new Object[size * 2 +1];
+Type[] ans = (Type[])new Object[size * 2];
 for (int i = 0; i < data.length; i++){
    ans[i] = data[(start + i) % data.length];
 }
