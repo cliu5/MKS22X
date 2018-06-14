@@ -41,7 +41,7 @@ resize();
   }
 
   
-}
+
   
   
  public void addLast(Type element){
