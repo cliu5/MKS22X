@@ -55,6 +55,7 @@ throw new NullPointerException();
   }
 if(size!=0){
 end=(end+1)%data.length;
+}
 data[end]=element;
 size++;
 }
