@@ -48,49 +48,7 @@ public class RunningMedian{
 
    
 }   
-public static void main(String[] args) {
-        RunningMedian a = new RunningMedian();
-        RunningMedian b = new RunningMedian();
-      	RunningMedian c = new RunningMedian();
-        
-        System.out.println("----- add & size -----");
-      
-        for (double number = 0.0; number < 10.0; number++) {
-            a.add(number);
-        }
-      
-      	System.out.println(a);
-        System.out.println("Size: " + a.size());
-      	
-        for (int time = 0; time < 100; time++) {
-          	b.add((int) (Math.random() * 10000) / 100.0);
-        }
-              
-      
-      	System.out.println(b);
-        System.out.println("Size: " + b.size());
-      	
-      	for (double num = 12345; num > 1; num /= 10) {
-        	c.add(num);
-        }
-      	
-      	System.out.println(c);
-      	System.out.println("Size: " + c.size());
-      
-      	System.out.println();
-      	System.out.println("----- getMedian -----");
-      	
-      	System.out.println(a);
-      	System.out.println("Median: " + a.getMedian());
-      	
-      	System.out.println(b);
-      	System.out.println("Median: " + b.getMedian());
-      
-      	System.out.println(c);
-      	System.out.println("Median: " + c.getMedian());
-    }
- 
-	 
+
 }
    
 
