@@ -3,12 +3,10 @@ public class Sorts{
     
   public static void heapsort(Integer[] array){
 	MyHeap<Integer> heap = heapify(array);
-	int counter = size(array) - 1;
+	int deleteIndex = size(array) - 1;
 	while(heap.size() > 0){
-	    array[counter] = heap.remove();
-	    counter--;
-	    //System.out.println(print(array));
-	    //System.out.println("..." + heap);
+	    array[deleteIndex] = heap.remove();
+	    deleteIndex--;
 	}
     }
     
@@ -17,18 +15,24 @@ public class Sorts{
 	for(int i = 0; i < size(array); i++){
 	    heap.add(array[i]);
 	}
-	//System.out.println(heap);
 	return heap;
     }
 
-    public static void swap(int index1, int index2, Integer[] array){
-	Integer storage = array[index1];
-	array[index1] = array[index2];
-	array[index2] = storage;
-    }
+   public void swap(Integer[]ary, int first, int second){
+	Integer temp = ary[first];
+	ary[first]=ary[second];
+	ary[second]=temp;
+}
     
     public static int size(Integer[] array){
-	return array.size();
+		int ans = 0;
+	for(int i = 0; i < array.length; i++){
+	    if(array[i] != null){
+		size++;
+	    }
+	}
+	return ans;
+
     }
 
 }
