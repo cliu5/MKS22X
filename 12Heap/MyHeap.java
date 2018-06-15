@@ -108,7 +108,7 @@ public void pushDown(int index){
 		    pushDown(2*index+2);
 	    }
     }
-	else if (ifMax&&ary[index].compareTo(ary[2*index+2])<0||!ifMax && ary[index].compareTo(ary[2*index+2)>0){
+	else if (ifMax&&ary[index].compareTo(ary[2*index+2])<0||!ifMax && ary[index].compareTo(ary[2*index+2])>0){
 		swap(ary,index,2*index+2);
 		pushDown(2*index+2);
 	}
