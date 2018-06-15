@@ -10,11 +10,9 @@ public class MyHeap<T extends Comparable<T>>{
     public boolean ifMax;
     public int size;
  
-    @SuppressWarnings("unchecked")
+    
     public MyHeap(){
-	ary = (T[]) new Comparable[10];
-	size = 0;
-	ifMax = true;
+	this(true);
     }
   
   //construct empty max heap//
@@ -56,7 +54,7 @@ public class MyHeap<T extends Comparable<T>>{
 	  if(size==0){
 		  return null;
 	  }
-	T temp = ary[0];
+	T temp = peek();
 	 ary[0]=ary[size-1];
 	  size--;
 	  pushDown(0);
@@ -83,42 +81,41 @@ return size;
 public void pushUp(int index){
 	if(ifMax && ary[index].compareTo(ary[(index - 1) / 2]) > 0 || !ifMax&&ary[index].compareTo(ary[(index-1)/2])<0){
 		swap(ary,index,(index-1)/2);
-		pushUp((index-1/2));
-    }
-	
-	
-	
+		pushUp((index-1)/2);
+    }	
 }
+	
 public void pushDown(int index){
 	int rightChild=2*index+2;
 	int leftChild=2*index+1;
 	
-	if(rightChild < size){
-	    if(ifMax && (ary[rightChild].compareTo(ary[index]) > 0 || ary[leftChild].compareTo(ary[index]) > 0)){
-		if(ary[rightChild].compareTo(ary[leftChild]) > 0){
-			swap(ary,rightChild,index);
-		    pushDown(rightChild);
-		}else {
-			swap(ary,leftChild,index);
-		    pushDown(leftChild);
-		}
-		    //same as above if statement but now if the rightChild is greaterthan left child//
-	    }else if(!ifMax && (ary[rightChild].compareTo(ary[index]) < 0 || ary[leftChild].compareTo(ary[index]) < 0)){
-		if(ary[rightChild].compareTo(ary[leftChild]) < 0){
-		    swap(ary,rightChild,index);
-		    pushDown(rightChild);
-		}else {
-		    swap(ary,leftChild,index);
-		    pushDown(leftChild);
-		}
-	    }
-	}else if(leftChild < size){
-	    if(ifMax && ary[leftChild].compareTo(ary[index]) > 0||!ifMax && ary[leftChild].compareTo(ary[index]) < 0){
-		    swap(ary,leftChild,index);
-		pushDown(leftChild);
-	    }
+	if(2*index+1 >= size){
+		return;
 	}
+	if (2*index+2 >= size){
+        if (ifMax&&ary[index].compareTo(ary[2*index+1])<0||!ifMax && ary[index].compareTo(ary[2*index+1])>0){
+        swap(ary,index,2*index+1);
+        pushDown(2*index+1);
+      }
     }
+    else if (ifMax&&ary[index].compareTo(ary[2*index+1])<0||!ifMax && ary[index].compareTo(ary[2*index+1])>0){
+	    if(ifMax&&ary[2*index+1].compareTo(ary[2*index+2])>=0||!ifMax&&ary[2*index+1].compareTo(ary[2*index+2])<=0){
+		    swap(ary,index,2*index+1);
+		    pushDown(2*index+1);
+	    }
+	    else{
+		    swap(ary,index,2*index+2);
+		    pushDown(2*index+2);
+	    }
+    }
+	else if (ifMax&&ary[index].compareTo(ary[2*index+2])<0||!ifMax && ary[index].compareTo(ary[2*index+2)>0){
+		swap(ary,index,2*index+2);
+		pushDown(2*index+2);
+	}
+   }											   
+	    
+	    
+	
 	
 public void swap(T[]ary, int first, int second){
 	T temp = ary[first];
@@ -127,15 +124,7 @@ public void swap(T[]ary, int first, int second){
 }
 	
 
-  public void heapify(T[] data){
-	ary = data;
-	size = ary.length;
-	for(int i = size - 1; i >= 0; i--){
-	    if(2*i + 1 < size){
-		pushDown(i);
-	    }
-	}
-    }
+ 
 
 	
 }
