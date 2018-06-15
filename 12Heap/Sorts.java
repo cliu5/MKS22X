@@ -34,5 +34,27 @@ public class Sorts{
 	return ans;
 
     }
+	  public static String print(Integer[] array){
+	String returnString = "[";
+	for(int i = 0; i < array.length; i++){
+	    returnString = returnString + array[i]  +", ";
+	}
+	returnString = returnString.substring(0, returnString.length() - 2);
+	return returnString + "]";
+    }
+    
+    public static void main(String[] args){
+	Integer[] a = new Integer[10];
+
+	
+	for(int i = 0; i < 10; i++){
+	    a[i] = new Integer ((int)(Math.random() * 10));
+	}
+
+	System.out.println("....." + print(a));
+	heapsort(a);
+	System.out.println("....." + print(a));
+	
+    }
 
 }
