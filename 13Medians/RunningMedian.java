@@ -8,13 +8,7 @@ public class RunningMedian{
 	maxHeap = new MyHeap<Double>(true);
 	minHeap = new MyHeap<Double>(false);
     }
-  public RunningMedian(double[] a){
-    minHeap = new MyHeap<>();
-    maxHeap = new MyHeap<>(false);
-    for(int i = 0; i < a.length; i++){
-      add(a[i]);
-    }
-  }
+  
     public void add(Double val){
 	if(maxHeap.size()==0 && minHeap.size()==0){
 	    maxHeap.add(val);
@@ -54,18 +48,47 @@ public class RunningMedian{
 
    
 }   
-public static void main(String[] args){
-    double[] data = {1.0,3.0,5.0,4.0,2.0};
-    RunningMedian a = new RunningMedian(data);
-    System.out.println(a.getMedian()); //3
-//    System.out.println(a.minHeap);
-//    System.out.println(a.maxHeap);
-    a.add(6.0);
-    System.out.println(a.getMedian()); //3.5
-    a.add(1.0);
-    a.add(1.0);
-    System.out.println(a.getMedian());//2.5
-  }
+public static void main(String[] args) {
+        RunningMedian a = new RunningMedian();
+        RunningMedian b = new RunningMedian();
+      	RunningMedian c = new RunningMedian();
+        
+        System.out.println("----- add & size -----");
+      
+        for (double number = 0.0; number < 10.0; number++) {
+            a.add(number);
+        }
+      
+      	System.out.println(a);
+        System.out.println("Size: " + a.size());
+      	
+        for (int time = 0; time < 100; time++) {
+          	b.add((int) (Math.random() * 10000) / 100.0);
+        }
+              
+      
+      	System.out.println(b);
+        System.out.println("Size: " + b.size());
+      	
+      	for (double num = 12345; num > 1; num /= 10) {
+        	c.add(num);
+        }
+      	
+      	System.out.println(c);
+      	System.out.println("Size: " + c.size());
+      
+      	System.out.println();
+      	System.out.println("----- getMedian -----");
+      	
+      	System.out.println(a);
+      	System.out.println("Median: " + a.getMedian());
+      	
+      	System.out.println(b);
+      	System.out.println("Median: " + b.getMedian());
+      
+      	System.out.println(c);
+      	System.out.println("Median: " + c.getMedian());
+    }
  
 	 
 }
