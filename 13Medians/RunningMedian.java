@@ -8,7 +8,13 @@ public class RunningMedian{
 	maxHeap = new MyHeap<Double>(true);
 	minHeap = new MyHeap<Double>(false);
     }
-
+  public RunningMedian(double[] a){
+    minHeap = new MyHeap<>();
+    maxHeap = new MyHeap<>(false);
+    for(int i = 0; i < a.length; i++){
+      add(a[i]);
+    }
+  }
     public void add(Double val){
 	if(maxHeap.size()==0 && minHeap.size()==0){
 	    maxHeap.add(val);
