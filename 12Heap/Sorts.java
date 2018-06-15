@@ -28,7 +28,7 @@ public class Sorts{
     }
     
     public static int size(Integer[] array){
-	return array.size;
+	return array.size();
     }
 
 }
