@@ -25,7 +25,7 @@ public class Sorts{
 }
    
   public static void main(String[]args){
-    int[] ary = {1,2,3,4,5};
+    int[] ary = {5,4,3,2,1};
     Sorts.heapsort(ary);
     System.out.println(Arrays.toString(ary));
   }
