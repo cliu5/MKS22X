@@ -48,28 +48,19 @@ public class RunningMedian{
 
    
 }   
-
-  public static void main(String[]args){
-    RunningMedian r = new RunningMedian();
-    //System.out.println(r);
-    r.add(3.0);
-    System.out.println(r);
-    r.add(5.0);
-    System.out.println(r);
-    r.add(1.0);
-    System.out.println(r);
-    r.add(32.0);
-    System.out.println(r);
-    r.add(32.0);
-    System.out.println(r);
-    r.add(32.0);
-    System.out.println(r);
-    r.add(32.0);
-    System.out.println(r);
-    r.add(90.0);
-    System.out.println(r);
+public static void main(String[] args){
+    double[] data = {1.0,3.0,5.0,4.0,2.0};
+    RunningMedian a = new RunningMedian(data);
+    System.out.println(a.getMedian()); //3
+//    System.out.println(a.minHeap);
+//    System.out.println(a.maxHeap);
+    a.add(6.0);
+    System.out.println(a.getMedian()); //3.5
+    a.add(1.0);
+    a.add(1.0);
+    System.out.println(a.getMedian());//2.5
   }
-
+ 
 	 
 }
    
