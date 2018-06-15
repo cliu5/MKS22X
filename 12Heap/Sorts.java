@@ -3,7 +3,7 @@ public class Sorts{
     
   public static void heapsort(Integer[] array){
 	MyHeap<Integer> heap = heapify(array);
-	int deleteIndex = size(array) - 1;
+	int deleteIndex = array.length - 1;
 	while(heap.size() > 0){
 	    array[deleteIndex] = heap.remove();
 	    deleteIndex--;
@@ -12,7 +12,7 @@ public class Sorts{
     
     public static MyHeap<Integer> heapify(Integer[] array){
 	MyHeap<Integer> heap = new MyHeap<>();
-	for(int i = 0; i < size(array); i++){
+	for(int i = 0; i < array.length; i++){
 	    heap.add(array[i]);
 	}
 	return heap;
