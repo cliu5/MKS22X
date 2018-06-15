@@ -24,4 +24,9 @@ public class Sorts{
 	ary[second]=temp;
 }
    
+  public static void main(String[]args){
+    int[] ary = {1,2,3,4,5};
+    Sorts.heapsort(ary);
+    System.out.println(Arrays.toString(ary));
+  }
 }
