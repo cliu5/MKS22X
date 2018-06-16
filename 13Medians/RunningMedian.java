@@ -1,55 +1,81 @@
-import java.util.*;
-
 public class RunningMedian{
-    private MyHeap<Double> maxHeap;
-    private MyHeap<Double> minHeap;
+
+    MyHeap<Double> maxHeap;
+    MyHeap<Double> minHeap;
+    int maxSize;
+    int minSize;
+    int choose;
 
     public RunningMedian(){
-	maxHeap = new MyHeap<Double>(true);
-	minHeap = new MyHeap<Double>(false);
+	
+	minHeap = new MyHeap<>();
+	maxHeap = new MyHeap(false);
+	maxSize = 0;
+	minSize = 0;
+	choose = 0;
+
     }
-  
-    public void add(Double val){
-	if(maxHeap.size()==0 && minHeap.size()==0){
-	    maxHeap.add(val);
-	}
-	else if(val > maxHeap.peek()){
-	    minHeap.add(val);
+
+    public void add(Double n){
+	if (n > this.getMedian()){
+	    minHeap.add(n);
+	    minSize += 1;
 	}
 	else{
-	    maxHeap.add(val);
+	    if(n < this.getMedian()){
+		maxHeap.add(n);			
+		maxSize += 1;
+	    }
+	    else{
+		if (choose % 2 == 0){
+		    maxHeap.add(n);
+		    maxSize += 1;
+
+		}
+		else{
+		    minHeap.add(n);
+		    minSize += 1;
+
+		}
+		choose += 1;
+	    }
+	}
+
+	//have to do the balancing thingymabob
+	if (maxSize > minSize + 1){
+	    minHeap.add(maxHeap.remove());
+	    minSize += 1;
+	    maxSize -= 1;
+	}
+
+	if (minSize > maxSize + 1){
+	    maxHeap.add(minHeap.remove());
+	    minSize -= 1;
+	    maxSize += 1;
+	}
+	  
+
+    }
+
+    public double getMedian(){
+	
+	if(maxSize == 0 && minSize == 0){
+	    return 0;
 	}
 	
-	if(maxHeap.size()-minHeap.size()>1){
-	    Double _val = maxHeap.remove();
-	    minHeap.add(_val);
-	}else if(minHeap.size()-maxHeap.size()>1){
-	    Double _val = minHeap.remove();
-	    maxHeap.add(_val);
+	if(maxSize == minSize){
+	    return (maxHeap.peek() + minHeap.peek()) / 2.0;
 	}
-}
-
-    public Double getMedian(){
-	Double ans=0.0;
-	if(size()==0){
-	    throw new NoSuchElementException();
+	else{
+	    if (maxSize > minSize){
+		return maxHeap.peek();
+	    }
+	    else{
+		return minHeap.peek();
+	    }
 	}
-	if(maxHeap.size() > minHeap.size()){
-	    ans = maxHeap.peek();
-	}else if(minHeap.size() > maxHeap.size() ){
-	    ans = minHeap.peek();
-	}else{
-	    ans = (minHeap.peek() + maxHeap.peek()) / 2;
-	}
-	return ans;
     }
-    public int size(){
-	return maxHeap.size()+minHeap.size();
 
-   
-}   
-
+  public int size(){
+	  return minSize+maxSize;
 }
-   
-
-  
