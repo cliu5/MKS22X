@@ -7,11 +7,19 @@ public class RunningMedian{
 
     public RunningMedian(){
 	
-	minHeap = new MyHeap<>(false);
-	maxHeap = new MyHeap();
+	minHeap = new MyHeap<>();
+	maxHeap = new MyHeap(false);
 	size=0;
 
     }
+	
+	 public RunningMedian(double[] a){
+    minHeap = new MyHeap<>();
+    maxHeap = new MyHeap<>(false);
+    for(int i = 0; i < a.length; i++){
+      add(a[i]);
+    }
+  }
 
     public void add(Double a){
 	    if(size() == 0){
@@ -55,18 +63,15 @@ public class RunningMedian{
   }
 	
 	    public static void main(String[] args){
-	RunningMedian a = new RunningMedian();
-	//System.out.println(a);
-	a.add(1230.0);
-	a.add(320.0);
-	a.add(440.0);
-	a.add(9560.0);
-	a.add(80.0);
-	a.add(100.0);
-	a.add(442.0);
-	a.add(12398120938.021312443);
-	System.out.println("med: " + a.getMedian());
-	System.out.println(a);
-	System.out.println(a.size());
-    }
+    double[] data = {1.0,3.0,5.0,4.0,2.0};
+    RunningMedian a = new RunningMedian(data);
+    System.out.println(a.getMedian()); //3
+//    System.out.println(a.minHeap);
+//    System.out.println(a.maxHeap);
+    a.add(6.0);
+    System.out.println(a.getMedian()); //3.5
+    a.add(1.0);
+    a.add(1.0);
+    System.out.println(a.getMedian());//2.5
+  }
 }
