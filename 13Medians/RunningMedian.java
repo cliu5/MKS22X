@@ -21,7 +21,7 @@ public class RunningMedian{
 		 minHeap.add(a);
 	 }
 	 else{
-		maxHeap.add(element);
+		maxHeap.add(a);
 	    }
 	if(maxHeap.size()>minHeap.size()+1){
 		minHeap.add(maxHeap.remove());
