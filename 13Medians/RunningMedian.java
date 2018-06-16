@@ -44,7 +44,7 @@ if (maxHeap.size() > minHeap.size()){
 	    return (maxHeap.peek() + minHeap.peek()) / 2.0;
 	}
 }
-    }
+  
 
   public int size(){
 	  return maxHeap.size()+minHeap.size();
