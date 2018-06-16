@@ -5,7 +5,7 @@ private boolean animate;
 	private boolean aStar;
   public MazeSolver(String mazeText){
     maze=new Maze(mazeText);
-	animate = true;
+	animate = false;
   }
   
   public boolean solve(){ 
